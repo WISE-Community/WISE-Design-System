@@ -1,0 +1,8 @@
+<ng-container>
+  <span
+    *ngIf="isProcessing"
+    class="loading loading-spinner"
+    aria-label="Processing..."
+  ></span>
+  <ng-content></ng-content>
+</ng-container>

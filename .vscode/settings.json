@@ -1,0 +1,5 @@
+{
+  "html.format.wrapAttributesIndentSize": 4,
+  "html.autoCreateQuotes": false,
+  "prettier.bracketSameLine": true
+}

@@ -1,0 +1,13 @@
+<dialog #dialog class="modal">
+  <div
+    class="modal-box p-0 w-11/12"
+    [class.max-w-screen-md]="config.width === 'md'"
+    [class.max-w-screen-lg]="config.width === 'lg'"
+    [class.max-w-screen-xl]="config.width === 'xl'"
+  >
+    <ng-template #dialogContent></ng-template>
+  </div>
+  <form *ngIf="config.closeOnBackdropClick" method="dialog" class="modal-backdrop">
+    <button>Close dialog</button>
+  </form>
+</dialog>

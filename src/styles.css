@@ -1,1 +1,145 @@
-/* You can add global styles to this file, and also import other style files */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  a:not(.btn) {
+    @apply text-primary;
+
+    &:hover {
+      @apply text-primary-focus;
+    }
+
+    .wisetype & {
+      @apply text-primary;
+
+      &:hover {
+        @apply text-primary-focus;
+      }
+    }
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    @apply font-heading;
+  }
+}
+
+/* Tailwind Typography */
+
+.wisetype :where(pre):not(:where([class~="not-wisetype"], [class~="not-wisetype"] *)) {
+  border-radius: 0;
+}
+
+/* DaisyUI */
+
+.btn.btn-disabled,
+.btn[disabled],
+.btn:disabled {
+  --tw-text-opacity: 0.4;
+}
+
+.btn-circle {
+  width: 2.5rem;
+
+  &.btn-xs {
+    width: 2rem;
+  }
+
+  &.btn-sm {
+    width: 2.25rem;
+  }
+
+  &.btn-lg {
+    width: 2.75rem;
+  }
+}
+
+/* .btn {
+  &:hover {
+    @apply outline;
+    @apply outline-offset-2;
+    @apply outline-2;
+  }
+} */
+
+.table {
+  .wisetype & {
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+
+  :where(thead, tfoot) {
+    @apply text-inherit;
+
+    :where(.table-pin-cols tr th) {
+      @apply bg-neutral-100 dark:bg-neutral-700;
+    }
+  }
+
+  :where(thead, tfoot) tr {
+    @apply bg-neutral-100 dark:bg-neutral-700;
+  }
+
+  :where(tbody) {
+    @apply text-sm;
+  }
+}
+
+/* Font Awesome icons */
+
+.fas {
+  font-size: 1.25em;
+}
+
+.fa-2xs {
+  font-size: 0.75em;
+}
+
+.fa-xs {
+  font-size: 0.875em;
+}
+
+.fa-sm {
+  font-size: 1em;
+}
+
+.fa-lg {
+  font-size: 1.5em;
+}
+
+.fa-xl {
+  font-size: 2em;
+}
+
+.fa-2xl {
+  font-size: 2.5em;
+}
+
+/* Scroll shadow */
+
+.scroll-shadow-v {
+  /* overflow: auto; */
+  background:
+    /* Shadow covers */
+    linear-gradient(hsl(var(--b1)) 30%, rgba(255, 255, 255, 0)), linear-gradient(rgba(255, 255, 255, 0), hsl(var(--b1)) 70%) 0 100%,
+    /* Shadows */
+    radial-gradient(50% 0, farthest-side, rgba(0, 0, 0, .1), rgba(0, 0, 0, 0)), radial-gradient(50% 100%, farthest-side, rgba(0, 0, 0, .1), rgba(0, 0, 0, 0)) 0 100%;
+  background:
+    /* Shadow covers */
+    linear-gradient(hsl(var(--b1)) 30%, rgba(255, 255, 255, 0)), linear-gradient(rgba(255, 255, 255, 0), hsl(var(--b1)) 70%) 0 100%,
+    /* Shadows */
+    radial-gradient(farthest-side at 50% 0, rgba(0, 0, 0, .1), rgba(0, 0, 0, 0)), radial-gradient(farthest-side at 50% 100%, rgba(0, 0, 0, .1), rgba(0, 0, 0, 0)) 0 100%;
+  background-repeat: no-repeat;
+  background-size: 100% 40px, 100% 40px, 100% 8px, 100% 8px;
+  /* Opera doesn't support this in the shorthand */
+  background-attachment: local, local, scroll, scroll;
+}
+
+/* Custom */
+
+.max-h-inherit {
+  max-height: inherit;
+}

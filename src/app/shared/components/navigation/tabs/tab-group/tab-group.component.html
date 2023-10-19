@@ -1,0 +1,30 @@
+<nav class="tabs" [ngClass]="{ 'grid grid-flow-col': block }" role="tablist">
+  <ng-container *ngFor="let tab of tabs; let i = index">
+    <!-- <div class="tab tab-bordered" (click)="selectTab(tab)">{{ tab.label }}</div> -->
+    <div
+      id="{{ tabGroupName + '-tab-label-' + i }}"
+      class="tab tab-{{ tabStyle }}"
+      [ngClass]="sizeClass"
+      role="tab"
+      [class.tab-active]="selectedTab === tab"
+      [attr.aria-selected]="selectedTab === tab"
+      [attr.aria-controls]="tabGroupName + '-tab-content-' + i"
+      (click)="selectTabByIndex(i, $event)"
+      (keydown.enter)="selectTab(tab, $event)"
+      (keydown.space)="selectTab(tab, $event)"
+      tabindex="0"
+    >
+      <ng-container *ngTemplateOutlet="tab.label"></ng-container>
+    </div>
+  </ng-container>
+</nav>
+<ng-container *ngFor="let tab of tabs; let i = index">
+  <div
+    *ngIf="selectedTab === tab"
+    id="{{ tabGroupName + '-tab-content-' + i }}"
+    role="tabpanel"
+    [attr.aria-labelledby]="tabGroupName + '-tab-label-' + i"
+  >
+    <ng-container *ngTemplateOutlet="tab.content"></ng-container>
+  </div>
+</ng-container>

@@ -1,0 +1,148 @@
+  <h2 id="overview" i18n>Overview</h2>
+  <p i18n>
+    WISE uses the
+    <a href="https://tailwindcss.com/docs/typography-plugin">Tailwind CSS Typography plugin</a> with
+    customizations to define typography styles that are used throughout WISE applications. To
+    utilize the typography styles demonstrated in this document, add the <code>wisetype</code>,
+    <code>dark:wisetype-dark</code>, and <code>wisetype-neutral</code> classes to the
+    <code>&lt;body&gt;</code> or a parent DOM element.
+  </p>
+  <p i18n>
+    Typographic content can also be modified using any Tailwind CSS typography utility classes.
+    Check out the <a href="https://tailwindcss.com/docs">Tailwind CSS documentation</a> for more
+    information.
+  </p>
+  <h2 id="font-families" i18n>Font Families</h2>
+  <p i18n>
+    WISE uses two font families by default - one for body content and one for headings. They can
+    also be applied to any HTML element using the following classes:
+  </p>
+  <table wise-table>
+    <thead>
+      <tr>
+        <th i18n>Class name</th>
+        <th i18n>Value</th>
+        <th i18n>Sample</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>
+          <code>font-body</code>
+        </td>
+        <td>{{ bodyFontFamily }}</td>
+        <td>
+          <span class="font-body">{{ sampleText }}</span>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <code>font-heading</code>
+        </td>
+        <td>{{ headingFontFamily }}</td>
+        <td>
+          <span class="font-heading text-lg">{{ sampleText }}</span>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <h2 id="headings" i18n>Headings</h2>
+  <table wise-table>
+    <thead>
+      <tr>
+        <th i18n>Element</th>
+        <th i18n>Font Size</th>
+        <th i18n>Font Family</th>
+        <th i18n>Font Weight</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>
+          <h1 class="toc-ignore">&lt;h1&gt; Heading 1</h1>
+        </td>
+        <td>2.25rem (36px)</td>
+        <td>{{ headingFontFamily }}</td>
+        <td>800</td>
+      </tr>
+      <tr>
+        <td>
+          <h2 class="toc-ignore">&lt;h2&gt; Heading 2</h2>
+        </td>
+        <td>1.75rem (28px)</td>
+        <td>{{ headingFontFamily }}</td>
+        <td>700</td>
+      </tr>
+      <tr>
+        <td>
+          <h3 class="toc-ignore">&lt;h3&gt; Heading 3</h3>
+        </td>
+        <td>1.5rem (24px)</td>
+        <td>{{ headingFontFamily }}</td>
+        <td>600</td>
+      </tr>
+      <tr>
+        <td>
+          <h4 class="toc-ignore">&lt;h4&gt; Heading 4</h4>
+        </td>
+        <td>1.25rem (20px)</td>
+        <td>{{ headingFontFamily }}</td>
+        <td>600</td>
+      </tr>
+    </tbody>
+  </table>
+  <h2 id="paragraphs" i18n>Paragraphs</h2>
+  <p i18n>
+    The default <code>font-size</code> for body and paragraph text is <code>1rem</code> (16 px).
+  </p>
+  <p class="font-bold" i18>Sample paragraphs:</p>
+  <p>
+    Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor.
+    Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus
+    mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa
+    quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu.
+  </p>
+  <p>
+    In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede
+    mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate
+    eleifend tellus.
+  </p>
+  <h2 id="lists" i18n>Lists</h2>
+  <p class="font-bold" i18n>Unordered List:</p>
+  <ul>
+    <li i18n>List item #1.</li>
+    <li i18n>List item #2.</li>
+    <li i18n>List item #3.</li>
+    <li i18n>List item #4.</li>
+  </ul>
+  <p class="font-bold" i18n>Ordered List:</p>
+  <ol>
+    <li i18n>List item #1.</li>
+    <li i18n>List item #2.</li>
+    <li i18n>List item #3.</li>
+    <li i18n>List item #4.</li>
+  </ol>
+  <h2 id="blockquotes" i18n>Blockquotes</h2>
+  <blockquote>
+    Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor.
+    Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus
+    mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem.
+  </blockquote>
+  <h2 id="images">Images</h2>
+  <figure>
+    <img src="https://picsum.photos/id/82/1500/997" i18n-alt alt="Sample image" />
+    <figcaption i18n>
+      This is a sample image caption that tells you something about the image above.
+    </figcaption>
+  </figure>
+  <h2 id="code" i18n>Code</h2>
+  <p i18n>Inline code can be displayed using the <code>&lt;code&gt;</code> element.</p>
+  <p i18n>
+    Larger code blocks can be displayed using a <code>&lt;code&gt;</code> element inside a
+    <code>&lt;pre&gt;</code>
+    element:
+  </p>
+  <pre>
+    <code class="language-js" [innerHTML]="codeSample"></code>
+  </pre>
+</article>

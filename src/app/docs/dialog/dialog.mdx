@@ -1,0 +1,20 @@
+import { Canvas, Meta, Story } from '@storybook/blocks';
+import * as DialogStories from './dialog.stories';
+
+<Meta of={DialogStories} />
+<div class="sb-unstyled wisetype dark:wisetype-invert wisetype-neutral mx-auto max-w-6xl">
+  <div class="font-body">
+    <h1 i18n>Dialog</h1>
+    <p i18n>
+      Dialogs are temporary, modal overlays that provide contextual information or require user
+      confirmation or input.
+    </p>
+    <p i18n>
+      The <code>WISEDialogService</code> can be used to open modal dialogs with WISE styling.
+    </p>
+    <h2 id="overview" i18n>
+      Overview
+    </h2>
+    <Story of={DialogStories.Dialog} />
+  </div>
+</div>
