@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { WISEButton } from 'src/app/shared/components/actions/button/button.component';
 import { WISEDialogContent } from 'src/app/shared/components/actions/dialog/dialog-content-components';
 import { WISEDialogContentModule } from 'src/app/shared/components/actions/dialog/dialog-content.module';
@@ -38,7 +38,7 @@ export class BasicDialog {
 @Component({
   standalone: true,
   imports: [WISEButton, WISEDialogContentModule],
-  templateUrl: './basic-dialog-content.component.html',
+  templateUrl: './basic-dialog-content.html',
 })
 export class BasicDialogContent extends WISEDialogContent implements OnInit {
   constructor() {

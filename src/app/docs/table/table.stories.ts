@@ -94,7 +94,7 @@ const defaultContent = `
 
 type StoryTable = WISETable & { tableContent?: string };
 
-export default {
+const meta: Meta<StoryTable> = {
   title: 'Components/Layout/Table',
   component: WISETable,
   decorators: [
@@ -104,10 +104,9 @@ export default {
     }),
   ],
   tags: ['autodocs'],
-  render: (args: StoryTable) => {
-    const { tableContent, ...props } = args;
+  render: (tableContent, ...args) => {
     return {
-      props,
+      props: args,
       template: `
         <div class="max-h-72 max-w-xl">
           <table
@@ -119,7 +118,7 @@ export default {
             [size]="size"
             [zebra]="zebra"
           >
-            ${tableContent}
+            ${defaultContent}
           </table>
         </div>
       `,
@@ -154,14 +153,14 @@ export default {
     },
   },
   args: {
-    tableContent: defaultContent,
     border: true,
     pinCols: false,
     pinRows: false,
     size: undefined,
     zebra: false,
   },
-} as Meta<StoryTable>;
+};
+export default meta;
 
 export const Table: StoryObj<StoryTable> = {};
 

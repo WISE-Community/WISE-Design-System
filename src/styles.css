@@ -2,19 +2,23 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+  --anchor-hover-color: color-mix(in oklab, var(--p) 90%, black);
+}
+
 @layer base {
   a:not(.btn) {
     @apply text-primary;
 
     &:hover {
-      @apply text-primary-focus;
+      color: var(--anchor-hover-color);
     }
 
     .wisetype & {
       @apply text-primary;
 
       &:hover {
-        @apply text-primary-focus;
+        color: var(--anchor-hover-color);
       }
     }
   }
@@ -64,6 +68,26 @@
     @apply outline-2;
   }
 } */
+
+.tab {
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  height: 3rem;
+  font-weight: 600;
+  /* color: oklch(var(--bc)); */
+  color: oklch(var(--bc) / .7);
+
+  &:hover, &:focus {
+    color: oklch(var(--bc));
+  }
+
+  &.tab-active {
+    &:not(.tab-disabled):not([disabled]) {
+      color: oklch(var(--p));
+      border-bottom-color: oklch(var(--p));
+    }
+  }
+}
 
 .table {
   .wisetype & {
@@ -124,12 +148,12 @@
   /* overflow: auto; */
   background:
     /* Shadow covers */
-    linear-gradient(hsl(var(--b1)) 30%, rgba(255, 255, 255, 0)), linear-gradient(rgba(255, 255, 255, 0), hsl(var(--b1)) 70%) 0 100%,
+    linear-gradient(oklch(var(--b1)) 30%, rgba(255, 255, 255, 0)), linear-gradient(rgba(255, 255, 255, 0), oklch(var(--b1)) 70%) 0 100%,
     /* Shadows */
     radial-gradient(50% 0, farthest-side, rgba(0, 0, 0, .1), rgba(0, 0, 0, 0)), radial-gradient(50% 100%, farthest-side, rgba(0, 0, 0, .1), rgba(0, 0, 0, 0)) 0 100%;
   background:
     /* Shadow covers */
-    linear-gradient(hsl(var(--b1)) 30%, rgba(255, 255, 255, 0)), linear-gradient(rgba(255, 255, 255, 0), hsl(var(--b1)) 70%) 0 100%,
+    linear-gradient(oklch(var(--b1)) 30%, rgba(255, 255, 255, 0)), linear-gradient(rgba(255, 255, 255, 0), oklch(var(--b1)) 70%) 0 100%,
     /* Shadows */
     radial-gradient(farthest-side at 50% 0, rgba(0, 0, 0, .1), rgba(0, 0, 0, 0)), radial-gradient(farthest-side at 50% 100%, rgba(0, 0, 0, .1), rgba(0, 0, 0, 0)) 0 100%;
   background-repeat: no-repeat;

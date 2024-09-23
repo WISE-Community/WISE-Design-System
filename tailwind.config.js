@@ -149,7 +149,6 @@ module.exports = {
     base: true,
     utils: true,
     logs: true,
-    // rtl: true,
     prefix: '',
     darkTheme: 'wisedark',
   },
@@ -194,5 +193,10 @@ module.exports = {
     'tab-sm',
     'tab-lg',
     'm-4',
+    'my-0',
+    'border',
+    'border-solid',
+    'border-base-300',
+    'tab-bordered',
   ],
 };

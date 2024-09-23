@@ -1,9 +1,8 @@
-<nav class="tabs" [ngClass]="{ 'grid grid-flow-col': block }" role="tablist">
+<nav class="tabs tabs-{{ tabStyle }}" [ngClass]="{ 'grid grid-flow-col': block }" role="tablist">
   <ng-container *ngFor="let tab of tabs; let i = index">
-    <!-- <div class="tab tab-bordered" (click)="selectTab(tab)">{{ tab.label }}</div> -->
     <div
       id="{{ tabGroupName + '-tab-label-' + i }}"
-      class="tab tab-{{ tabStyle }}"
+      class="tab"
       [ngClass]="sizeClass"
       role="tab"
       [class.tab-active]="selectedTab === tab"
