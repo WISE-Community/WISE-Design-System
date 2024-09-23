@@ -28,14 +28,13 @@ const config: StorybookConfig = {
       },
     },
     '@storybook/addon-styling-webpack',
-    '@storybook/addon-mdx-gfm'
+    '@storybook/addon-mdx-gfm',
+    '@chromatic-com/storybook'
   ],
   framework: {
     name: '@storybook/angular',
     options: {},
   },
-  docs: {
-    autodocs: 'tag',
-  },
+  docs: {},
 };
 export default config;

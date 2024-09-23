@@ -47,5 +47,5 @@ export const Typography: Story = {
   render: (args: TypographyComponent) => ({
     props: args,
   }),
-  tags: ['hide'],
+  // tags: ['hide'],
 };

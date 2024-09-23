@@ -614,7 +614,7 @@
         },
         {
             "name": "TypographyComponent",
-            "id": "component-TypographyComponent-998d98cbb91b5a038ed065cbea52c444141cacc2ca5bbd99bf2c85192a57284858dae49c226e95b2e50e7a635148238c544e5921c7df5b9ea17a576cbd7ba2ce",
+            "id": "component-TypographyComponent-b6d660e90898b368b5cf5e8319191da22b26ad3f2c99c2964a7d691a61d3ecd6685f9be3a683c443eee5529d302ba238f5d91c5f51308cb4d9cad2c6ce96a606",
             "file": "src/app/docs/typography/typography.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -642,7 +642,7 @@
                     "type": "string",
                     "optional": false,
                     "description": "",
-                    "line": 14
+                    "line": 11
                 },
                 {
                     "name": "codeSample",
@@ -652,7 +652,7 @@
                     "type": "string",
                     "optional": false,
                     "description": "",
-                    "line": 16
+                    "line": 13
                 },
                 {
                     "name": "headingFontFamily",
@@ -662,7 +662,7 @@
                     "type": "string",
                     "optional": false,
                     "description": "",
-                    "line": 15
+                    "line": 12
                 },
                 {
                     "name": "sampleText",
@@ -672,67 +672,20 @@
                     "type": "string",
                     "optional": false,
                     "description": "",
-                    "line": 13
-                },
-                {
-                    "name": "selectedTabIndex",
-                    "defaultValue": "0",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "number",
-                    "optional": false,
-                    "description": "",
-                    "line": 28
+                    "line": 10
                 }
             ],
-            "methodsClass": [
-                {
-                    "name": "setSelectedTabIndex",
-                    "args": [
-                        {
-                            "name": "index",
-                            "type": "number",
-                            "deprecated": false,
-                            "deprecationMessage": ""
-                        }
-                    ],
-                    "optional": false,
-                    "returnType": "void",
-                    "typeParameters": [],
-                    "line": 32,
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "jsdoctags": [
-                        {
-                            "name": "index",
-                            "type": "number",
-                            "deprecated": false,
-                            "deprecationMessage": "",
-                            "tagName": {
-                                "text": "param"
-                            }
-                        }
-                    ]
-                }
-            ],
+            "methodsClass": [],
             "deprecated": false,
             "deprecationMessage": "",
             "hostBindings": [],
             "hostListeners": [],
             "standalone": true,
-            "imports": [
-                {
-                    "name": "WISEButton"
-                },
-                {
-                    "name": "TabsModule",
-                    "type": "module"
-                }
-            ],
+            "imports": [],
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component } from '@angular/core';\nimport { WISEButton } from 'src/app/shared/components/actions/button/button.component';\nimport { TabsModule } from 'src/app/shared/components/navigation/tabs/tabs.module';\n\n@Component({\n  standalone: true,\n  selector: 'typography',\n  templateUrl: './typography.component.html',\n  styleUrls: ['./typography.component.css'],\n  imports: [WISEButton, TabsModule],\n})\nexport class TypographyComponent {\n  sampleText: string = $localize`Web-based Inquiry Science Environment`;\n  bodyFontFamily: string = 'Open Sans';\n  headingFontFamily: string = 'Raleway';\n  codeSample: string = `\n    import { Component, HostBinding, Input } from '@angular/core';\n\n    @Component({\n      selector: 'button[wise-button], input[wise-button]',\n      host: {\n        '[attr.disabled]': '(isProcessing || isDisabled) || null',\n        '[attr.tabindex]': 'isDisabled ? -1 : tabindex',\n        '[class.btn-block]': 'block',\n        '[class.btn-circle]': 'circle',\n        ...\n  `;\n  selectedTabIndex: number = 0;\n\n  constructor() {}\n\n  setSelectedTabIndex(index: number): void {\n    this.selectedTabIndex = index;\n  }\n}\n",
+            "sourceCode": "import { Component } from '@angular/core';\n\n@Component({\n  standalone: true,\n  selector: 'typography',\n  templateUrl: './typography.component.html',\n  styleUrls: ['./typography.component.css'],\n})\nexport class TypographyComponent {\n  sampleText: string = $localize`Web-based Inquiry Science Environment`;\n  bodyFontFamily: string = 'Open Sans';\n  headingFontFamily: string = 'Raleway';\n  codeSample: string = `\n    import { Component, HostBinding, Input } from '@angular/core';\n\n    @Component({\n      selector: 'button[wise-button], input[wise-button]',\n      host: {\n        '[attr.disabled]': '(isProcessing || isDisabled) || null',\n        '[attr.tabindex]': 'isDisabled ? -1 : tabindex',\n        '[class.btn-block]': 'block',\n        '[class.btn-circle]': 'circle',\n        ...\n  `;\n\n  constructor() {}\n}\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
@@ -747,9 +700,9 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "args": [],
-                "line": 28
+                "line": 24
             },
-            "templateData": "<article class=\"font-body\">\n  <wise-tab-group\n    [selectedIndex]=\"selectedTabIndex\"\n    (selectedIndexChange)=\"setSelectedTabIndex($event)\"\n  >\n    <wise-tab>\n      <ng-template #tabLabel i18n>Tab 1</ng-template>\n      <ng-template #tabContent>\n        <div class=\"m-4\">\n          <p i18n>Tab Content 1</p>\n        </div>\n      </ng-template>\n    </wise-tab>\n    <wise-tab>\n      <ng-template #tabLabel i18n>Tab 2</ng-template>\n      <ng-template #tabContent>\n        <div class=\"m-4\">\n          <p i18n>Tab Content 2</p>\n        </div>\n      </ng-template>\n    </wise-tab>\n  </wise-tab-group>\n  <button wise-button (click)=\"selectedTabIndex = 1\">Select Tab 2</button>\n  <h1 i18n>Typography</h1>\n  <h2 id=\"overview\" i18n>Overview</h2>\n  <p i18n>\n    WISE uses the\n    <a href=\"https://tailwindcss.com/docs/typography-plugin\">Tailwind CSS Typography plugin</a> with\n    customizations to define typography styles that are used throughout WISE applications. To\n    utilize the typography styles demonstrated in this document, add the <code>wisetype</code>,\n    <code>dark:wisetype-dark</code>, and <code>wisetype-neutral</code> classes to the\n    <code>&lt;body&gt;</code> or a parent DOM element.\n  </p>\n  <p i18n>\n    Typographic content can also be modified using any Tailwind CSS typography utility classes.\n    Check out the <a href=\"https://tailwindcss.com/docs\">Tailwind CSS documentation</a> for more\n    information.\n  </p>\n  <h2 id=\"font-families\" i18n>Font Families</h2>\n  <p i18n>\n    WISE uses two font families by default - one for body content and one for headings. They can\n    also be applied to any HTML element using the following classes:\n  </p>\n  <table wise-table>\n    <thead>\n      <tr>\n        <th i18n>Class name</th>\n        <th i18n>Value</th>\n        <th i18n>Sample</th>\n      </tr>\n    </thead>\n    <tbody>\n      <tr>\n        <td>\n          <code>font-body</code>\n        </td>\n        <td>{{ bodyFontFamily }}</td>\n        <td>\n          <span class=\"font-body\">{{ sampleText }}</span>\n        </td>\n      </tr>\n      <tr>\n        <td>\n          <code>font-heading</code>\n        </td>\n        <td>{{ headingFontFamily }}</td>\n        <td>\n          <span class=\"font-heading text-lg\">{{ sampleText }}</span>\n        </td>\n      </tr>\n    </tbody>\n  </table>\n  <h2 id=\"headings\" i18n>Headings</h2>\n  <table wise-table>\n    <thead>\n      <tr>\n        <th i18n>Element</th>\n        <th i18n>Font Size</th>\n        <th i18n>Font Family</th>\n        <th i18n>Font Weight</th>\n      </tr>\n    </thead>\n    <tbody>\n      <tr>\n        <td>\n          <h1 class=\"toc-ignore\">&lt;h1&gt; Heading 1</h1>\n        </td>\n        <td>2.25rem (36px)</td>\n        <td>{{ headingFontFamily }}</td>\n        <td>800</td>\n      </tr>\n      <tr>\n        <td>\n          <h2 class=\"toc-ignore\">&lt;h2&gt; Heading 2</h2>\n        </td>\n        <td>1.75rem (28px)</td>\n        <td>{{ headingFontFamily }}</td>\n        <td>700</td>\n      </tr>\n      <tr>\n        <td>\n          <h3 class=\"toc-ignore\">&lt;h3&gt; Heading 3</h3>\n        </td>\n        <td>1.5rem (24px)</td>\n        <td>{{ headingFontFamily }}</td>\n        <td>600</td>\n      </tr>\n      <tr>\n        <td>\n          <h4 class=\"toc-ignore\">&lt;h4&gt; Heading 4</h4>\n        </td>\n        <td>1.25rem (20px)</td>\n        <td>{{ headingFontFamily }}</td>\n        <td>600</td>\n      </tr>\n    </tbody>\n  </table>\n  <h2 id=\"paragraphs\" i18n>Paragraphs</h2>\n  <p i18n>\n    The default <code>font-size</code> for body and paragraph text is <code>1rem</code> (16 px).\n  </p>\n  <p class=\"font-bold\" i18>Sample paragraphs:</p>\n  <p>\n    Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor.\n    Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus\n    mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa\n    quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu.\n  </p>\n  <p>\n    In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede\n    mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate\n    eleifend tellus.\n  </p>\n  <h2 id=\"lists\" i18n>Lists</h2>\n  <p class=\"font-bold\" i18n>Unordered List:</p>\n  <ul>\n    <li i18n>List item #1.</li>\n    <li i18n>List item #2.</li>\n    <li i18n>List item #3.</li>\n    <li i18n>List item #4.</li>\n  </ul>\n  <p class=\"font-bold\" i18n>Ordered List:</p>\n  <ol>\n    <li i18n>List item #1.</li>\n    <li i18n>List item #2.</li>\n    <li i18n>List item #3.</li>\n    <li i18n>List item #4.</li>\n  </ol>\n  <h2 id=\"blockquotes\" i18n>Blockquotes</h2>\n  <blockquote>\n    Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor.\n    Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus\n    mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem.\n  </blockquote>\n  <h2 id=\"images\">Images</h2>\n  <figure>\n    <img src=\"https://picsum.photos/id/82/1500/997\" i18n-alt alt=\"Sample image\" />\n    <figcaption i18n>\n      This is a sample image caption that tells you something about the image above.\n    </figcaption>\n  </figure>\n  <h2 id=\"code\" i18n>Code</h2>\n  <p i18n>Inline code can be displayed using the <code>&lt;code&gt;</code> element.</p>\n  <p i18n>\n    Larger code blocks can be displayed using a <code>&lt;code&gt;</code> element inside a\n    <code>&lt;pre&gt;</code>\n    element:\n  </p>\n  <pre>\n    <code class=\"language-js\" [innerHTML]=\"codeSample\"></code>\n  </pre>\n</article>\n"
+            "templateData": "<article class=\"font-body\">\n  <h1 i18n>Typography</h1>\n  <h2 id=\"overview\" i18n>Overview</h2>\n  <p i18n>\n    WISE uses the\n    <a href=\"https://tailwindcss.com/docs/typography-plugin\">Tailwind CSS Typography plugin</a> with\n    customizations to define typography styles that are used throughout WISE applications. To\n    utilize the typography styles demonstrated in this document, add the <code>wisetype</code>,\n    <code>dark:wisetype-dark</code>, and <code>wisetype-neutral</code> classes to the\n    <code>&lt;body&gt;</code> or a parent DOM element.\n  </p>\n  <p i18n>\n    Typographic content can also be modified using any Tailwind CSS typography utility classes.\n    Check out the <a href=\"https://tailwindcss.com/docs\">Tailwind CSS documentation</a> for more\n    information.\n  </p>\n  <h2 id=\"font-families\" i18n>Font Families</h2>\n  <p i18n>\n    WISE uses two font families by default - one for body content and one for headings. They can\n    also be applied to any HTML element using the following classes:\n  </p>\n  <table wise-table>\n    <thead>\n      <tr>\n        <th i18n>Class name</th>\n        <th i18n>Value</th>\n        <th i18n>Sample</th>\n      </tr>\n    </thead>\n    <tbody>\n      <tr>\n        <td>\n          <code>font-body</code>\n        </td>\n        <td>{{ bodyFontFamily }}</td>\n        <td>\n          <span class=\"font-body\">{{ sampleText }}</span>\n        </td>\n      </tr>\n      <tr>\n        <td>\n          <code>font-heading</code>\n        </td>\n        <td>{{ headingFontFamily }}</td>\n        <td>\n          <span class=\"font-heading text-lg\">{{ sampleText }}</span>\n        </td>\n      </tr>\n    </tbody>\n  </table>\n  <h2 id=\"headings\" i18n>Headings</h2>\n  <table wise-table>\n    <thead>\n      <tr>\n        <th i18n>Element</th>\n        <th i18n>Font Size</th>\n        <th i18n>Font Family</th>\n        <th i18n>Font Weight</th>\n      </tr>\n    </thead>\n    <tbody>\n      <tr>\n        <td>\n          <h1 class=\"toc-ignore\">&lt;h1&gt; Heading 1</h1>\n        </td>\n        <td>2.25rem (36px)</td>\n        <td>{{ headingFontFamily }}</td>\n        <td>800</td>\n      </tr>\n      <tr>\n        <td>\n          <h2 class=\"toc-ignore\">&lt;h2&gt; Heading 2</h2>\n        </td>\n        <td>1.75rem (28px)</td>\n        <td>{{ headingFontFamily }}</td>\n        <td>700</td>\n      </tr>\n      <tr>\n        <td>\n          <h3 class=\"toc-ignore\">&lt;h3&gt; Heading 3</h3>\n        </td>\n        <td>1.5rem (24px)</td>\n        <td>{{ headingFontFamily }}</td>\n        <td>600</td>\n      </tr>\n      <tr>\n        <td>\n          <h4 class=\"toc-ignore\">&lt;h4&gt; Heading 4</h4>\n        </td>\n        <td>1.25rem (20px)</td>\n        <td>{{ headingFontFamily }}</td>\n        <td>600</td>\n      </tr>\n    </tbody>\n  </table>\n  <h2 id=\"paragraphs\" i18n>Paragraphs</h2>\n  <p i18n>\n    The default <code>font-size</code> for body and paragraph text is <code>1rem</code> (16 px).\n  </p>\n  <p class=\"font-bold\" i18>Sample paragraphs:</p>\n  <p>\n    Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor.\n    Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus\n    mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa\n    quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu.\n  </p>\n  <p>\n    In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede\n    mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate\n    eleifend tellus.\n  </p>\n  <h2 id=\"lists\" i18n>Lists</h2>\n  <p class=\"font-bold\" i18n>Unordered List:</p>\n  <ul>\n    <li i18n>List item #1.</li>\n    <li i18n>List item #2.</li>\n    <li i18n>List item #3.</li>\n    <li i18n>List item #4.</li>\n  </ul>\n  <p class=\"font-bold\" i18n>Ordered List:</p>\n  <ol>\n    <li i18n>List item #1.</li>\n    <li i18n>List item #2.</li>\n    <li i18n>List item #3.</li>\n    <li i18n>List item #4.</li>\n  </ol>\n  <h2 id=\"blockquotes\" i18n>Blockquotes</h2>\n  <blockquote>\n    Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor.\n    Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus\n    mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem.\n  </blockquote>\n  <h2 id=\"images\">Images</h2>\n  <figure>\n    <img src=\"https://picsum.photos/id/82/1500/997\" i18n-alt alt=\"Sample image\" />\n    <figcaption i18n>\n      This is a sample image caption that tells you something about the image above.\n    </figcaption>\n  </figure>\n  <h2 id=\"code\" i18n>Code</h2>\n  <p i18n>Inline code can be displayed using the <code>&lt;code&gt;</code> element.</p>\n  <p i18n>\n    Larger code blocks can be displayed using a <code>&lt;code&gt;</code> element inside a\n    <code>&lt;pre&gt;</code>\n    element:\n  </p>\n  <pre>\n    <code class=\"language-js\" [innerHTML]=\"codeSample\"></code>\n  </pre>\n</article>\n"
         },
         {
             "name": "WISEAnchor",
@@ -2378,7 +2331,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Meta<TypographyComponent>",
-                "defaultValue": "{\n  title: 'Design Tokens/Typography',\n  component: TypographyComponent,\n  // parameters: {\n  //   More on how to position stories at: https://storybook.js.org/docs/angular/configure/story-layout\n  //   layout: 'fullscreen',\n  // },\n  decorators: [\n    moduleMetadata({\n      declarations: [],\n      imports: [CommonModule],\n    }),\n  ],\n  argTypes: {\n    sampleText: {\n      table: {\n        disable: true,\n      },\n    },\n    bodyFontFamily: {\n      table: {\n        disable: true,\n      },\n    },\n    headingFontFamily: {\n      table: {\n        disable: true,\n      },\n    },\n    codeSample: {\n      table: {\n        disable: true,\n      },\n    },\n  },\n}"
+                "defaultValue": "{\n  title: 'DesignTokens/Typography',\n  component: TypographyComponent,\n  // parameters: {\n  //   More on how to position stories at: https://storybook.js.org/docs/angular/configure/story-layout\n  //   layout: 'fullscreen',\n  // },\n  decorators: [\n    moduleMetadata({\n      declarations: [],\n      imports: [CommonModule],\n    }),\n  ],\n  argTypes: {\n    sampleText: {\n      table: {\n        disable: true,\n      },\n    },\n    bodyFontFamily: {\n      table: {\n        disable: true,\n      },\n    },\n    headingFontFamily: {\n      table: {\n        disable: true,\n      },\n    },\n    codeSample: {\n      table: {\n        disable: true,\n      },\n    },\n  },\n}"
             },
             {
                 "name": "PinColumns",
@@ -2755,7 +2708,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Meta<TypographyComponent>",
-                    "defaultValue": "{\n  title: 'Design Tokens/Typography',\n  component: TypographyComponent,\n  // parameters: {\n  //   More on how to position stories at: https://storybook.js.org/docs/angular/configure/story-layout\n  //   layout: 'fullscreen',\n  // },\n  decorators: [\n    moduleMetadata({\n      declarations: [],\n      imports: [CommonModule],\n    }),\n  ],\n  argTypes: {\n    sampleText: {\n      table: {\n        disable: true,\n      },\n    },\n    bodyFontFamily: {\n      table: {\n        disable: true,\n      },\n    },\n    headingFontFamily: {\n      table: {\n        disable: true,\n      },\n    },\n    codeSample: {\n      table: {\n        disable: true,\n      },\n    },\n  },\n}"
+                    "defaultValue": "{\n  title: 'DesignTokens/Typography',\n  component: TypographyComponent,\n  // parameters: {\n  //   More on how to position stories at: https://storybook.js.org/docs/angular/configure/story-layout\n  //   layout: 'fullscreen',\n  // },\n  decorators: [\n    moduleMetadata({\n      declarations: [],\n      imports: [CommonModule],\n    }),\n  ],\n  argTypes: {\n    sampleText: {\n      table: {\n        disable: true,\n      },\n    },\n    bodyFontFamily: {\n      table: {\n        disable: true,\n      },\n    },\n    headingFontFamily: {\n      table: {\n        disable: true,\n      },\n    },\n    codeSample: {\n      table: {\n        disable: true,\n      },\n    },\n  },\n}"
                 },
                 {
                     "name": "Typography",
@@ -3094,7 +3047,7 @@
                 "linktype": "component",
                 "name": "TypographyComponent",
                 "coveragePercent": 0,
-                "coverageCount": "0/8",
+                "coverageCount": "0/6",
                 "status": "low"
             },
             {
