@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "wise-design-daisyui-new": {
+    "wise-design-system": {
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -18,7 +18,7 @@
           "builder": "@angular-devkit/build-angular:application",
           "options": {
             "outputPath": {
-              "base": "dist/wise-design-daisyui-new"
+              "base": "dist/wise-design-system"
             },
             "index": "src/index.html",
             "polyfills": ["zone.js", "@angular/localize/init"],
@@ -61,10 +61,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "wise-design-daisyui-new:build:production"
+              "browserTarget": "wise-design-system:build:production"
             },
             "development": {
-              "browserTarget": "wise-design-daisyui-new:build:development"
+              "browserTarget": "wise-design-system:build:development"
             },
             "en-US": {
               "browserTarget": "angular-i18n-example:build:en-US"
@@ -75,7 +75,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "wise-design-daisyui-new:build"
+            "browserTarget": "wise-design-system:build"
           }
         },
         "test": {
@@ -92,7 +92,7 @@
           "builder": "@storybook/angular:start-storybook",
           "options": {
             "configDir": ".storybook",
-            "browserTarget": "wise-design-daisyui-new:build",
+            "browserTarget": "wise-design-system:build",
             "compodoc": true,
             "compodocArgs": ["-e", "json", "-d", "."],
             "port": 6006
@@ -102,7 +102,7 @@
           "builder": "@storybook/angular:build-storybook",
           "options": {
             "configDir": ".storybook",
-            "browserTarget": "wise-design-daisyui-new:build",
+            "browserTarget": "wise-design-system:build",
             "compodoc": true,
             "compodocArgs": ["-e", "json", "-d", "."],
             "outputDir": "storybook-static"
