@@ -6,7 +6,5 @@ export default create({
   brandUrl: 'https://wise.berkeley.edu',
   brandImage: '/wise-web-header-img.png',
   brandTarget: '_self',
-  colorPrimary: '#00799C',
-  barSelectedColor: '#00799C',
   fontBase: '"Open Sans", sans-serif',
 });
