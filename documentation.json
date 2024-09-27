@@ -3,74 +3,6 @@
     "interfaces": [],
     "injectables": [
         {
-            "name": "DocsService",
-            "id": "injectable-DocsService-d855ee481ee25bff26353f7e92d48c273c93385f229dda63207bb563b6b5f64cf52b51fb19838772a28bab60511db7ee65246c47fa4ffb2f72a2555845f2476e",
-            "file": "src/app/docs/docs.service.ts",
-            "properties": [],
-            "methods": [
-                {
-                    "name": "getTemplateString",
-                    "args": [
-                        {
-                            "name": "templateRef",
-                            "type": "TemplateRef<any>",
-                            "deprecated": false,
-                            "deprecationMessage": ""
-                        }
-                    ],
-                    "optional": false,
-                    "returnType": "string",
-                    "typeParameters": [],
-                    "line": 9,
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "jsdoctags": [
-                        {
-                            "name": "templateRef",
-                            "type": "TemplateRef<any>",
-                            "deprecated": false,
-                            "deprecationMessage": "",
-                            "tagName": {
-                                "text": "param"
-                            }
-                        }
-                    ]
-                }
-            ],
-            "deprecated": false,
-            "deprecationMessage": "",
-            "description": "",
-            "rawdescription": "\n",
-            "sourceCode": "import { Injectable, TemplateRef, ViewContainerRef } from '@angular/core';\n\n@Injectable({\n  providedIn: 'root',\n})\nexport class DocsService {\n  constructor(private viewContainerRef: ViewContainerRef) {}\n\n  getTemplateString(templateRef: TemplateRef<any>): string {\n    const viewRef = this.viewContainerRef.createEmbeddedView(templateRef);\n    const templateHtml = viewRef.rootNodes[0].innerHTML;\n    viewRef.destroy(); // Clean up the view\n    return templateHtml;\n  }\n}\n",
-            "constructorObj": {
-                "name": "constructor",
-                "description": "",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "args": [
-                    {
-                        "name": "viewContainerRef",
-                        "type": "ViewContainerRef",
-                        "deprecated": false,
-                        "deprecationMessage": ""
-                    }
-                ],
-                "line": 6,
-                "jsdoctags": [
-                    {
-                        "name": "viewContainerRef",
-                        "type": "ViewContainerRef",
-                        "deprecated": false,
-                        "deprecationMessage": "",
-                        "tagName": {
-                            "text": "param"
-                        }
-                    }
-                ]
-            },
-            "type": "injectable"
-        },
-        {
             "name": "WISEDialogService",
             "id": "injectable-WISEDialogService-549d5dad730577737d131d953ed0b7c7aa03167a9f0acfc053571ce8c3581bb850a63cf10ebaaec02f6d2c0635e837eabbbba692944fa3d375df4ddc371046ba",
             "file": "src/app/shared/components/actions/dialog/dialog.service.ts",
@@ -273,7 +205,7 @@
     "components": [
         {
             "name": "AppComponent",
-            "id": "component-AppComponent-b751ca5fbfdb9e35358ac859c3b4b8c3673d83a7062fcce262bb469877cbe37bf52c6c841e560b3b465a7a30f9b35f5bb5e47b859dc90467f62ead505c07cc12",
+            "id": "component-AppComponent-1069e02ade1561c8d7015a8731c3cd5dd7e308818bf983fb0863f4d1659cccdc57e09ed1392724b36ed7336b2f36527d2e517d21daa4cfe9945e0aac869a417e",
             "file": "src/app/app.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -301,7 +233,7 @@
                     "type": "string",
                     "optional": false,
                     "description": "",
-                    "line": 9
+                    "line": 10
                 }
             ],
             "methodsClass": [],
@@ -309,12 +241,12 @@
             "deprecationMessage": "",
             "hostBindings": [],
             "hostListeners": [],
-            "standalone": false,
+            "standalone": true,
             "imports": [],
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component } from '@angular/core';\n\n@Component({\n  selector: 'app-root',\n  templateUrl: './app.component.html',\n  styleUrls: ['./app.component.css']\n})\nexport class AppComponent {\n  title = 'wise-design-daisyui';\n}\n",
+            "sourceCode": "import { Component } from '@angular/core';\n\n@Component({\n    selector: 'app-root',\n    templateUrl: './app.component.html',\n    styleUrls: ['./app.component.css'],\n    standalone: true\n})\nexport class AppComponent {\n  title = 'wise-design-daisyui';\n}\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
@@ -327,7 +259,7 @@
         },
         {
             "name": "BasicDialog",
-            "id": "component-BasicDialog-ca1b8017f3f70f93ac5f2467ab0e6a265814a4467ea43ddc9def12cce5f455bdc2c56b2446f4fffb00b2a0d751e5506f360d376a067d5f9ef454be3fa658ac8e",
+            "id": "component-BasicDialog-62fed2847832bc6055fed77630782fbab7147962bea578d3ce235dd2712ee484d442982f26a27612dab4c67065f41c337b817227d8e20438a090b3fab019d964",
             "file": "src/app/docs/dialog/basic-dialog/basic-dialog.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -362,7 +294,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 18,
+                    "line": 22,
                     "deprecated": false,
                     "deprecationMessage": "",
                     "jsdoctags": [
@@ -392,7 +324,7 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component, OnInit, ViewChild } from '@angular/core';\nimport { WISEButton } from 'src/app/shared/components/actions/button/button.component';\nimport { WISEDialogContent } from 'src/app/shared/components/actions/dialog/dialog-content-components';\nimport { WISEDialogContentModule } from 'src/app/shared/components/actions/dialog/dialog-content.module';\nimport { WISEDialogService } from 'src/app/shared/components/actions/dialog/dialog.service';\nimport { WISEDialogConfig } from 'src/app/shared/components/actions/dialog/dialogConfig';\n\n@Component({\n  standalone: true,\n  selector: 'basic-dialog',\n  imports: [WISEButton],\n  templateUrl: './basic-dialog.component.html',\n  styleUrls: ['./basic-dialog.component.css'],\n})\nexport class BasicDialog {\n  constructor(private dialogService: WISEDialogService) {}\n\n  openDialog(width: 'sm' | 'md' | 'lg' | 'xl' = 'sm'): void {\n    const dialogConfig: WISEDialogConfig = {\n      data: {\n        title: 'Hello World!',\n      },\n      closeOnBackdropClick: true,\n      closeOnEscape: true,\n      width: width,\n    };\n    const dialog = this.dialogService.open(BasicDialogContent, dialogConfig);\n    dialog.instance.dialogClosed.subscribe((result: any) => {\n      console.log(`${result.text} from ${width} dialog`);\n    });\n\n    // setTimeout(() => {\n    //   dialog.instance.close();\n    // }, 1000);\n  }\n}\n\n@Component({\n  standalone: true,\n  imports: [WISEButton, WISEDialogContentModule],\n  templateUrl: './basic-dialog-content.html',\n})\nexport class BasicDialogContent extends WISEDialogContent implements OnInit {\n  constructor() {\n    super();\n  }\n\n  ngOnInit(): void {\n    this.callbackData = { text: `${this.data.title}` };\n  }\n}\n",
+            "sourceCode": "import { Component, OnInit } from '@angular/core';\nimport { WISEButton } from 'src/app/shared/components/actions/button/button.component';\nimport { WISEDialogContent } from 'src/app/shared/components/actions/dialog/dialog-content-components';\nimport { WISEDialogService } from 'src/app/shared/components/actions/dialog/dialog.service';\nimport { WISEDialogConfig } from 'src/app/shared/components/actions/dialog/dialogConfig';\nimport {\n  WISEDialogActions,\n  WISEDialogBody,\n  WISEDialogTitle,\n} from '../../../shared/components/actions/dialog/dialog-content-components';\n\n@Component({\n  standalone: true,\n  selector: 'basic-dialog',\n  imports: [WISEButton],\n  templateUrl: './basic-dialog.component.html',\n  styleUrls: ['./basic-dialog.component.css'],\n})\nexport class BasicDialog {\n  constructor(private dialogService: WISEDialogService) {}\n\n  openDialog(width: 'sm' | 'md' | 'lg' | 'xl' = 'sm'): void {\n    const dialogConfig: WISEDialogConfig = {\n      data: {\n        title: 'Hello World!',\n      },\n      closeOnBackdropClick: true,\n      closeOnEscape: true,\n      width: width,\n    };\n    const dialog = this.dialogService.open(BasicDialogContent, dialogConfig);\n    dialog.instance.dialogClosed.subscribe((result: any) => {\n      console.log(`${result.text} from ${width} dialog`);\n    });\n\n    // setTimeout(() => {\n    //   dialog.instance.close();\n    // }, 1000);\n  }\n}\n\n@Component({\n  standalone: true,\n  imports: [WISEButton, WISEDialogActions, WISEDialogBody, WISEDialogTitle],\n  templateUrl: './basic-dialog-content.html',\n})\nexport class BasicDialogContent extends WISEDialogContent implements OnInit {\n  constructor() {\n    super();\n  }\n\n  ngOnInit(): void {\n    this.callbackData = { text: `${this.data.title}` };\n  }\n}\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
@@ -414,7 +346,7 @@
                         "deprecationMessage": ""
                     }
                 ],
-                "line": 15,
+                "line": 19,
                 "jsdoctags": [
                     {
                         "name": "dialogService",
@@ -431,7 +363,7 @@
         },
         {
             "name": "BasicDialogContent",
-            "id": "component-BasicDialogContent-ca1b8017f3f70f93ac5f2467ab0e6a265814a4467ea43ddc9def12cce5f455bdc2c56b2446f4fffb00b2a0d751e5506f360d376a067d5f9ef454be3fa658ac8e",
+            "id": "component-BasicDialogContent-62fed2847832bc6055fed77630782fbab7147962bea578d3ce235dd2712ee484d442982f26a27612dab4c67065f41c337b817227d8e20438a090b3fab019d964",
             "file": "src/app/docs/dialog/basic-dialog/basic-dialog.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -480,7 +412,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 48,
+                    "line": 52,
                     "deprecated": false,
                     "deprecationMessage": ""
                 },
@@ -508,14 +440,19 @@
                     "name": "WISEButton"
                 },
                 {
-                    "name": "WISEDialogContentModule",
-                    "type": "module"
+                    "name": "WISEDialogActions"
+                },
+                {
+                    "name": "WISEDialogBody"
+                },
+                {
+                    "name": "WISEDialogTitle"
                 }
             ],
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component, OnInit, ViewChild } from '@angular/core';\nimport { WISEButton } from 'src/app/shared/components/actions/button/button.component';\nimport { WISEDialogContent } from 'src/app/shared/components/actions/dialog/dialog-content-components';\nimport { WISEDialogContentModule } from 'src/app/shared/components/actions/dialog/dialog-content.module';\nimport { WISEDialogService } from 'src/app/shared/components/actions/dialog/dialog.service';\nimport { WISEDialogConfig } from 'src/app/shared/components/actions/dialog/dialogConfig';\n\n@Component({\n  standalone: true,\n  selector: 'basic-dialog',\n  imports: [WISEButton],\n  templateUrl: './basic-dialog.component.html',\n  styleUrls: ['./basic-dialog.component.css'],\n})\nexport class BasicDialog {\n  constructor(private dialogService: WISEDialogService) {}\n\n  openDialog(width: 'sm' | 'md' | 'lg' | 'xl' = 'sm'): void {\n    const dialogConfig: WISEDialogConfig = {\n      data: {\n        title: 'Hello World!',\n      },\n      closeOnBackdropClick: true,\n      closeOnEscape: true,\n      width: width,\n    };\n    const dialog = this.dialogService.open(BasicDialogContent, dialogConfig);\n    dialog.instance.dialogClosed.subscribe((result: any) => {\n      console.log(`${result.text} from ${width} dialog`);\n    });\n\n    // setTimeout(() => {\n    //   dialog.instance.close();\n    // }, 1000);\n  }\n}\n\n@Component({\n  standalone: true,\n  imports: [WISEButton, WISEDialogContentModule],\n  templateUrl: './basic-dialog-content.html',\n})\nexport class BasicDialogContent extends WISEDialogContent implements OnInit {\n  constructor() {\n    super();\n  }\n\n  ngOnInit(): void {\n    this.callbackData = { text: `${this.data.title}` };\n  }\n}\n",
+            "sourceCode": "import { Component, OnInit } from '@angular/core';\nimport { WISEButton } from 'src/app/shared/components/actions/button/button.component';\nimport { WISEDialogContent } from 'src/app/shared/components/actions/dialog/dialog-content-components';\nimport { WISEDialogService } from 'src/app/shared/components/actions/dialog/dialog.service';\nimport { WISEDialogConfig } from 'src/app/shared/components/actions/dialog/dialogConfig';\nimport {\n  WISEDialogActions,\n  WISEDialogBody,\n  WISEDialogTitle,\n} from '../../../shared/components/actions/dialog/dialog-content-components';\n\n@Component({\n  standalone: true,\n  selector: 'basic-dialog',\n  imports: [WISEButton],\n  templateUrl: './basic-dialog.component.html',\n  styleUrls: ['./basic-dialog.component.css'],\n})\nexport class BasicDialog {\n  constructor(private dialogService: WISEDialogService) {}\n\n  openDialog(width: 'sm' | 'md' | 'lg' | 'xl' = 'sm'): void {\n    const dialogConfig: WISEDialogConfig = {\n      data: {\n        title: 'Hello World!',\n      },\n      closeOnBackdropClick: true,\n      closeOnEscape: true,\n      width: width,\n    };\n    const dialog = this.dialogService.open(BasicDialogContent, dialogConfig);\n    dialog.instance.dialogClosed.subscribe((result: any) => {\n      console.log(`${result.text} from ${width} dialog`);\n    });\n\n    // setTimeout(() => {\n    //   dialog.instance.close();\n    // }, 1000);\n  }\n}\n\n@Component({\n  standalone: true,\n  imports: [WISEButton, WISEDialogActions, WISEDialogBody, WISEDialogTitle],\n  templateUrl: './basic-dialog-content.html',\n})\nexport class BasicDialogContent extends WISEDialogContent implements OnInit {\n  constructor() {\n    super();\n  }\n\n  ngOnInit(): void {\n    this.callbackData = { text: `${this.data.title}` };\n  }\n}\n",
             "assetsDirs": [],
             "styleUrlsData": "",
             "stylesData": "",
@@ -525,7 +462,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "args": [],
-                "line": 43
+                "line": 47
             },
             "extends": "WISEDialogContent",
             "implements": [
@@ -535,18 +472,13 @@
         },
         {
             "name": "BasicDialogInfo",
-            "id": "component-BasicDialogInfo-84d23f8b615a428dd7fb43bdb2dfd74715b7034c38db5ba963c006f18946797286ac7003790dff138637b7aed4abbee916dfe97c9cfc4a0a0a55f3f67b4db58a",
+            "id": "component-BasicDialogInfo-3d78c7cca133159d1171fbb0b515825bde47eda7345182a554d61126cce71c1e28298d8a0713c2f7e630a25f1d3fdf7b885f6d0a07e49a67a9b361978923be9e",
             "file": "src/app/docs/dialog/basic-dialog-info/basic-dialog-info.component.ts",
             "encapsulation": [],
             "entryComponents": [],
             "inputs": [],
             "outputs": [],
-            "providers": [
-                {
-                    "name": "DocsService",
-                    "type": "injectable"
-                }
-            ],
+            "providers": [],
             "selector": "basic-dialog-info",
             "styleUrls": [
                 "./basic-dialog-info.component.css"
@@ -568,14 +500,16 @@
             "standalone": true,
             "imports": [
                 {
-                    "name": "TabsModule",
-                    "type": "module"
+                    "name": "WISETabGroup"
+                },
+                {
+                    "name": "WISETab"
                 }
             ],
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component } from '@angular/core';\nimport { TabsModule } from 'src/app/shared/components/navigation/tabs/tabs.module';\nimport { DocsService } from '../../docs.service';\n\n@Component({\n  standalone: true,\n  selector: 'basic-dialog-info',\n  imports: [TabsModule],\n  providers: [DocsService],\n  templateUrl: './basic-dialog-info.component.html',\n  styleUrls: ['./basic-dialog-info.component.css'],\n})\nexport class BasicDialogInfo {\n  constructor(private docsService: DocsService) {}\n}\n",
+            "sourceCode": "import { Component } from '@angular/core';\nimport { WISETabGroup } from '../../../shared/components/navigation/tabs/tab-group/tab-group.component';\nimport { WISETab } from '../../../shared/components/navigation/tabs/tab/tab.component';\n// import { SyntaxDirective } from 'src/app/shared/directives/syntax.directive';\n// import basicDialogContent from '../basic-dialog/basic-dialog-content.html?raw';\n// import basicDialogCode from '../basic-dialog/basic-dialog.component.ts?raw';\n// import basicDialogTemplate from '../basic-dialog/basic-dialog.component.html?raw';\n\n@Component({\n  standalone: true,\n  selector: 'basic-dialog-info',\n  imports: [WISETabGroup, WISETab],\n  templateUrl: './basic-dialog-info.component.html',\n  styleUrls: ['./basic-dialog-info.component.css'],\n})\nexport class BasicDialogInfo {\n  // protected basicDialogContent: string = basicDialogContent;\n  // protected basicDialogCode: string = basicDialogCode;\n  // protected basicDialogTemplate: string = basicDialogTemplate;\n\n  constructor() {}\n}\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
@@ -589,28 +523,10 @@
                 "description": "",
                 "deprecated": false,
                 "deprecationMessage": "",
-                "args": [
-                    {
-                        "name": "docsService",
-                        "type": "DocsService",
-                        "deprecated": false,
-                        "deprecationMessage": ""
-                    }
-                ],
-                "line": 13,
-                "jsdoctags": [
-                    {
-                        "name": "docsService",
-                        "type": "DocsService",
-                        "deprecated": false,
-                        "deprecationMessage": "",
-                        "tagName": {
-                            "text": "param"
-                        }
-                    }
-                ]
+                "args": [],
+                "line": 16
             },
-            "templateData": "<div class=\"border border-solid border-base-300 rounded-md shadow-md\">\n  <wise-tab-group>\n    <wise-tab>\n      <ng-template #tabLabel i18n>HTML</ng-template>\n      <ng-template #tabContent>\n        <pre class=\"my-0 prismjs\">\n          <code class=\"language-html\"></code>\n        </pre>\n      </ng-template>\n    </wise-tab>\n    <wise-tab>\n      <ng-template #tabLabel i18n>TS</ng-template>\n      <ng-template #tabContent>\n        <pre class=\"my-0\">\n          <code class=\"language-ts\">TS content</code>\n        </pre>\n      </ng-template>\n    </wise-tab>\n    <wise-tab>\n      <ng-template #tabLabel>basic-dialog-content.html</ng-template>\n      <ng-template #tabContent>\n        <pre class=\"my-0\">\n          <code class=\"language-html\">Dialog template content</code>\n        </pre>\n      </ng-template>\n    </wise-tab>\n  </wise-tab-group>\n</div>\n"
+            "templateData": "<div class=\"border border-solid border-base-300 rounded-md shadow-md\">\n  <wise-tab-group>\n    <wise-tab>\n      <ng-template #tabLabel i18n>HTML</ng-template>\n      <ng-template #tabContent>\n        <pre class=\"my-0 prismjs\">\n          <code syntax=\"html\"></code>\n        </pre>\n      </ng-template>\n    </wise-tab>\n    <wise-tab>\n      <ng-template #tabLabel i18n>TS</ng-template>\n      <ng-template #tabContent>\n        <pre class=\"my-0\">\n          <code syntax=\"typescript\"></code>\n        </pre>\n      </ng-template>\n    </wise-tab>\n    <wise-tab>\n      <ng-template #tabLabel>basic-dialog-content.html</ng-template>\n      <ng-template #tabContent>\n        <pre class=\"my-0\">\n          <code syntax=\"html\"></code>\n        </pre>\n      </ng-template>\n    </wise-tab>\n  </wise-tab-group>\n</div>\n"
         },
         {
             "name": "TypographyComponent",
@@ -1359,7 +1275,7 @@
         },
         {
             "name": "WISEDialogActions",
-            "id": "component-WISEDialogActions-9ed58e254e90fd496bc05f3f0839ae90c6272af270b4f6222960e9aa94ef68ae39dfa6d6ecf67dfe1818b01ad3b0fc6da92b2fa3490d14fda70a808e4cea9266",
+            "id": "component-WISEDialogActions-d1c7ca48cd15265a012e820d08f97d5a9a67c8fa4c5ef9daf92e3ca7f1ce22c925e13128bcf84a036a92d623715896d3c6a4a36db4d75a1ec8de120dc8fd2b0a",
             "file": "src/app/shared/components/actions/dialog/dialog-content-components.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -1387,14 +1303,14 @@
             "description": "<p>Container for the bottom actions in a dialog. Stays fixed to the bottom when scrolling.</p>\n",
             "rawdescription": "\n\nContainer for the bottom actions in a dialog. Stays fixed to the bottom when scrolling.\n",
             "type": "component",
-            "sourceCode": "import { Component, Input } from '@angular/core';\nimport { WISEDialogContentModule } from './dialog-content.module';\n\n/**\n * Title of a dialog. Stays fixed to the top of the dialog when scrolling.\n */\n@Component({\n  standalone: true,\n  selector: 'wise-dialog-title, [wise-dialog-title]',\n  host: {\n    class: 'p-4 bg-base-100',\n  },\n  template: `\n    <h2 class=\"text-lg m-0\">\n      <ng-content></ng-content>\n    </h2>\n  `,\n})\nexport class WISEDialogTitle {}\n\n/**\n * Scrollable container for dialog content.\n */\n@Component({\n  standalone: true,\n  selector: 'wise-dialog-body, [wise-dialog-body]',\n  host: {\n    class: 'px-4 flex-1 overflow-auto scroll-shadow-v',\n  },\n  template: `<ng-content></ng-content>`,\n})\nexport class WISEDialogBody {}\n\n/**\n * Container for the bottom actions in a dialog. Stays fixed to the bottom when scrolling.\n */\n@Component({\n  standalone: true,\n  selector: 'wise-dialog-action, [wise-dialog-action]',\n  host: {\n    class: 'modal-action gap-2 mt-0 p-4 bg-base-100',\n  },\n  template: `<ng-content></ng-content>`,\n})\nexport class WISEDialogActions {}\n\n/**\n * Content of a dialog. Can contain any or all of the dialog title, body, and action component.\n * Should be extended to provide custom content for each dialog instance.\n */\n@Component({\n  standalone: true,\n  selector: 'wise-dialog-content',\n  host: {\n    class: 'flex flex-col max-h-inherit',\n  },\n  template: '',\n  imports: [],\n})\nexport class WISEDialogContent {\n  @Input() data: any;\n\n  callbackData: any;\n\n  constructor() {}\n\n  getCallbackData(): any {\n    return this.callbackData;\n  }\n}\n",
+            "sourceCode": "import { Component, Input } from '@angular/core';\n\n\n/**\n * Title of a dialog. Stays fixed to the top of the dialog when scrolling.\n */\n@Component({\n  standalone: true,\n  selector: 'wise-dialog-title, [wise-dialog-title]',\n  host: {\n    class: 'p-4 bg-base-100',\n  },\n  template: `\n    <h2 class=\"text-lg m-0\">\n      <ng-content></ng-content>\n    </h2>\n  `,\n})\nexport class WISEDialogTitle {}\n\n/**\n * Scrollable container for dialog content.\n */\n@Component({\n  standalone: true,\n  selector: 'wise-dialog-body, [wise-dialog-body]',\n  host: {\n    class: 'px-4 flex-1 overflow-auto scroll-shadow-v',\n  },\n  template: `<ng-content></ng-content>`,\n})\nexport class WISEDialogBody {}\n\n/**\n * Container for the bottom actions in a dialog. Stays fixed to the bottom when scrolling.\n */\n@Component({\n  standalone: true,\n  selector: 'wise-dialog-action, [wise-dialog-action]',\n  host: {\n    class: 'modal-action gap-2 mt-0 p-4 bg-base-100',\n  },\n  template: `<ng-content></ng-content>`,\n})\nexport class WISEDialogActions {}\n\n/**\n * Content of a dialog. Can contain any or all of the dialog title, body, and action component.\n * Should be extended to provide custom content for each dialog instance.\n */\n@Component({\n  standalone: true,\n  selector: 'wise-dialog-content',\n  host: {\n    class: 'flex flex-col max-h-inherit',\n  },\n  template: '',\n  imports: [],\n})\nexport class WISEDialogContent {\n  @Input() data: any;\n\n  callbackData: any;\n\n  constructor() {}\n\n  getCallbackData(): any {\n    return this.callbackData;\n  }\n}\n",
             "assetsDirs": [],
             "styleUrlsData": "",
             "stylesData": ""
         },
         {
             "name": "WISEDialogBody",
-            "id": "component-WISEDialogBody-9ed58e254e90fd496bc05f3f0839ae90c6272af270b4f6222960e9aa94ef68ae39dfa6d6ecf67dfe1818b01ad3b0fc6da92b2fa3490d14fda70a808e4cea9266",
+            "id": "component-WISEDialogBody-d1c7ca48cd15265a012e820d08f97d5a9a67c8fa4c5ef9daf92e3ca7f1ce22c925e13128bcf84a036a92d623715896d3c6a4a36db4d75a1ec8de120dc8fd2b0a",
             "file": "src/app/shared/components/actions/dialog/dialog-content-components.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -1422,14 +1338,14 @@
             "description": "<p>Scrollable container for dialog content.</p>\n",
             "rawdescription": "\n\nScrollable container for dialog content.\n",
             "type": "component",
-            "sourceCode": "import { Component, Input } from '@angular/core';\nimport { WISEDialogContentModule } from './dialog-content.module';\n\n/**\n * Title of a dialog. Stays fixed to the top of the dialog when scrolling.\n */\n@Component({\n  standalone: true,\n  selector: 'wise-dialog-title, [wise-dialog-title]',\n  host: {\n    class: 'p-4 bg-base-100',\n  },\n  template: `\n    <h2 class=\"text-lg m-0\">\n      <ng-content></ng-content>\n    </h2>\n  `,\n})\nexport class WISEDialogTitle {}\n\n/**\n * Scrollable container for dialog content.\n */\n@Component({\n  standalone: true,\n  selector: 'wise-dialog-body, [wise-dialog-body]',\n  host: {\n    class: 'px-4 flex-1 overflow-auto scroll-shadow-v',\n  },\n  template: `<ng-content></ng-content>`,\n})\nexport class WISEDialogBody {}\n\n/**\n * Container for the bottom actions in a dialog. Stays fixed to the bottom when scrolling.\n */\n@Component({\n  standalone: true,\n  selector: 'wise-dialog-action, [wise-dialog-action]',\n  host: {\n    class: 'modal-action gap-2 mt-0 p-4 bg-base-100',\n  },\n  template: `<ng-content></ng-content>`,\n})\nexport class WISEDialogActions {}\n\n/**\n * Content of a dialog. Can contain any or all of the dialog title, body, and action component.\n * Should be extended to provide custom content for each dialog instance.\n */\n@Component({\n  standalone: true,\n  selector: 'wise-dialog-content',\n  host: {\n    class: 'flex flex-col max-h-inherit',\n  },\n  template: '',\n  imports: [],\n})\nexport class WISEDialogContent {\n  @Input() data: any;\n\n  callbackData: any;\n\n  constructor() {}\n\n  getCallbackData(): any {\n    return this.callbackData;\n  }\n}\n",
+            "sourceCode": "import { Component, Input } from '@angular/core';\n\n\n/**\n * Title of a dialog. Stays fixed to the top of the dialog when scrolling.\n */\n@Component({\n  standalone: true,\n  selector: 'wise-dialog-title, [wise-dialog-title]',\n  host: {\n    class: 'p-4 bg-base-100',\n  },\n  template: `\n    <h2 class=\"text-lg m-0\">\n      <ng-content></ng-content>\n    </h2>\n  `,\n})\nexport class WISEDialogTitle {}\n\n/**\n * Scrollable container for dialog content.\n */\n@Component({\n  standalone: true,\n  selector: 'wise-dialog-body, [wise-dialog-body]',\n  host: {\n    class: 'px-4 flex-1 overflow-auto scroll-shadow-v',\n  },\n  template: `<ng-content></ng-content>`,\n})\nexport class WISEDialogBody {}\n\n/**\n * Container for the bottom actions in a dialog. Stays fixed to the bottom when scrolling.\n */\n@Component({\n  standalone: true,\n  selector: 'wise-dialog-action, [wise-dialog-action]',\n  host: {\n    class: 'modal-action gap-2 mt-0 p-4 bg-base-100',\n  },\n  template: `<ng-content></ng-content>`,\n})\nexport class WISEDialogActions {}\n\n/**\n * Content of a dialog. Can contain any or all of the dialog title, body, and action component.\n * Should be extended to provide custom content for each dialog instance.\n */\n@Component({\n  standalone: true,\n  selector: 'wise-dialog-content',\n  host: {\n    class: 'flex flex-col max-h-inherit',\n  },\n  template: '',\n  imports: [],\n})\nexport class WISEDialogContent {\n  @Input() data: any;\n\n  callbackData: any;\n\n  constructor() {}\n\n  getCallbackData(): any {\n    return this.callbackData;\n  }\n}\n",
             "assetsDirs": [],
             "styleUrlsData": "",
             "stylesData": ""
         },
         {
             "name": "WISEDialogContent",
-            "id": "component-WISEDialogContent-9ed58e254e90fd496bc05f3f0839ae90c6272af270b4f6222960e9aa94ef68ae39dfa6d6ecf67dfe1818b01ad3b0fc6da92b2fa3490d14fda70a808e4cea9266",
+            "id": "component-WISEDialogContent-d1c7ca48cd15265a012e820d08f97d5a9a67c8fa4c5ef9daf92e3ca7f1ce22c925e13128bcf84a036a92d623715896d3c6a4a36db4d75a1ec8de120dc8fd2b0a",
             "file": "src/app/shared/components/actions/dialog/dialog-content-components.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -1487,7 +1403,7 @@
             "description": "<p>Content of a dialog. Can contain any or all of the dialog title, body, and action component.\nShould be extended to provide custom content for each dialog instance.</p>\n",
             "rawdescription": "\n\nContent of a dialog. Can contain any or all of the dialog title, body, and action component.\nShould be extended to provide custom content for each dialog instance.\n",
             "type": "component",
-            "sourceCode": "import { Component, Input } from '@angular/core';\nimport { WISEDialogContentModule } from './dialog-content.module';\n\n/**\n * Title of a dialog. Stays fixed to the top of the dialog when scrolling.\n */\n@Component({\n  standalone: true,\n  selector: 'wise-dialog-title, [wise-dialog-title]',\n  host: {\n    class: 'p-4 bg-base-100',\n  },\n  template: `\n    <h2 class=\"text-lg m-0\">\n      <ng-content></ng-content>\n    </h2>\n  `,\n})\nexport class WISEDialogTitle {}\n\n/**\n * Scrollable container for dialog content.\n */\n@Component({\n  standalone: true,\n  selector: 'wise-dialog-body, [wise-dialog-body]',\n  host: {\n    class: 'px-4 flex-1 overflow-auto scroll-shadow-v',\n  },\n  template: `<ng-content></ng-content>`,\n})\nexport class WISEDialogBody {}\n\n/**\n * Container for the bottom actions in a dialog. Stays fixed to the bottom when scrolling.\n */\n@Component({\n  standalone: true,\n  selector: 'wise-dialog-action, [wise-dialog-action]',\n  host: {\n    class: 'modal-action gap-2 mt-0 p-4 bg-base-100',\n  },\n  template: `<ng-content></ng-content>`,\n})\nexport class WISEDialogActions {}\n\n/**\n * Content of a dialog. Can contain any or all of the dialog title, body, and action component.\n * Should be extended to provide custom content for each dialog instance.\n */\n@Component({\n  standalone: true,\n  selector: 'wise-dialog-content',\n  host: {\n    class: 'flex flex-col max-h-inherit',\n  },\n  template: '',\n  imports: [],\n})\nexport class WISEDialogContent {\n  @Input() data: any;\n\n  callbackData: any;\n\n  constructor() {}\n\n  getCallbackData(): any {\n    return this.callbackData;\n  }\n}\n",
+            "sourceCode": "import { Component, Input } from '@angular/core';\n\n\n/**\n * Title of a dialog. Stays fixed to the top of the dialog when scrolling.\n */\n@Component({\n  standalone: true,\n  selector: 'wise-dialog-title, [wise-dialog-title]',\n  host: {\n    class: 'p-4 bg-base-100',\n  },\n  template: `\n    <h2 class=\"text-lg m-0\">\n      <ng-content></ng-content>\n    </h2>\n  `,\n})\nexport class WISEDialogTitle {}\n\n/**\n * Scrollable container for dialog content.\n */\n@Component({\n  standalone: true,\n  selector: 'wise-dialog-body, [wise-dialog-body]',\n  host: {\n    class: 'px-4 flex-1 overflow-auto scroll-shadow-v',\n  },\n  template: `<ng-content></ng-content>`,\n})\nexport class WISEDialogBody {}\n\n/**\n * Container for the bottom actions in a dialog. Stays fixed to the bottom when scrolling.\n */\n@Component({\n  standalone: true,\n  selector: 'wise-dialog-action, [wise-dialog-action]',\n  host: {\n    class: 'modal-action gap-2 mt-0 p-4 bg-base-100',\n  },\n  template: `<ng-content></ng-content>`,\n})\nexport class WISEDialogActions {}\n\n/**\n * Content of a dialog. Can contain any or all of the dialog title, body, and action component.\n * Should be extended to provide custom content for each dialog instance.\n */\n@Component({\n  standalone: true,\n  selector: 'wise-dialog-content',\n  host: {\n    class: 'flex flex-col max-h-inherit',\n  },\n  template: '',\n  imports: [],\n})\nexport class WISEDialogContent {\n  @Input() data: any;\n\n  callbackData: any;\n\n  constructor() {}\n\n  getCallbackData(): any {\n    return this.callbackData;\n  }\n}\n",
             "assetsDirs": [],
             "styleUrlsData": "",
             "stylesData": "",
@@ -1502,7 +1418,7 @@
         },
         {
             "name": "WISEDialogTitle",
-            "id": "component-WISEDialogTitle-9ed58e254e90fd496bc05f3f0839ae90c6272af270b4f6222960e9aa94ef68ae39dfa6d6ecf67dfe1818b01ad3b0fc6da92b2fa3490d14fda70a808e4cea9266",
+            "id": "component-WISEDialogTitle-d1c7ca48cd15265a012e820d08f97d5a9a67c8fa4c5ef9daf92e3ca7f1ce22c925e13128bcf84a036a92d623715896d3c6a4a36db4d75a1ec8de120dc8fd2b0a",
             "file": "src/app/shared/components/actions/dialog/dialog-content-components.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -1530,14 +1446,14 @@
             "description": "<p>Title of a dialog. Stays fixed to the top of the dialog when scrolling.</p>\n",
             "rawdescription": "\n\nTitle of a dialog. Stays fixed to the top of the dialog when scrolling.\n",
             "type": "component",
-            "sourceCode": "import { Component, Input } from '@angular/core';\nimport { WISEDialogContentModule } from './dialog-content.module';\n\n/**\n * Title of a dialog. Stays fixed to the top of the dialog when scrolling.\n */\n@Component({\n  standalone: true,\n  selector: 'wise-dialog-title, [wise-dialog-title]',\n  host: {\n    class: 'p-4 bg-base-100',\n  },\n  template: `\n    <h2 class=\"text-lg m-0\">\n      <ng-content></ng-content>\n    </h2>\n  `,\n})\nexport class WISEDialogTitle {}\n\n/**\n * Scrollable container for dialog content.\n */\n@Component({\n  standalone: true,\n  selector: 'wise-dialog-body, [wise-dialog-body]',\n  host: {\n    class: 'px-4 flex-1 overflow-auto scroll-shadow-v',\n  },\n  template: `<ng-content></ng-content>`,\n})\nexport class WISEDialogBody {}\n\n/**\n * Container for the bottom actions in a dialog. Stays fixed to the bottom when scrolling.\n */\n@Component({\n  standalone: true,\n  selector: 'wise-dialog-action, [wise-dialog-action]',\n  host: {\n    class: 'modal-action gap-2 mt-0 p-4 bg-base-100',\n  },\n  template: `<ng-content></ng-content>`,\n})\nexport class WISEDialogActions {}\n\n/**\n * Content of a dialog. Can contain any or all of the dialog title, body, and action component.\n * Should be extended to provide custom content for each dialog instance.\n */\n@Component({\n  standalone: true,\n  selector: 'wise-dialog-content',\n  host: {\n    class: 'flex flex-col max-h-inherit',\n  },\n  template: '',\n  imports: [],\n})\nexport class WISEDialogContent {\n  @Input() data: any;\n\n  callbackData: any;\n\n  constructor() {}\n\n  getCallbackData(): any {\n    return this.callbackData;\n  }\n}\n",
+            "sourceCode": "import { Component, Input } from '@angular/core';\n\n\n/**\n * Title of a dialog. Stays fixed to the top of the dialog when scrolling.\n */\n@Component({\n  standalone: true,\n  selector: 'wise-dialog-title, [wise-dialog-title]',\n  host: {\n    class: 'p-4 bg-base-100',\n  },\n  template: `\n    <h2 class=\"text-lg m-0\">\n      <ng-content></ng-content>\n    </h2>\n  `,\n})\nexport class WISEDialogTitle {}\n\n/**\n * Scrollable container for dialog content.\n */\n@Component({\n  standalone: true,\n  selector: 'wise-dialog-body, [wise-dialog-body]',\n  host: {\n    class: 'px-4 flex-1 overflow-auto scroll-shadow-v',\n  },\n  template: `<ng-content></ng-content>`,\n})\nexport class WISEDialogBody {}\n\n/**\n * Container for the bottom actions in a dialog. Stays fixed to the bottom when scrolling.\n */\n@Component({\n  standalone: true,\n  selector: 'wise-dialog-action, [wise-dialog-action]',\n  host: {\n    class: 'modal-action gap-2 mt-0 p-4 bg-base-100',\n  },\n  template: `<ng-content></ng-content>`,\n})\nexport class WISEDialogActions {}\n\n/**\n * Content of a dialog. Can contain any or all of the dialog title, body, and action component.\n * Should be extended to provide custom content for each dialog instance.\n */\n@Component({\n  standalone: true,\n  selector: 'wise-dialog-content',\n  host: {\n    class: 'flex flex-col max-h-inherit',\n  },\n  template: '',\n  imports: [],\n})\nexport class WISEDialogContent {\n  @Input() data: any;\n\n  callbackData: any;\n\n  constructor() {}\n\n  getCallbackData(): any {\n    return this.callbackData;\n  }\n}\n",
             "assetsDirs": [],
             "styleUrlsData": "",
             "stylesData": ""
         },
         {
             "name": "WISETab",
-            "id": "component-WISETab-0b6cc54af543efae75286154a8086e12c831f79117bad9d642b0f20c77cc2050c3217af94175718335125df056387aea35f26e61efe5c9ef48836e2243628c0e",
+            "id": "component-WISETab-b2d6f33c3d6ca68514b454b2cee9e0b8acf6910bda81ffdcd2f2fbb318c59e97f947065319ea247e54ddf042c4935c49397d0abd016154e97ed8219e0924f00f",
             "file": "src/app/shared/components/navigation/tabs/tab/tab.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -1563,7 +1479,7 @@
                     "type": "TemplateRef<any>",
                     "optional": false,
                     "description": "",
-                    "line": 12,
+                    "line": 13,
                     "decorators": [
                         {
                             "name": "ContentChild",
@@ -1581,7 +1497,7 @@
                     "type": "TemplateRef<any>",
                     "optional": false,
                     "description": "",
-                    "line": 13,
+                    "line": 14,
                     "decorators": [
                         {
                             "name": "ContentChild",
@@ -1598,12 +1514,12 @@
             "deprecationMessage": "",
             "hostBindings": [],
             "hostListeners": [],
-            "standalone": false,
+            "standalone": true,
             "imports": [],
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component, ContentChild, TemplateRef } from '@angular/core';\n\n@Component({\n  selector: 'wise-tab',\n  template: `\n    <ng-content select=\"[tabLabel]\"></ng-content>\n    <ng-content select=\"[tabContent]\"></ng-content>\n  `,\n  styleUrls: ['./tab.component.css'],\n})\nexport class WISETab {\n  @ContentChild('tabContent', { static: false }) content!: TemplateRef<any>;\n  @ContentChild('tabLabel', { static: false }) label!: TemplateRef<any>;\n}\n",
+            "sourceCode": "import { Component, ContentChild, TemplateRef } from '@angular/core';\n\n@Component({\n    selector: 'wise-tab',\n    template: `\n    <ng-content select=\"[tabLabel]\"></ng-content>\n    <ng-content select=\"[tabContent]\"></ng-content>\n  `,\n    styleUrls: ['./tab.component.css'],\n    standalone: true,\n})\nexport class WISETab {\n  @ContentChild('tabContent', { static: false }) content!: TemplateRef<any>;\n  @ContentChild('tabLabel', { static: false }) label!: TemplateRef<any>;\n}\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
@@ -1615,7 +1531,7 @@
         },
         {
             "name": "WISETabGroup",
-            "id": "component-WISETabGroup-1726ead27d72d02b92d5d428127072990569eb7e3cdaab755cd91c3650be8e3cb6df301ded4e52c52e2b317de3cbb900593c5b2a8daa01090a8c9c3badc758da",
+            "id": "component-WISETabGroup-45d30404b6e23348d2f690bf1d012846b42ea0286962ea771aff211080c43f0775ec0b3e9921e78a441d11643452734a23b3b93419597edb89ee1a98347a2f3c",
             "file": "src/app/shared/components/navigation/tabs/tab-group/tab-group.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -1640,7 +1556,7 @@
                     "deprecationMessage": "",
                     "rawdescription": "\n\nTakes up the full width of its container\n",
                     "description": "<p>Takes up the full width of its container</p>\n",
-                    "line": 27,
+                    "line": 35,
                     "type": "boolean",
                     "decorators": []
                 },
@@ -1651,7 +1567,7 @@
                     "deprecationMessage": "",
                     "rawdescription": "\n\nSets the selected tab by index\n",
                     "description": "<p>Sets the selected tab by index</p>\n",
-                    "line": 33,
+                    "line": 41,
                     "type": "number",
                     "decorators": []
                 },
@@ -1662,7 +1578,7 @@
                     "deprecationMessage": "",
                     "rawdescription": "\n\nThe size of the tab group\n",
                     "description": "<p>The size of the tab group</p>\n",
-                    "line": 39,
+                    "line": 47,
                     "type": "\"xs\" | \"sm\" | \"lg\" | string",
                     "decorators": []
                 },
@@ -1673,7 +1589,7 @@
                     "deprecationMessage": "",
                     "rawdescription": "\n\nThe name of the tab group (used for accessibility; should be unique if there are multiple tab groups on the page)\n",
                     "description": "<p>The name of the tab group (used for accessibility; should be unique if there are multiple tab groups on the page)</p>\n",
-                    "line": 45,
+                    "line": 53,
                     "type": "string",
                     "decorators": []
                 },
@@ -1684,7 +1600,7 @@
                     "deprecationMessage": "",
                     "rawdescription": "\n\nThe style of the tab group\n",
                     "description": "<p>The style of the tab group</p>\n",
-                    "line": 51,
+                    "line": 59,
                     "type": "\"bordered\" | \"lifted\" | \"boxed\" | string",
                     "decorators": []
                 }
@@ -1695,7 +1611,7 @@
                     "defaultValue": "new EventEmitter<number>()",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 53,
+                    "line": 61,
                     "type": "EventEmitter"
                 }
             ],
@@ -1707,7 +1623,7 @@
                     "type": "WISETab | undefined",
                     "optional": false,
                     "description": "",
-                    "line": 55
+                    "line": 63
                 },
                 {
                     "name": "sizeClass",
@@ -1717,7 +1633,7 @@
                     "type": "string",
                     "optional": false,
                     "description": "",
-                    "line": 56
+                    "line": 64
                 },
                 {
                     "name": "tabs",
@@ -1726,7 +1642,7 @@
                     "type": "QueryList<WISETab>",
                     "optional": false,
                     "description": "",
-                    "line": 21,
+                    "line": 29,
                     "decorators": [
                         {
                             "name": "ContentChildren",
@@ -1745,7 +1661,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 70,
+                    "line": 78,
                     "deprecated": false,
                     "deprecationMessage": ""
                 },
@@ -1762,7 +1678,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 60,
+                    "line": 68,
                     "deprecated": false,
                     "deprecationMessage": "",
                     "jsdoctags": [
@@ -1797,7 +1713,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 81,
+                    "line": 89,
                     "deprecated": false,
                     "deprecationMessage": "",
                     "modifierKind": [
@@ -1845,7 +1761,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 75,
+                    "line": 83,
                     "deprecated": false,
                     "deprecationMessage": "",
                     "modifierKind": [
@@ -1878,12 +1794,25 @@
             "deprecationMessage": "",
             "hostBindings": [],
             "hostListeners": [],
-            "standalone": false,
-            "imports": [],
+            "standalone": true,
+            "imports": [
+                {
+                    "name": "NgClass"
+                },
+                {
+                    "name": "NgFor"
+                },
+                {
+                    "name": "NgTemplateOutlet"
+                },
+                {
+                    "name": "NgIf"
+                }
+            ],
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import {\n  AfterContentInit,\n  ChangeDetectorRef,\n  Component,\n  ContentChildren,\n  EventEmitter,\n  Input,\n  OnChanges,\n  Output,\n  QueryList,\n  SimpleChanges,\n} from '@angular/core';\nimport { WISETab } from '../tab/tab.component';\n\n@Component({\n  selector: 'wise-tab-group',\n  templateUrl: './tab-group.component.html',\n  styleUrls: ['./tab-group.component.css'],\n})\nexport class WISETabGroup implements AfterContentInit, OnChanges {\n  @ContentChildren(WISETab) tabs!: QueryList<WISETab>;\n\n  /**\n   * Takes up the full width of its container\n   */\n  @Input()\n  block?: boolean = false;\n\n  /**\n   * Sets the selected tab by index\n   */\n  @Input()\n  selectedIndex: number = 0;\n\n  /**\n   * The size of the tab group\n   */\n  @Input()\n  size?: 'xs' | 'sm' | 'lg' | '' = '';\n\n  /**\n   * The name of the tab group (used for accessibility; should be unique if there are multiple tab groups on the page)\n   */\n  @Input()\n  tabGroupName: string = 'tabgroup';\n\n  /**\n   * The style of the tab group\n   */\n  @Input()\n  tabStyle?: 'bordered' | 'lifted' | 'boxed' | '' = 'bordered';\n\n  @Output() selectedIndexChange = new EventEmitter<number>();\n\n  selectedTab: WISETab | undefined;\n  sizeClass: string = '';\n\n  constructor(private cd: ChangeDetectorRef) {}\n\n  ngOnChanges(changes: SimpleChanges) {\n    if (changes?.['size']?.currentValue) {\n      this.sizeClass = this.size ? `tab-${this.size}` : '';\n    }\n\n    if (changes?.['selectedIndex']?.currentValue) {\n      this.selectTabByIndex(this.selectedIndex);\n    }\n  }\n\n  ngAfterContentInit() {\n    // this.selectTab(this.tabs.toArray()[this.selectedIndex]);\n    this.selectTabByIndex(this.selectedIndex);\n  }\n\n  protected selectTabByIndex(index: number, event?: Event) {\n    this.selectedIndex = index;\n    this.selectedIndexChange.emit(this.selectedIndex);\n    this.selectTab(this.tabs.toArray()[index], event);\n  }\n\n  protected selectTab(tab: WISETab, event?: Event) {\n    event?.preventDefault();\n    this.selectedTab = tab;\n  }\n}\n",
+            "sourceCode": "import {\n  AfterContentInit,\n  ChangeDetectorRef,\n  Component,\n  ContentChildren,\n  EventEmitter,\n  Input,\n  OnChanges,\n  Output,\n  QueryList,\n  SimpleChanges,\n} from '@angular/core';\nimport { WISETab } from '../tab/tab.component';\nimport { NgClass, NgFor, NgTemplateOutlet, NgIf } from '@angular/common';\n\n@Component({\n    selector: 'wise-tab-group',\n    templateUrl: './tab-group.component.html',\n    styleUrls: ['./tab-group.component.css'],\n    standalone: true,\n    imports: [\n        NgClass,\n        NgFor,\n        NgTemplateOutlet,\n        NgIf,\n    ],\n})\nexport class WISETabGroup implements AfterContentInit, OnChanges {\n  @ContentChildren(WISETab) tabs!: QueryList<WISETab>;\n\n  /**\n   * Takes up the full width of its container\n   */\n  @Input()\n  block?: boolean = false;\n\n  /**\n   * Sets the selected tab by index\n   */\n  @Input()\n  selectedIndex: number = 0;\n\n  /**\n   * The size of the tab group\n   */\n  @Input()\n  size?: 'xs' | 'sm' | 'lg' | '' = '';\n\n  /**\n   * The name of the tab group (used for accessibility; should be unique if there are multiple tab groups on the page)\n   */\n  @Input()\n  tabGroupName: string = 'tabgroup';\n\n  /**\n   * The style of the tab group\n   */\n  @Input()\n  tabStyle?: 'bordered' | 'lifted' | 'boxed' | '' = 'bordered';\n\n  @Output() selectedIndexChange = new EventEmitter<number>();\n\n  selectedTab: WISETab | undefined;\n  sizeClass: string = '';\n\n  constructor(private cd: ChangeDetectorRef) {}\n\n  ngOnChanges(changes: SimpleChanges) {\n    if (changes?.['size']?.currentValue) {\n      this.sizeClass = this.size ? `tab-${this.size}` : '';\n    }\n\n    if (changes?.['selectedIndex']?.currentValue) {\n      this.selectTabByIndex(this.selectedIndex);\n    }\n  }\n\n  ngAfterContentInit() {\n    // this.selectTab(this.tabs.toArray()[this.selectedIndex]);\n    this.selectTabByIndex(this.selectedIndex);\n  }\n\n  protected selectTabByIndex(index: number, event?: Event) {\n    this.selectedIndex = index;\n    this.selectedIndexChange.emit(this.selectedIndex);\n    this.selectTab(this.tabs.toArray()[index], event);\n  }\n\n  protected selectTab(tab: WISETab, event?: Event) {\n    event?.preventDefault();\n    this.selectedTab = tab;\n  }\n}\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
@@ -1905,7 +1834,7 @@
                         "deprecationMessage": ""
                     }
                 ],
-                "line": 56,
+                "line": 64,
                 "jsdoctags": [
                     {
                         "name": "cd",
@@ -2079,158 +2008,7 @@
             }
         }
     ],
-    "modules": [
-        {
-            "name": "AppModule",
-            "id": "module-AppModule-47aeeb45b97f312dd2a690e5f0bc41a0b80c7cfa42e8209b5dd181ee5797ea513e50bfbcffe5cbcca1dbc487df539a0c5f6cc0cf94f68ed556280841800433c6",
-            "description": "",
-            "deprecationMessage": "",
-            "deprecated": false,
-            "file": "src/app/app.module.ts",
-            "methods": [],
-            "sourceCode": "import { NgModule } from '@angular/core';\nimport { BrowserModule } from '@angular/platform-browser';\nimport { AppComponent } from './app.component';\n\n@NgModule({\n  declarations: [AppComponent],\n  imports: [BrowserModule],\n  providers: [],\n  bootstrap: [AppComponent],\n})\nexport class AppModule {}\n",
-            "children": [
-                {
-                    "type": "providers",
-                    "elements": []
-                },
-                {
-                    "type": "declarations",
-                    "elements": [
-                        {
-                            "name": "AppComponent"
-                        }
-                    ]
-                },
-                {
-                    "type": "imports",
-                    "elements": []
-                },
-                {
-                    "type": "exports",
-                    "elements": []
-                },
-                {
-                    "type": "bootstrap",
-                    "elements": [
-                        {
-                            "name": "AppComponent"
-                        }
-                    ]
-                },
-                {
-                    "type": "classes",
-                    "elements": []
-                }
-            ]
-        },
-        {
-            "name": "TabsModule",
-            "id": "module-TabsModule-16aac47b06f8cd7b2dad91ea9d6351b2e8316eb7b10a39684003e3437edf4ae9193374cdb52c34cec591056c237294da8c1ac489c98727f51ea3f02aeba499e7",
-            "description": "",
-            "deprecationMessage": "",
-            "deprecated": false,
-            "file": "src/app/shared/components/navigation/tabs/tabs.module.ts",
-            "methods": [],
-            "sourceCode": "import { NgModule } from '@angular/core';\nimport { CommonModule } from '@angular/common';\nimport { WISETabGroup } from './tab-group/tab-group.component';\nimport { WISETab } from './tab/tab.component';\n\n@NgModule({\n  declarations: [WISETabGroup, WISETab],\n  imports: [CommonModule],\n  exports: [WISETabGroup, WISETab],\n})\nexport class TabsModule {}\n",
-            "children": [
-                {
-                    "type": "providers",
-                    "elements": []
-                },
-                {
-                    "type": "declarations",
-                    "elements": [
-                        {
-                            "name": "WISETab"
-                        },
-                        {
-                            "name": "WISETabGroup"
-                        }
-                    ]
-                },
-                {
-                    "type": "imports",
-                    "elements": []
-                },
-                {
-                    "type": "exports",
-                    "elements": [
-                        {
-                            "name": "WISETab"
-                        },
-                        {
-                            "name": "WISETabGroup"
-                        }
-                    ]
-                },
-                {
-                    "type": "bootstrap",
-                    "elements": []
-                },
-                {
-                    "type": "classes",
-                    "elements": []
-                }
-            ]
-        },
-        {
-            "name": "WISEDialogContentModule",
-            "id": "module-WISEDialogContentModule-7bcc7a4946932aaa5d2fe0532e65d09ce91952f02a00622fa9c15878ed57641853ebe457492ba7ca15f9d784b69fa8870ba146eab4593e8a2066408e0341ca86",
-            "description": "",
-            "deprecationMessage": "",
-            "deprecated": false,
-            "file": "src/app/shared/components/actions/dialog/dialog-content.module.ts",
-            "methods": [],
-            "sourceCode": "import { NgModule } from '@angular/core';\nimport { CommonModule } from '@angular/common';\nimport { WISEDialogActions, WISEDialogBody, WISEDialogTitle } from './dialog-content-components';\n\n@NgModule({\n  declarations: [],\n  imports: [CommonModule, WISEDialogActions, WISEDialogBody, WISEDialogTitle],\n  exports: [WISEDialogActions, WISEDialogBody, WISEDialogTitle],\n})\nexport class WISEDialogContentModule {}\n",
-            "children": [
-                {
-                    "type": "providers",
-                    "elements": []
-                },
-                {
-                    "type": "declarations",
-                    "elements": []
-                },
-                {
-                    "type": "imports",
-                    "elements": [
-                        {
-                            "name": "WISEDialogActions"
-                        },
-                        {
-                            "name": "WISEDialogBody"
-                        },
-                        {
-                            "name": "WISEDialogTitle"
-                        }
-                    ]
-                },
-                {
-                    "type": "exports",
-                    "elements": [
-                        {
-                            "name": "WISEDialogActions"
-                        },
-                        {
-                            "name": "WISEDialogBody"
-                        },
-                        {
-                            "name": "WISEDialogTitle"
-                        }
-                    ]
-                },
-                {
-                    "type": "bootstrap",
-                    "elements": []
-                },
-                {
-                    "type": "classes",
-                    "elements": []
-                }
-            ]
-        }
-    ],
+    "modules": [],
     "miscellaneous": {
         "variables": [
             {
@@ -2271,7 +2049,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story",
-                "defaultValue": "{\n  render: () => ({\n    template: `\n      <basic-dialog></basic-dialog>\n      <basic-dialog-info></basic-dialog-info>\n    `,\n  }),\n}"
+                "defaultValue": "{\n  render: () => ({\n    template: `\n      <basic-dialog></basic-dialog>\n    `,\n  }),\n}"
             },
             {
                 "name": "DisplayVariants",
@@ -2311,7 +2089,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Meta",
-                "defaultValue": "{\n  title: 'Components/Actions/Dialog',\n  decorators: [\n    moduleMetadata({\n      declarations: [],\n      imports: [BasicDialog, BasicDialogInfo, CommonModule],\n    }),\n  ],\n  argTypes: {},\n}"
+                "defaultValue": "{\n  title: 'Components/Actions/Dialog',\n  decorators: [\n    moduleMetadata({\n      declarations: [],\n      imports: [BasicDialog, CommonModule],\n    }),\n  ],\n  argTypes: {},\n}"
             },
             {
                 "name": "meta",
@@ -2331,7 +2109,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Meta<TypographyComponent>",
-                "defaultValue": "{\n  title: 'DesignTokens/Typography',\n  component: TypographyComponent,\n  // parameters: {\n  //   More on how to position stories at: https://storybook.js.org/docs/angular/configure/story-layout\n  //   layout: 'fullscreen',\n  // },\n  decorators: [\n    moduleMetadata({\n      declarations: [],\n      imports: [CommonModule],\n    }),\n  ],\n  argTypes: {\n    sampleText: {\n      table: {\n        disable: true,\n      },\n    },\n    bodyFontFamily: {\n      table: {\n        disable: true,\n      },\n    },\n    headingFontFamily: {\n      table: {\n        disable: true,\n      },\n    },\n    codeSample: {\n      table: {\n        disable: true,\n      },\n    },\n  },\n}"
+                "defaultValue": "{\n  title: 'Design Tokens/Typography',\n  component: TypographyComponent,\n  // parameters: {\n  //   More on how to position stories at: https://storybook.js.org/docs/angular/configure/story-layout\n  //   layout: 'fullscreen',\n  // },\n  decorators: [\n    moduleMetadata({\n      declarations: [],\n      imports: [CommonModule],\n    }),\n  ],\n  argTypes: {\n    sampleText: {\n      table: {\n        disable: true,\n      },\n    },\n    bodyFontFamily: {\n      table: {\n        disable: true,\n      },\n    },\n    headingFontFamily: {\n      table: {\n        disable: true,\n      },\n    },\n    codeSample: {\n      table: {\n        disable: true,\n      },\n    },\n  },\n}"
             },
             {
                 "name": "PinColumns",
@@ -2431,7 +2209,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story",
-                "defaultValue": "{\n  render: (args: TypographyComponent) => ({\n    props: args,\n  }),\n  tags: ['hide'],\n}"
+                "defaultValue": "{\n  render: (args: TypographyComponent) => ({\n    props: args,\n  }),\n  // tags: ['hide'],\n}"
             },
             {
                 "name": "Widths",
@@ -2686,7 +2464,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Story",
-                    "defaultValue": "{\n  render: () => ({\n    template: `\n      <basic-dialog></basic-dialog>\n      <basic-dialog-info></basic-dialog-info>\n    `,\n  }),\n}"
+                    "defaultValue": "{\n  render: () => ({\n    template: `\n      <basic-dialog></basic-dialog>\n    `,\n  }),\n}"
                 },
                 {
                     "name": "meta",
@@ -2696,7 +2474,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Meta",
-                    "defaultValue": "{\n  title: 'Components/Actions/Dialog',\n  decorators: [\n    moduleMetadata({\n      declarations: [],\n      imports: [BasicDialog, BasicDialogInfo, CommonModule],\n    }),\n  ],\n  argTypes: {},\n}"
+                    "defaultValue": "{\n  title: 'Components/Actions/Dialog',\n  decorators: [\n    moduleMetadata({\n      declarations: [],\n      imports: [BasicDialog, CommonModule],\n    }),\n  ],\n  argTypes: {},\n}"
                 }
             ],
             "src/app/docs/typography/typography.stories.ts": [
@@ -2708,7 +2486,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Meta<TypographyComponent>",
-                    "defaultValue": "{\n  title: 'DesignTokens/Typography',\n  component: TypographyComponent,\n  // parameters: {\n  //   More on how to position stories at: https://storybook.js.org/docs/angular/configure/story-layout\n  //   layout: 'fullscreen',\n  // },\n  decorators: [\n    moduleMetadata({\n      declarations: [],\n      imports: [CommonModule],\n    }),\n  ],\n  argTypes: {\n    sampleText: {\n      table: {\n        disable: true,\n      },\n    },\n    bodyFontFamily: {\n      table: {\n        disable: true,\n      },\n    },\n    headingFontFamily: {\n      table: {\n        disable: true,\n      },\n    },\n    codeSample: {\n      table: {\n        disable: true,\n      },\n    },\n  },\n}"
+                    "defaultValue": "{\n  title: 'Design Tokens/Typography',\n  component: TypographyComponent,\n  // parameters: {\n  //   More on how to position stories at: https://storybook.js.org/docs/angular/configure/story-layout\n  //   layout: 'fullscreen',\n  // },\n  decorators: [\n    moduleMetadata({\n      declarations: [],\n      imports: [CommonModule],\n    }),\n  ],\n  argTypes: {\n    sampleText: {\n      table: {\n        disable: true,\n      },\n    },\n    bodyFontFamily: {\n      table: {\n        disable: true,\n      },\n    },\n    headingFontFamily: {\n      table: {\n        disable: true,\n      },\n    },\n    codeSample: {\n      table: {\n        disable: true,\n      },\n    },\n  },\n}"
                 },
                 {
                     "name": "Typography",
@@ -2718,7 +2496,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Story",
-                    "defaultValue": "{\n  render: (args: TypographyComponent) => ({\n    props: args,\n  }),\n  tags: ['hide'],\n}"
+                    "defaultValue": "{\n  render: (args: TypographyComponent) => ({\n    props: args,\n  }),\n  // tags: ['hide'],\n}"
                 }
             ],
             ".storybook/preview.ts": [
@@ -2960,15 +2738,6 @@
                 "name": "meta",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
-                "filePath": "src/app/docs/docs.service.ts",
-                "type": "injectable",
-                "linktype": "injectable",
-                "name": "DocsService",
-                "coveragePercent": 0,
-                "coverageCount": "0/3",
                 "status": "low"
             },
             {

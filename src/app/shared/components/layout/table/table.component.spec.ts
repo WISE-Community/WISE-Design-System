@@ -8,8 +8,8 @@ describe('WISETable', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [WISETable],
-    });
+    imports: [WISETable],
+});
     fixture = TestBed.createComponent(WISETable);
     component = fixture.componentInstance;
     fixture.detectChanges();

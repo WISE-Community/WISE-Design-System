@@ -8,8 +8,8 @@ describe('BasicDialogInfoComponent', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [BasicDialogInfoComponent]
-    });
+    imports: [BasicDialogInfoComponent]
+});
     fixture = TestBed.createComponent(BasicDialogInfoComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();

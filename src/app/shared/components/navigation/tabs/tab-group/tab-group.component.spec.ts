@@ -8,8 +8,8 @@ describe('WISETabGroup', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [WISETabGroup],
-    });
+    imports: [WISETabGroup],
+});
     fixture = TestBed.createComponent(WISETabGroup);
     component = fixture.componentInstance;
     fixture.detectChanges();

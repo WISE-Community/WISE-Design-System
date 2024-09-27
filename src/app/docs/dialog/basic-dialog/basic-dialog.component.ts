@@ -1,9 +1,13 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { WISEButton } from 'src/app/shared/components/actions/button/button.component';
 import { WISEDialogContent } from 'src/app/shared/components/actions/dialog/dialog-content-components';
-import { WISEDialogContentModule } from 'src/app/shared/components/actions/dialog/dialog-content.module';
 import { WISEDialogService } from 'src/app/shared/components/actions/dialog/dialog.service';
 import { WISEDialogConfig } from 'src/app/shared/components/actions/dialog/dialogConfig';
+import {
+  WISEDialogActions,
+  WISEDialogBody,
+  WISEDialogTitle,
+} from '../../../shared/components/actions/dialog/dialog-content-components';
 
 @Component({
   standalone: true,
@@ -37,7 +41,7 @@ export class BasicDialog {
 
 @Component({
   standalone: true,
-  imports: [WISEButton, WISEDialogContentModule],
+  imports: [WISEButton, WISEDialogActions, WISEDialogBody, WISEDialogTitle],
   templateUrl: './basic-dialog-content.html',
 })
 export class BasicDialogContent extends WISEDialogContent implements OnInit {

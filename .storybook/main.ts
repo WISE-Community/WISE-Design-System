@@ -29,7 +29,7 @@ const config: StorybookConfig = {
     },
     '@storybook/addon-styling-webpack',
     '@storybook/addon-mdx-gfm',
-    '@chromatic-com/storybook'
+    '@chromatic-com/storybook',
   ],
   framework: {
     name: '@storybook/angular',

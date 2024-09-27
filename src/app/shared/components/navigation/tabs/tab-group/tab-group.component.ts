@@ -11,11 +11,19 @@ import {
   SimpleChanges,
 } from '@angular/core';
 import { WISETab } from '../tab/tab.component';
+import { NgClass, NgFor, NgTemplateOutlet, NgIf } from '@angular/common';
 
 @Component({
-  selector: 'wise-tab-group',
-  templateUrl: './tab-group.component.html',
-  styleUrls: ['./tab-group.component.css'],
+    selector: 'wise-tab-group',
+    templateUrl: './tab-group.component.html',
+    styleUrls: ['./tab-group.component.css'],
+    standalone: true,
+    imports: [
+        NgClass,
+        NgFor,
+        NgTemplateOutlet,
+        NgIf,
+    ],
 })
 export class WISETabGroup implements AfterContentInit, OnChanges {
   @ContentChildren(WISETab) tabs!: QueryList<WISETab>;

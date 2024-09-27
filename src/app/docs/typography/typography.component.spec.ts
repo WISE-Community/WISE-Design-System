@@ -8,8 +8,8 @@ describe('TypographyComponent', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [TypographyComponent]
-    });
+    imports: [TypographyComponent]
+});
     fixture = TestBed.createComponent(TypographyComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();

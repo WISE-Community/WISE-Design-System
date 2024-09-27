@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { WISEDialogContentModule } from './dialog-content.module';
+
 
 /**
  * Title of a dialog. Stays fixed to the top of the dialog when scrolling.

@@ -8,8 +8,8 @@ describe('WISEDialog', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [WISEDialog],
-    });
+    imports: [WISEDialog],
+});
     fixture = TestBed.createComponent(WISEDialog);
     component = fixture.componentInstance;
     fixture.detectChanges();
