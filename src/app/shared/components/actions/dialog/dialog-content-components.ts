@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-
+import { WISEDialog } from './dialog.component';
 
 /**
  * Title of a dialog. Stays fixed to the top of the dialog when scrolling.
@@ -59,8 +59,9 @@ export class WISEDialogActions {}
 })
 export class WISEDialogContent {
   @Input() data: any;
+  @Input() dialog: WISEDialog = new WISEDialog();
 
-  callbackData: any;
+  protected callbackData: any;
 
   constructor() {}
 

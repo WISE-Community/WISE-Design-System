@@ -42,6 +42,7 @@ export class WISEDialog {
     this.config = { ...this.config, ...config };
     this.contentComponentRef = this.dialogContent.createComponent(component);
     this.contentComponentRef.setInput('data', this.config.data);
+    this.contentComponentRef.setInput('dialog', this);
     if (!this.config.closeOnEscape) {
       this.dialogElement.addEventListener('cancel', this.preventClose);
     }
