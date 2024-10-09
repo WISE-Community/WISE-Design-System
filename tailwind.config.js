@@ -85,6 +85,14 @@ module.exports = {
             height: '2.75rem',
             'min-height': '2.75rem',
           },
+          '.btn-circle': {
+            width: '2.5rem',
+            height: '2.5rem',
+          },
+          '.btn-square': {
+            width: '2.5rem',
+            height: '2.5rem',
+          },
           '--border-btn': '2px',
           '--rounded-box': '0.5rem',
           // "--btn-text-case": "normal",
@@ -133,6 +141,14 @@ module.exports = {
           '.btn-lg': {
             height: '2.75rem',
             'min-height': '2.75rem',
+          },
+          '.btn-circle': {
+            width: '2.5rem',
+            height: '2.5rem',
+          },
+          '.btn-square': {
+            width: '2.5rem',
+            height: '2.5rem',
           },
           '--border-btn': '2px',
           '--tab-border': '2px',
@@ -198,5 +214,16 @@ module.exports = {
     'border-solid',
     'border-base-300',
     'tab-bordered',
+    'tabs',
+    'tabs-bordered',
+    'tab',
+    'tab-active',
+    'input',
+    'input-bordered',
+    'pb-2',
+    'w-full',
+    'card',
+    'rounded-lg',
+    'shadow-lg',
   ],
 };

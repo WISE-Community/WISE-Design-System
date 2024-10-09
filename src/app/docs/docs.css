@@ -1,0 +1,53 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.doc-example {
+  @apply border border-solid px-4 rounded-lg shadow-lg;
+}
+
+/* React Tabs */
+
+.react-tabs__tab-list {
+  padding: 0;
+  margin: 0;
+  @apply tabs tabs-bordered;
+}
+
+.react-tabs__tab {
+  cursor: pointer;
+  @apply tab;
+  margin: 0;
+  height: 3rem;
+  font-weight: 600;
+  color: oklch(var(--bc) / .6);
+  border-bottom-width: 2px;
+  border-bottom-color: oklch(var(--bc) / .2);
+
+  &:hover,
+  &:focus {
+    color: oklch(var(--bc));
+  }
+}
+
+.react-tabs__tab--selected {
+  @apply tab-active;
+  outline: none;
+
+  &:not(.tab-disabled):not([disabled]) {
+    color: oklch(var(--p));
+    border-bottom-color: oklch(var(--p));
+  }
+}
+
+.react-tabs__tab:focus {
+  outline: none;
+}
+
+.react-tabs__tab-panel {
+  display: none;
+}
+
+.react-tabs__tab-panel--selected {
+  display: block;
+}

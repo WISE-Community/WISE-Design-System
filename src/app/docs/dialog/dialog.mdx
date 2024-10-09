@@ -20,23 +20,25 @@ import basicDialogContent from '!!raw-loader!./basic-dialog/basic-dialog-content
     <h2 id="overview">
       Overview
     </h2>
-    <Story of={DialogStories.Dialog} />
-    <Tabs>
-      <TabList>
-        <Tab>HTML</Tab>
-        <Tab>TS</Tab>
-        <Tab>basic-dialog-content.html</Tab>
-      </TabList>
-
-      <TabPanel>
-        <Source code={basicDialogTemplate} language="html" dark />
-      </TabPanel>
-      <TabPanel>
-        <Source code={basicDialogCode} language="typescript" dark />
-      </TabPanel>
-      <TabPanel>
-        <Source code={basicDialogContent} language="html" dark />
-      </TabPanel>
-    </Tabs>
+    <div class="doc-example">
+      <Story of={DialogStories.Dialog} />
+      <div class="divider -mx-4"></div>
+      <Tabs>
+        <TabList>
+          <Tab>HTML</Tab>
+          <Tab>TS</Tab>
+          <Tab>basic-dialog-content.html</Tab>
+        </TabList>
+        <TabPanel>
+          <Source code={basicDialogTemplate} language="html" dark />
+        </TabPanel>
+        <TabPanel>
+          <Source code={basicDialogCode} language="typescript" dark />
+        </TabPanel>
+        <TabPanel>
+          <Source code={basicDialogContent} language="html" dark />
+        </TabPanel>
+      </Tabs>
+    </div>
   </div>
 </div>

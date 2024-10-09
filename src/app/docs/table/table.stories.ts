@@ -203,7 +203,7 @@ export const Sizes: StoryObj<StoryTable> = {
   render: (args) => ({
     props: args,
     template: `
-      <div class="wisetype max-w-none">
+      <div class="max-w-none">
         <p>Extra Small:</p>
         <table wise-table size="xs">
           <thead>

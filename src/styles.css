@@ -35,6 +35,15 @@
 
 .wisetype :where(pre):not(:where([class~="not-wisetype"], [class~="not-wisetype"] *)) {
   border-radius: 0;
+  padding: 0;
+}
+
+pre {
+  position: relative;
+}
+
+.wisetype :where(pre code):not(:where([class~="not-wisetype"],[class~="not-wisetype"] *)) {
+  padding: 1em;
 }
 
 /* DaisyUI */
@@ -45,15 +54,17 @@
   --tw-text-opacity: 0.4;
 }
 
-.btn-circle {
-  width: 2.5rem;
-
+.btn-circle, .btn-square {
   &.btn-xs {
     width: 2rem;
   }
 
   &.btn-sm {
     width: 2.25rem;
+  }
+
+  &.btn-md {
+    width: 2.5rem;
   }
 
   &.btn-lg {
