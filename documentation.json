@@ -4,27 +4,31 @@
     "injectables": [
         {
             "name": "WISEDialogService",
-            "id": "injectable-WISEDialogService-549d5dad730577737d131d953ed0b7c7aa03167a9f0acfc053571ce8c3581bb850a63cf10ebaaec02f6d2c0635e837eabbbba692944fa3d375df4ddc371046ba",
+            "id": "injectable-WISEDialogService-5bc42db8a2b179195f0b778614db6ab42d0d4b299060a4be51a738355e9a9e19aaaa82bc693bde7c2763e154979981a45e0747dbcd734144b5a18de47893f6fd",
             "file": "src/app/shared/components/actions/dialog/dialog.service.ts",
             "properties": [
                 {
-                    "name": "dialogRef",
+                    "name": "dialogRefs",
+                    "defaultValue": "[]",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "type": "ComponentRef<WISEDialog> | undefined",
+                    "type": "ComponentRef<WISEDialog>[]",
                     "optional": false,
                     "description": "",
-                    "line": 20
+                    "line": 23,
+                    "modifierKind": [
+                        121
+                    ]
                 }
             ],
             "methods": [
                 {
-                    "name": "close",
+                    "name": "closeAll",
                     "args": [],
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 45,
+                    "line": 43,
                     "deprecated": false,
                     "deprecationMessage": ""
                 },
@@ -50,7 +54,7 @@
                     "typeParameters": [
                         "T"
                     ],
-                    "line": 23,
+                    "line": 25,
                     "deprecated": false,
                     "deprecationMessage": "",
                     "jsdoctags": [
@@ -80,7 +84,7 @@
             "deprecationMessage": "",
             "description": "",
             "rawdescription": "\n",
-            "sourceCode": "import {\n  ApplicationRef,\n  ComponentRef,\n  EmbeddedViewRef,\n  EnvironmentInjector,\n  Injectable,\n  Injector,\n  Type,\n  createComponent,\n} from '@angular/core';\nimport { WISEDialog } from './dialog.component';\nimport { WISEDialogConfig } from './dialogConfig';\n\n@Injectable({\n  providedIn: 'root',\n})\nexport class WISEDialogService {\n  constructor(private injector: Injector, private appRef: ApplicationRef) {}\n\n  dialogRef: ComponentRef<WISEDialog> | undefined;\n\n  // open<T>(component: Type<T>, dialogConfig?: WISEDialogConfig): Promise<any> {\n  open<T>(component: Type<T>, dialogConfig?: WISEDialogConfig): ComponentRef<WISEDialog> {\n    const dialogRef = createComponent(WISEDialog, {\n      environmentInjector: this.injector as EnvironmentInjector,\n    });\n    this.appRef.attachView(dialogRef.hostView);\n    const domElem = (dialogRef.hostView as EmbeddedViewRef<any>).rootNodes[0] as HTMLElement;\n    document.body.appendChild(domElem);\n    dialogRef.changeDetectorRef.detectChanges();\n    dialogRef.instance.open(component, dialogConfig);\n\n    // return new Promise((resolve) => {\n    // dialogRef.instance.dialogClosed.subscribe((result: any) => {\n    dialogRef.instance.dialogClosed.subscribe(() => {\n      this.appRef.detachView(dialogRef.hostView);\n      dialogRef.destroy();\n      // resolve(result);\n    });\n    // });\n    this.dialogRef = dialogRef;\n    return dialogRef;\n  }\n\n  close(): void {\n    this.dialogRef?.instance.dialog.nativeElement.close();\n  }\n}\n",
+            "sourceCode": "import {\n  ApplicationRef,\n  ComponentRef,\n  EmbeddedViewRef,\n  EnvironmentInjector,\n  Injectable,\n  Injector,\n  Type,\n  createComponent,\n} from '@angular/core';\nimport { WISEDialog } from './dialog.component';\nimport { WISEDialogConfig } from './dialogConfig';\n\n@Injectable({\n  providedIn: 'root',\n})\nexport class WISEDialogService {\n  constructor(\n    private injector: Injector,\n    private appRef: ApplicationRef,\n  ) {}\n\n  private dialogRefs: ComponentRef<WISEDialog>[] = [];\n\n  open<T>(component: Type<T>, dialogConfig?: WISEDialogConfig): ComponentRef<WISEDialog> {\n    const dialogRef = createComponent(WISEDialog, {\n      environmentInjector: this.injector as EnvironmentInjector,\n    });\n    this.appRef.attachView(dialogRef.hostView);\n    const domElem = (dialogRef.hostView as EmbeddedViewRef<any>).rootNodes[0] as HTMLElement;\n    document.body.appendChild(domElem);\n    dialogRef.changeDetectorRef.detectChanges();\n    dialogRef.instance.open(component, dialogConfig);\n    this.dialogRefs.push(dialogRef);\n    dialogRef.instance.dialogClosed.subscribe(() => {\n      this.appRef.detachView(dialogRef.hostView);\n      this.dialogRefs = this.dialogRefs.filter((ref) => ref !== dialogRef);\n      dialogRef.destroy();\n    });\n    return dialogRef;\n  }\n\n  closeAll(): void {\n    this.dialogRefs.forEach((dialogRef) => {\n      dialogRef.instance.dialog.nativeElement.close();\n    });\n  }\n}\n",
             "constructorObj": {
                 "name": "constructor",
                 "description": "",

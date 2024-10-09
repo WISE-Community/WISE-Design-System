@@ -15,11 +15,13 @@ import { WISEDialogConfig } from './dialogConfig';
   providedIn: 'root',
 })
 export class WISEDialogService {
-  constructor(private injector: Injector, private appRef: ApplicationRef) {}
+  constructor(
+    private injector: Injector,
+    private appRef: ApplicationRef,
+  ) {}
 
-  dialogRef: ComponentRef<WISEDialog> | undefined;
+  private dialogRefs: ComponentRef<WISEDialog>[] = [];
 
-  // open<T>(component: Type<T>, dialogConfig?: WISEDialogConfig): Promise<any> {
   open<T>(component: Type<T>, dialogConfig?: WISEDialogConfig): ComponentRef<WISEDialog> {
     const dialogRef = createComponent(WISEDialog, {
       environmentInjector: this.injector as EnvironmentInjector,
@@ -29,20 +31,18 @@ export class WISEDialogService {
     document.body.appendChild(domElem);
     dialogRef.changeDetectorRef.detectChanges();
     dialogRef.instance.open(component, dialogConfig);
-
-    // return new Promise((resolve) => {
-    // dialogRef.instance.dialogClosed.subscribe((result: any) => {
+    this.dialogRefs.push(dialogRef);
     dialogRef.instance.dialogClosed.subscribe(() => {
       this.appRef.detachView(dialogRef.hostView);
+      this.dialogRefs = this.dialogRefs.filter((ref) => ref !== dialogRef);
       dialogRef.destroy();
-      // resolve(result);
     });
-    // });
-    this.dialogRef = dialogRef;
     return dialogRef;
   }
 
-  close(): void {
-    this.dialogRef?.instance.dialog.nativeElement.close();
+  closeAll(): void {
+    this.dialogRefs.forEach((dialogRef) => {
+      dialogRef.instance.dialog.nativeElement.close();
+    });
   }
 }
