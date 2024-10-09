@@ -1,11 +1,20 @@
-<div wise-dialog-title>{{ data.title }}</div>
+<div wise-dialog-title>Hello {{ data.name }}!</div>
 <div wise-dialog-body>
-  <p style="min-height: 600px">Some content</p>
-  <p>Some more content</p>
+  <label class="form-control pb-2">
+    <div class="label">
+      <span class="label-text">What is your favorite color?</span>
+    </div>
+    <input
+      type="text"
+      placeholder="Favorite color"
+      class="input input-bordered w-full"
+      [(ngModel)]="color"
+    />
+  </label>
 </div>
 <div wise-dialog-action>
-  <button wise-button color="primary">Hello</button>
   <form method="dialog">
-    <button wise-button>Close</button>
+    <button wise-button>Cancel</button>
   </form>
+  <button wise-button color="primary" (click)="submit()">Submit</button>
 </div>

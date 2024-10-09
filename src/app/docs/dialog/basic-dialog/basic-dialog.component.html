@@ -1,6 +1,24 @@
-<p class="gap-2 flex flex-wrap">
-  <button wise-button (click)="openDialog()" i18n>Small Dialog</button>
-  <button wise-button (click)="openDialog('md')" i18n>Medium Dialog</button>
-  <button wise-button (click)="openDialog('lg')" i18n>Large Dialog</button>
-  <button wise-button (click)="openDialog('xl')" i18n>XL Dialog</button>
-</p>
+<ol>
+  <li>
+    <label class="form-control pb-2">
+      <div class="label">
+        <span class="label-text">What is your name?</span>
+      </div>
+      <input type="text" placeholder="Name" class="input input-bordered" [(ngModel)]="name" />
+    </label>
+  </li>
+  <li>
+    Choose one:
+    <div class="gap-2 flex flex-wrap py-2">
+      <button wise-button (click)="openDialog()">Small Dialog</button>
+      <button wise-button (click)="openDialog('md')">Medium Dialog</button>
+      <button wise-button (click)="openDialog('lg')">Large Dialog</button>
+      <button wise-button (click)="openDialog('xl')">XL Dialog</button>
+    </div>
+  </li>
+  @if (color) {
+    <li>
+      Favorite color: <b>{{ color }}</b> | Dialog size: <b>{{ width }}</b>
+    </li>
+  }
+</ol>

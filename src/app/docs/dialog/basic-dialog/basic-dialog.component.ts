@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ComponentRef, OnInit } from '@angular/core';
 import { WISEButton } from 'src/app/shared/components/actions/button/button.component';
 import { WISEDialogContent } from 'src/app/shared/components/actions/dialog/dialog-content-components';
 import { WISEDialogService } from 'src/app/shared/components/actions/dialog/dialog.service';
@@ -8,40 +8,50 @@ import {
   WISEDialogBody,
   WISEDialogTitle,
 } from '../../../shared/components/actions/dialog/dialog-content-components';
+import { WISEDialog } from 'src/app/shared/components/actions/dialog/dialog.component';
+import { FormsModule } from '@angular/forms';
 
 @Component({
   standalone: true,
   selector: 'basic-dialog',
-  imports: [WISEButton],
+  imports: [FormsModule, WISEButton],
   templateUrl: './basic-dialog.component.html',
-  styleUrls: ['./basic-dialog.component.css'],
 })
 export class BasicDialog {
   constructor(private dialogService: WISEDialogService) {}
 
+  private dialogRef: ComponentRef<WISEDialog> | undefined;
+  private name: string = '';
+  private color: string = '';
+  private width: string = 'sm';
+
   openDialog(width: 'sm' | 'md' | 'lg' | 'xl' = 'sm'): void {
     const dialogConfig: WISEDialogConfig = {
       data: {
-        title: 'Hello World!',
+        name: this.name,
+        color: this.color,
       },
       closeOnBackdropClick: true,
       closeOnEscape: true,
       width: width,
     };
-    const dialog = this.dialogService.open(BasicDialogContent, dialogConfig);
-    dialog.instance.dialogClosed.subscribe((result: any) => {
-      console.log(`${result.text} from ${width} dialog`);
+    this.dialogRef = this.dialogService.open(BasicDialogContent, dialogConfig);
+    this.dialogRef.instance.dialogClosed.subscribe((result: any) => {
+      if (result) {
+        this.color = result.color;
+        this.width = width;
+      }
     });
 
     // setTimeout(() => {
-    //   dialog.instance.close();
+    //   this.dialogRef?.instance.close();
     // }, 1000);
   }
 }
 
 @Component({
   standalone: true,
-  imports: [WISEButton, WISEDialogActions, WISEDialogBody, WISEDialogTitle],
+  imports: [FormsModule, WISEButton, WISEDialogActions, WISEDialogBody, WISEDialogTitle],
   templateUrl: './basic-dialog-content.html',
 })
 export class BasicDialogContent extends WISEDialogContent implements OnInit {
@@ -49,7 +59,14 @@ export class BasicDialogContent extends WISEDialogContent implements OnInit {
     super();
   }
 
+  protected color: string = '';
+
   ngOnInit(): void {
-    this.callbackData = { text: `${this.data.title}` };
+    this.color = this.data.color;
+  }
+
+  submit(): void {
+    this.callbackData = { color: `${this.color}` };
+    this.dialog.close();
   }
 }
