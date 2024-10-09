@@ -12,11 +12,40 @@
     padding: 2rem;
   }
 
-  [data-theme='wisedark'] .sbdocs.css-k7lbue {
+  .sbdocs .docblock-source {
+    margin: 1.25em 0;
+  }
+
+  [data-theme='wisedark'] .sbdocs,
+  [data-theme='wisedark'] .sbdocs-preview {
     background: transparent;
+  }
+
+  [data-theme='wisedark'] .sbdocs > :not(.docblock-argstable),
+  [data-theme='wisedark'] .sbdocs-preview {
+    color: var(--tw-prose-body);
+  }
+
+  [data-theme='wisedark'] .sbdocs > :not(.docblock-argstable-body) > h1,
+  [data-theme='wisedark'] .sbdocs > :not(.docblock-argstable-body) > h2,
+  [data-theme='wisedark'] .sbdocs > :not(.docblock-argstable-body) > h3,
+  [data-theme='wisedark'] .sbdocs > :not(.docblock-argstable-body) > td,
+  [data-theme='wisedark'] .sbdocs > :not(.docblock-argstable-body) > th,
+  [data-theme='wisedark'] .sbdocs-preview h1,
+  [data-theme='wisedark'] .sbdocs-preview h2,
+  [data-theme='wisedark'] .sbdocs-preview h3,
+  [data-theme='wisedark'] .sbdocs-preview td,
+  [data-theme='wisedark'] .sbdocs-preview th,
+  [data-theme='wisedark'] .sbdocs .docblock-argstable-head th {
+    color: var(--tw-prose-headings) !important;
   }
 
   [data-theme='wisedark'] .css-q7khkg .toc-list-item > a {
     color: #bbbbbb;
+  }
+
+  [data-theme='wisedark'] .sbdocs-preview {
+    box-shadow: rgba(255, 255, 255, 0.1) 0 1px 3px 0 !important;
+    border: 1px solid rgba(255, 255, 255, 0.15) !important;
   }
 </style>
