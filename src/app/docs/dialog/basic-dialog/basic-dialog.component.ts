@@ -1,14 +1,13 @@
 import { Component, ComponentRef, OnInit } from '@angular/core';
 import { WISEButton } from 'src/app/shared/components/actions/button/button.component';
-import { WISEDialogContent } from 'src/app/shared/components/actions/dialog/dialog-content-components';
 import { WISEDialogService } from 'src/app/shared/components/actions/dialog/dialog.service';
 import { WISEDialogConfig } from 'src/app/shared/components/actions/dialog/dialogConfig';
 import {
   WISEDialogActions,
   WISEDialogBody,
+  WISEDialogContent,
   WISEDialogTitle,
 } from '../../../shared/components/actions/dialog/dialog-content-components';
-import { WISEDialog } from 'src/app/shared/components/actions/dialog/dialog.component';
 import { FormsModule } from '@angular/forms';
 
 @Component({
@@ -20,7 +19,6 @@ import { FormsModule } from '@angular/forms';
 export class BasicDialog {
   constructor(private dialogService: WISEDialogService) {}
 
-  private dialogRef: ComponentRef<WISEDialog> | undefined;
   private name: string = '';
   private color: string = '';
   private width: string = 'sm';
@@ -31,21 +29,15 @@ export class BasicDialog {
         name: this.name,
         color: this.color,
       },
-      closeOnBackdropClick: true,
-      closeOnEscape: true,
       width: width,
     };
-    this.dialogRef = this.dialogService.open(BasicDialogContent, dialogConfig);
-    this.dialogRef.instance.dialogClosed.subscribe((result: any) => {
+    let dialogRef = this.dialogService.open(BasicDialogContent, dialogConfig);
+    dialogRef.instance.dialogClosed.subscribe((result: any) => {
       if (result) {
         this.color = result.color;
         this.width = width;
       }
     });
-
-    // setTimeout(() => {
-    //   this.dialogRef?.instance.close();
-    // }, 1000);
   }
 }
 
@@ -66,7 +58,7 @@ export class BasicDialogContent extends WISEDialogContent implements OnInit {
   }
 
   submit(): void {
-    this.callbackData = { color: `${this.color}` };
+    this.callbackData = { color: this.color };
     this.dialog.close();
   }
 }
