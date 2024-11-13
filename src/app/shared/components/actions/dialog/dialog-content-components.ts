@@ -1,5 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { WISEDialog } from './dialog.component';
+import { WISEDialogService } from './dialog.service';
 
 /**
  * Title of a dialog. Stays fixed to the top of the dialog when scrolling.
@@ -11,12 +12,16 @@ import { WISEDialog } from './dialog.component';
     class: 'p-4 bg-base-100',
   },
   template: `
-    <h2 class="text-lg m-0">
+    <h2 class="text-lg m-0" [id]="titleId">
       <ng-content></ng-content>
     </h2>
   `,
 })
-export class WISEDialogTitle {}
+export class WISEDialogTitle {
+  constructor(private dialogService: WISEDialogService) {}
+
+  titleId: string = this.dialogService.DIALOG_TITLE_PREFIX + this.dialogService.dialogRefs.length;
+}
 
 /**
  * Scrollable container for dialog content.
@@ -36,9 +41,9 @@ export class WISEDialogBody {}
  */
 @Component({
   standalone: true,
-  selector: 'wise-dialog-action, [wise-dialog-action]',
+  selector: 'wise-dialog-actions, [wise-dialog-actions]',
   host: {
-    class: 'modal-action gap-2 mt-0 p-4 bg-base-100',
+    class: 'modal-action mt-0 p-4 bg-base-100',
   },
   template: `<ng-content></ng-content>`,
 })

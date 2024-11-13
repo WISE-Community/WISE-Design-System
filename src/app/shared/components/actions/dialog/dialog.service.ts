@@ -30,7 +30,7 @@ export class WISEDialogService {
     const domElem = (dialogRef.hostView as EmbeddedViewRef<any>).rootNodes[0] as HTMLElement;
     document.body.appendChild(domElem);
     dialogRef.changeDetectorRef.detectChanges();
-    dialogRef.instance.open(component, dialogConfig);
+    dialogRef.instance.open(component, this.initializeDialogConfig(dialogConfig));
     this.dialogRefs.push(dialogRef);
     dialogRef.instance.dialogClosed.subscribe(() => {
       this.appRef.detachView(dialogRef.hostView);
@@ -38,6 +38,15 @@ export class WISEDialogService {
       dialogRef.destroy();
     });
     return dialogRef;
+  }
+
+  private initializeDialogConfig(dialogConfig: WISEDialogConfig | undefined) {
+    let config: WISEDialogConfig = new WISEDialogConfig();
+    config = { ...config, ...dialogConfig };
+    if (!config.ariaLabelledBy && !config.ariaLabel) {
+      config.ariaLabelledBy = this.DIALOG_TITLE_PREFIX + this.dialogRefs.length;
+    }
+    return config;
   }
 
   closeAll(): void {

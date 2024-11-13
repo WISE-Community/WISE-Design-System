@@ -22,6 +22,7 @@ export class WISEDialog {
   @ViewChild('dialog') dialog!: ElementRef<HTMLDialogElement>;
   @ViewChild('dialogContent', { read: ViewContainerRef }) dialogContent!: ViewContainerRef;
 
+  protected ariaLabelledBy: string | null = null;
   protected config: WISEDialogConfig = new WISEDialogConfig();
   protected contentComponentRef: ComponentRef<any> | undefined;
   protected dialogElement!: HTMLDialogElement;
@@ -38,8 +39,8 @@ export class WISEDialog {
     });
   }
 
-  open<T>(component: Type<T>, config?: WISEDialogConfig) {
-    this.config = { ...this.config, ...config };
+  open<T>(component: Type<T>, config: WISEDialogConfig = new WISEDialogConfig()): void {
+    this.config = config;
     this.contentComponentRef = this.dialogContent.createComponent(component);
     this.contentComponentRef.setInput('data', this.config.data);
     this.contentComponentRef.setInput('dialog', this);

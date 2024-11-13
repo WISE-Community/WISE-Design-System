@@ -4,6 +4,11 @@
     [class.max-w-screen-md]="config.width === 'md'"
     [class.max-w-screen-lg]="config.width === 'lg'"
     [class.max-w-screen-xl]="config.width === 'xl'"
+    [attr.aria-role]="config.role"
+    [attr.aria-modal]="config.ariaModal"
+    [attr.aria-label]="config.ariaLabel ? config.ariaLabel : null"
+    [attr.aria-labelledby]="config.ariaLabelledBy ? config.ariaLabelledBy : null"
+    [attr.aria-describedby]="config.ariaDescribedBy ? config.ariaDescribedBy : null"
   >
     <ng-template #dialogContent></ng-template>
   </div>
