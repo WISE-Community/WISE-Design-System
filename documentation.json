@@ -4,9 +4,19 @@
     "injectables": [
         {
             "name": "WISEDialogService",
-            "id": "injectable-WISEDialogService-5bc42db8a2b179195f0b778614db6ab42d0d4b299060a4be51a738355e9a9e19aaaa82bc693bde7c2763e154979981a45e0747dbcd734144b5a18de47893f6fd",
+            "id": "injectable-WISEDialogService-6b11e3b6af9b7d38d46a710f25150e25f464b6bf71d946b1f02563fde0d995266163238651200ce359ff87bc1f12333a3bd63b8283562f3709af92be0d71f641",
             "file": "src/app/shared/components/actions/dialog/dialog.service.ts",
             "properties": [
+                {
+                    "name": "DIALOG_TITLE_PREFIX",
+                    "defaultValue": "'wise-dialog-title-'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 26
+                },
                 {
                     "name": "dialogRefs",
                     "defaultValue": "[]",
@@ -14,11 +24,9 @@
                     "deprecationMessage": "",
                     "type": "ComponentRef<WISEDialog>[]",
                     "optional": false,
-                    "description": "",
-                    "line": 23,
-                    "modifierKind": [
-                        121
-                    ]
+                    "description": "<p>A list of all open dialogs</p>\n",
+                    "line": 30,
+                    "rawdescription": "\n\nA list of all open dialogs\n"
                 }
             ],
             "methods": [
@@ -28,9 +36,42 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 43,
+                    "line": 68,
                     "deprecated": false,
-                    "deprecationMessage": ""
+                    "deprecationMessage": "",
+                    "rawdescription": "\n\nCloses all open dialogs.\n",
+                    "description": "<p>Closes all open dialogs.</p>\n"
+                },
+                {
+                    "name": "initializeDialogConfig",
+                    "args": [
+                        {
+                            "name": "dialogConfig",
+                            "type": "WISEDialogConfig | undefined",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "WISEDialogConfig",
+                    "typeParameters": [],
+                    "line": 56,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "modifierKind": [
+                        121
+                    ],
+                    "jsdoctags": [
+                        {
+                            "name": "dialogConfig",
+                            "type": "WISEDialogConfig | undefined",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
                 },
                 {
                     "name": "open",
@@ -54,37 +95,151 @@
                     "typeParameters": [
                         "T"
                     ],
-                    "line": 25,
+                    "line": 38,
                     "deprecated": false,
                     "deprecationMessage": "",
+                    "rawdescription": "\n\nOpens a dialog with the specified component and configuration.\n",
+                    "description": "<p>Opens a dialog with the specified component and configuration.</p>\n",
                     "jsdoctags": [
                         {
-                            "name": "component",
+                            "name": {
+                                "pos": 715,
+                                "end": 724,
+                                "flags": 8421376,
+                                "modifierFlagsCache": 0,
+                                "transformFlags": 0,
+                                "kind": 79,
+                                "escapedText": "component"
+                            },
                             "type": "Type<T>",
                             "deprecated": false,
                             "deprecationMessage": "",
                             "tagName": {
-                                "text": "param"
+                                "pos": 699,
+                                "end": 704,
+                                "flags": 8421376,
+                                "modifierFlagsCache": 0,
+                                "transformFlags": 0,
+                                "kind": 79,
+                                "escapedText": "param"
+                            },
+                            "comment": "<p>The component to display in the dialog.</p>\n",
+                            "typeExpression": {
+                                "pos": 705,
+                                "end": 714,
+                                "flags": 8421376,
+                                "modifierFlagsCache": 0,
+                                "transformFlags": 0,
+                                "kind": 312,
+                                "type": {
+                                    "pos": 706,
+                                    "end": 713,
+                                    "flags": 8388608,
+                                    "modifierFlagsCache": 0,
+                                    "transformFlags": 1,
+                                    "kind": 180,
+                                    "typeName": {
+                                        "pos": 706,
+                                        "end": 710,
+                                        "flags": 8388608,
+                                        "modifierFlagsCache": 0,
+                                        "transformFlags": 0,
+                                        "kind": 79,
+                                        "escapedText": "Type"
+                                    },
+                                    "typeArguments": [
+                                        {
+                                            "pos": 711,
+                                            "end": 712,
+                                            "flags": 8388608,
+                                            "modifierFlagsCache": 0,
+                                            "transformFlags": 1,
+                                            "kind": 180,
+                                            "typeName": {
+                                                "pos": 711,
+                                                "end": 712,
+                                                "flags": 8388608,
+                                                "modifierFlagsCache": 0,
+                                                "transformFlags": 0,
+                                                "kind": 79,
+                                                "escapedText": "T"
+                                            }
+                                        }
+                                    ]
+                                }
                             }
                         },
                         {
-                            "name": "dialogConfig",
+                            "name": {
+                                "pos": 796,
+                                "end": 808,
+                                "flags": 8421376,
+                                "modifierFlagsCache": 0,
+                                "transformFlags": 0,
+                                "kind": 79,
+                                "escapedText": "dialogConfig"
+                            },
                             "type": "WISEDialogConfig",
                             "deprecated": false,
                             "deprecationMessage": "",
                             "optional": true,
                             "tagName": {
-                                "text": "param"
+                                "pos": 771,
+                                "end": 776,
+                                "flags": 8421376,
+                                "modifierFlagsCache": 0,
+                                "transformFlags": 0,
+                                "kind": 79,
+                                "escapedText": "param"
+                            },
+                            "comment": "<p>Configuration options for the dialog.</p>\n",
+                            "typeExpression": {
+                                "pos": 777,
+                                "end": 795,
+                                "flags": 8421376,
+                                "modifierFlagsCache": 0,
+                                "transformFlags": 0,
+                                "kind": 312,
+                                "type": {
+                                    "pos": 778,
+                                    "end": 794,
+                                    "flags": 8388608,
+                                    "modifierFlagsCache": 0,
+                                    "transformFlags": 1,
+                                    "kind": 180,
+                                    "typeName": {
+                                        "pos": 778,
+                                        "end": 794,
+                                        "flags": 8388608,
+                                        "modifierFlagsCache": 0,
+                                        "transformFlags": 0,
+                                        "kind": 79,
+                                        "escapedText": "WISEDialogConfig"
+                                    }
+                                }
                             }
+                        },
+                        {
+                            "tagName": {
+                                "pos": 853,
+                                "end": 860,
+                                "flags": 8421376,
+                                "modifierFlagsCache": 0,
+                                "transformFlags": 0,
+                                "kind": 79,
+                                "escapedText": "returns"
+                            },
+                            "comment": "<p>Reference to the newly opened dialog component.</p>\n",
+                            "returnType": ""
                         }
                     ]
                 }
             ],
             "deprecated": false,
             "deprecationMessage": "",
-            "description": "",
-            "rawdescription": "\n",
-            "sourceCode": "import {\n  ApplicationRef,\n  ComponentRef,\n  EmbeddedViewRef,\n  EnvironmentInjector,\n  Injectable,\n  Injector,\n  Type,\n  createComponent,\n} from '@angular/core';\nimport { WISEDialog } from './dialog.component';\nimport { WISEDialogConfig } from './dialogConfig';\n\n@Injectable({\n  providedIn: 'root',\n})\nexport class WISEDialogService {\n  constructor(\n    private injector: Injector,\n    private appRef: ApplicationRef,\n  ) {}\n\n  private dialogRefs: ComponentRef<WISEDialog>[] = [];\n\n  open<T>(component: Type<T>, dialogConfig?: WISEDialogConfig): ComponentRef<WISEDialog> {\n    const dialogRef = createComponent(WISEDialog, {\n      environmentInjector: this.injector as EnvironmentInjector,\n    });\n    this.appRef.attachView(dialogRef.hostView);\n    const domElem = (dialogRef.hostView as EmbeddedViewRef<any>).rootNodes[0] as HTMLElement;\n    document.body.appendChild(domElem);\n    dialogRef.changeDetectorRef.detectChanges();\n    dialogRef.instance.open(component, dialogConfig);\n    this.dialogRefs.push(dialogRef);\n    dialogRef.instance.dialogClosed.subscribe(() => {\n      this.appRef.detachView(dialogRef.hostView);\n      this.dialogRefs = this.dialogRefs.filter((ref) => ref !== dialogRef);\n      dialogRef.destroy();\n    });\n    return dialogRef;\n  }\n\n  closeAll(): void {\n    this.dialogRefs.forEach((dialogRef) => {\n      dialogRef.instance.dialog.nativeElement.close();\n    });\n  }\n}\n",
+            "description": "<p>Service to open WISE modal dialogs.</p>\n",
+            "rawdescription": "\n\nService to open WISE modal dialogs.\n",
+            "sourceCode": "import {\n  ApplicationRef,\n  ComponentRef,\n  EmbeddedViewRef,\n  EnvironmentInjector,\n  Injectable,\n  Injector,\n  Type,\n  createComponent,\n} from '@angular/core';\nimport { WISEDialog } from './dialog.component';\nimport { WISEDialogConfig } from './dialogConfig';\n\n/**\n * Service to open WISE modal dialogs.\n */\n@Injectable({\n  providedIn: 'root',\n})\nexport class WISEDialogService {\n  constructor(\n    private injector: Injector,\n    private appRef: ApplicationRef,\n  ) {}\n\n  DIALOG_TITLE_PREFIX: string = 'wise-dialog-title-';\n  /**\n   * A list of all open dialogs\n   */\n  dialogRefs: ComponentRef<WISEDialog>[] = [];\n\n  /**\n   * Opens a dialog with the specified component and configuration.\n   * @param {Type<T>} component The component to display in the dialog.\n   * @param {WISEDialogConfig} dialogConfig Configuration options for the dialog.\n   * @returns {ComponentRef<WISEDialog>} Reference to the newly opened dialog component.\n   */\n  open<T>(component: Type<T>, dialogConfig?: WISEDialogConfig): ComponentRef<WISEDialog> {\n    const dialogRef = createComponent(WISEDialog, {\n      environmentInjector: this.injector as EnvironmentInjector,\n    });\n    this.appRef.attachView(dialogRef.hostView);\n    const domElem = (dialogRef.hostView as EmbeddedViewRef<any>).rootNodes[0] as HTMLElement;\n    document.body.appendChild(domElem);\n    dialogRef.changeDetectorRef.detectChanges();\n    dialogRef.instance.open(component, this.initializeDialogConfig(dialogConfig));\n    this.dialogRefs.push(dialogRef);\n    dialogRef.instance.dialogClosed.subscribe(() => {\n      this.appRef.detachView(dialogRef.hostView);\n      this.dialogRefs = this.dialogRefs.filter((ref) => ref !== dialogRef);\n      dialogRef.destroy();\n    });\n    return dialogRef;\n  }\n\n  private initializeDialogConfig(dialogConfig: WISEDialogConfig | undefined) {\n    let config: WISEDialogConfig = new WISEDialogConfig();\n    config = { ...config, ...dialogConfig };\n    if (!config.ariaLabelledBy && !config.ariaLabel) {\n      config.ariaLabelledBy = this.DIALOG_TITLE_PREFIX + this.dialogRefs.length;\n    }\n    return config;\n  }\n\n  /**\n   * Closes all open dialogs.\n   */\n  closeAll(): void {\n    this.dialogRefs.forEach((dialogRef) => {\n      dialogRef.instance.dialog.nativeElement.close();\n    });\n  }\n}\n",
             "constructorObj": {
                 "name": "constructor",
                 "description": "",
@@ -104,7 +259,7 @@
                         "deprecationMessage": ""
                     }
                 ],
-                "line": 17,
+                "line": 20,
                 "jsdoctags": [
                     {
                         "name": "injector",
@@ -134,13 +289,57 @@
     "classes": [
         {
             "name": "WISEDialogConfig",
-            "id": "class-WISEDialogConfig-c998a8ffa4df0e6cce7caa549da70139a07bea26c269194633bea7611331978b6f654412bb69b6efe408dd03d2559b8d31b9bb4ddff073de8d32e5f4c092b36b",
+            "id": "class-WISEDialogConfig-14689437a0b0fa1a2d4bec4ef8338b35a5084067cd277ff263b88eeecf318fc61900cd8ed996134b54e6b739c8e6f9d0dbad00427e50fbaf798777bd93b3de97",
             "file": "src/app/shared/components/actions/dialog/dialogConfig.ts",
             "deprecated": false,
             "deprecationMessage": "",
             "type": "class",
-            "sourceCode": "export class WISEDialogConfig {\n  /**\n   * Whether the dialog should close when the backdrop is clicked.\n   */\n  closeOnBackdropClick?: boolean = true;\n  /**\n   * Whether the dialog should close when the escape key is pressed.\n   */\n  closeOnEscape?: boolean = true;\n  /**\n   * Data to be passed to the dialog content component.\n   */\n  data?: any = null;\n  /**\n   * The position of the dialog on the screen.\n   */\n  position?: 'top' | 'bottom' | 'middle' = 'middle';\n  /**\n   * The width of the dialog.\n   */\n  width?: 'sm' | 'md' | 'lg' | 'xl' = 'sm';\n}\n",
+            "sourceCode": "export class WISEDialogConfig {\n  /**\n   * ID of the element that describes the dialog.\n   */\n  ariaDescribedBy?: string | null = null;\n  /**\n   * ARIA label to assign to the dialog element.\n   */\n  ariaLabel?: string | null = null;\n  /**\n   * ID of the element that labels the dialog. If not set, `wise-dialog-title` will be used (if present).\n   * Will be ignored if `ariaLabel` is set.\n   */\n  ariaLabelledBy?: string | null = null;\n  /**\n   * Whether the dialog is a modal dialog. Used to set the `aria-modal` attribute.\n   */\n  ariaModal?: boolean = true;\n  /**\n   * Whether the dialog should close when the backdrop is clicked.\n   */\n  closeOnBackdropClick?: boolean = true;\n  /**\n   * Whether the dialog should close when the escape key is pressed.\n   */\n  closeOnEscape?: boolean = true;\n  /**\n   * Data to be passed to the dialog content component.\n   */\n  data?: any = null;\n  /**\n   * The position of the dialog on the screen.\n   */\n  position?: 'top' | 'bottom' | 'middle' = 'middle';\n  /**\n   * The ARIA role of the dialog.\n   */\n  role?: 'dialog' | 'alertdialog' = 'dialog';\n  /**\n   * The width of the dialog.\n   */\n  width?: 'sm' | 'md' | 'lg' | 'xl' = 'sm';\n}\n",
             "properties": [
+                {
+                    "name": "ariaDescribedBy",
+                    "defaultValue": "null",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string | null",
+                    "optional": true,
+                    "description": "<p>ID of the element that describes the dialog.</p>\n",
+                    "line": 8,
+                    "rawdescription": "\n\nID of the element that describes the dialog.\n"
+                },
+                {
+                    "name": "ariaLabel",
+                    "defaultValue": "null",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string | null",
+                    "optional": true,
+                    "description": "<p>ARIA label to assign to the dialog element.</p>\n",
+                    "line": 12,
+                    "rawdescription": "\n\nARIA label to assign to the dialog element.\n"
+                },
+                {
+                    "name": "ariaLabelledBy",
+                    "defaultValue": "null",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string | null",
+                    "optional": true,
+                    "description": "<p>ID of the element that labels the dialog. If not set, <code>wise-dialog-title</code> will be used (if present).\nWill be ignored if <code>ariaLabel</code> is set.</p>\n",
+                    "line": 17,
+                    "rawdescription": "\n\nID of the element that labels the dialog. If not set, `wise-dialog-title` will be used (if present).\nWill be ignored if `ariaLabel` is set.\n"
+                },
+                {
+                    "name": "ariaModal",
+                    "defaultValue": "true",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "boolean",
+                    "optional": true,
+                    "description": "<p>Whether the dialog is a modal dialog. Used to set the <code>aria-modal</code> attribute.</p>\n",
+                    "line": 21,
+                    "rawdescription": "\n\nWhether the dialog is a modal dialog. Used to set the `aria-modal` attribute.\n"
+                },
                 {
                     "name": "closeOnBackdropClick",
                     "defaultValue": "true",
@@ -149,7 +348,7 @@
                     "type": "boolean",
                     "optional": true,
                     "description": "<p>Whether the dialog should close when the backdrop is clicked.</p>\n",
-                    "line": 5,
+                    "line": 25,
                     "rawdescription": "\n\nWhether the dialog should close when the backdrop is clicked.\n"
                 },
                 {
@@ -160,7 +359,7 @@
                     "type": "boolean",
                     "optional": true,
                     "description": "<p>Whether the dialog should close when the escape key is pressed.</p>\n",
-                    "line": 9,
+                    "line": 29,
                     "rawdescription": "\n\nWhether the dialog should close when the escape key is pressed.\n"
                 },
                 {
@@ -171,7 +370,7 @@
                     "type": "any",
                     "optional": true,
                     "description": "<p>Data to be passed to the dialog content component.</p>\n",
-                    "line": 13,
+                    "line": 33,
                     "rawdescription": "\n\nData to be passed to the dialog content component.\n"
                 },
                 {
@@ -182,8 +381,19 @@
                     "type": "\"top\" | \"bottom\" | \"middle\"",
                     "optional": true,
                     "description": "<p>The position of the dialog on the screen.</p>\n",
-                    "line": 17,
+                    "line": 37,
                     "rawdescription": "\n\nThe position of the dialog on the screen.\n"
+                },
+                {
+                    "name": "role",
+                    "defaultValue": "'dialog'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "\"dialog\" | \"alertdialog\"",
+                    "optional": true,
+                    "description": "<p>The ARIA role of the dialog.</p>\n",
+                    "line": 41,
+                    "rawdescription": "\n\nThe ARIA role of the dialog.\n"
                 },
                 {
                     "name": "width",
@@ -193,10 +403,12 @@
                     "type": "\"sm\" | \"md\" | \"lg\" | \"xl\"",
                     "optional": true,
                     "description": "<p>The width of the dialog.</p>\n",
-                    "line": 21,
+                    "line": 45,
                     "rawdescription": "\n\nThe width of the dialog.\n"
                 }
             ],
+            "description": "<p>Configuration for a WISE dialog.</p>\n",
+            "rawdescription": "\n\nConfiguration for a WISE dialog.\n",
             "methods": [],
             "indexSignatures": [],
             "inputsClass": [],
@@ -263,7 +475,7 @@
         },
         {
             "name": "BasicDialog",
-            "id": "component-BasicDialog-c9193b1160ce332492e375273093a9483ba691061b7387c3de2155bc9f77c8b2d324489d79dbd0c70e94dc6b1309d07b6e6be501aeb3e6ea75dcfa6e9fda36fc",
+            "id": "component-BasicDialog-224448799491f7cd59ad2140e722b626337a3c31b1fc44a14abd4bd865207fc53f8ae9b1c9e48fb7436da1f4a902ffcbb943a21edc21c809c4a53f90e6812836",
             "file": "src/app/docs/dialog/basic-dialog/basic-dialog.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -289,18 +501,6 @@
                     "type": "string",
                     "optional": false,
                     "description": "",
-                    "line": 25,
-                    "modifierKind": [
-                        121
-                    ]
-                },
-                {
-                    "name": "dialogRef",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "ComponentRef<WISEDialog> | undefined",
-                    "optional": false,
-                    "description": "",
                     "line": 23,
                     "modifierKind": [
                         121
@@ -314,7 +514,7 @@
                     "type": "string",
                     "optional": false,
                     "description": "",
-                    "line": 24,
+                    "line": 22,
                     "modifierKind": [
                         121
                     ]
@@ -327,7 +527,7 @@
                     "type": "string",
                     "optional": false,
                     "description": "",
-                    "line": 26,
+                    "line": 24,
                     "modifierKind": [
                         121
                     ]
@@ -348,7 +548,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 28,
+                    "line": 26,
                     "deprecated": false,
                     "deprecationMessage": "",
                     "jsdoctags": [
@@ -382,7 +582,7 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component, ComponentRef, OnInit } from '@angular/core';\nimport { WISEButton } from 'src/app/shared/components/actions/button/button.component';\nimport { WISEDialogContent } from 'src/app/shared/components/actions/dialog/dialog-content-components';\nimport { WISEDialogService } from 'src/app/shared/components/actions/dialog/dialog.service';\nimport { WISEDialogConfig } from 'src/app/shared/components/actions/dialog/dialogConfig';\nimport {\n  WISEDialogActions,\n  WISEDialogBody,\n  WISEDialogTitle,\n} from '../../../shared/components/actions/dialog/dialog-content-components';\nimport { WISEDialog } from 'src/app/shared/components/actions/dialog/dialog.component';\nimport { FormsModule } from '@angular/forms';\n\n@Component({\n  standalone: true,\n  selector: 'basic-dialog',\n  imports: [FormsModule, WISEButton],\n  templateUrl: './basic-dialog.component.html',\n})\nexport class BasicDialog {\n  constructor(private dialogService: WISEDialogService) {}\n\n  private dialogRef: ComponentRef<WISEDialog> | undefined;\n  private name: string = '';\n  private color: string = '';\n  private width: string = 'sm';\n\n  openDialog(width: 'sm' | 'md' | 'lg' | 'xl' = 'sm'): void {\n    const dialogConfig: WISEDialogConfig = {\n      data: {\n        name: this.name,\n      },\n      closeOnBackdropClick: true,\n      closeOnEscape: true,\n      width: width,\n    };\n    this.dialogRef = this.dialogService.open(BasicDialogContent, dialogConfig);\n    this.dialogRef.instance.dialogClosed.subscribe((result: any) => {\n      if (result) {\n        this.color = result.color;\n        this.width = width;\n      }\n    });\n\n    // setTimeout(() => {\n    //   dialog.instance.close();\n    // }, 1000);\n  }\n}\n\n@Component({\n  standalone: true,\n  imports: [FormsModule, WISEButton, WISEDialogActions, WISEDialogBody, WISEDialogTitle],\n  templateUrl: './basic-dialog-content.html',\n})\nexport class BasicDialogContent extends WISEDialogContent {\n  constructor() {\n    super();\n  }\n\n  protected color: string = '';\n\n  submit(): void {\n    this.callbackData = { color: `${this.color}` };\n    this.dialogRef?.close();\n  }\n}\n",
+            "sourceCode": "import { Component, ComponentRef, OnInit } from '@angular/core';\nimport { WISEButton } from 'src/app/shared/components/actions/button/button.component';\nimport { WISEDialogService } from 'src/app/shared/components/actions/dialog/dialog.service';\nimport { WISEDialogConfig } from 'src/app/shared/components/actions/dialog/dialogConfig';\nimport {\n  WISEDialogActions,\n  WISEDialogBody,\n  WISEDialogContent,\n  WISEDialogTitle,\n} from '../../../shared/components/actions/dialog/dialog-content-components';\nimport { FormsModule } from '@angular/forms';\n\n@Component({\n  standalone: true,\n  selector: 'basic-dialog',\n  imports: [FormsModule, WISEButton],\n  templateUrl: './basic-dialog.component.html',\n})\nexport class BasicDialog {\n  constructor(private dialogService: WISEDialogService) {}\n\n  private name: string = '';\n  private color: string = '';\n  private width: string = 'sm';\n\n  openDialog(width: 'sm' | 'md' | 'lg' | 'xl' = 'sm'): void {\n    const dialogConfig: WISEDialogConfig = {\n      data: {\n        name: this.name,\n        color: this.color,\n      },\n      width: width,\n    };\n    let dialogRef = this.dialogService.open(BasicDialogContent, dialogConfig);\n    dialogRef.instance.dialogClosed.subscribe((result: any) => {\n      if (result) {\n        this.color = result.color;\n        this.width = width;\n      }\n    });\n  }\n}\n\n@Component({\n  standalone: true,\n  imports: [FormsModule, WISEButton, WISEDialogActions, WISEDialogBody, WISEDialogTitle],\n  templateUrl: './basic-dialog-content.html',\n})\nexport class BasicDialogContent extends WISEDialogContent implements OnInit {\n  constructor() {\n    super();\n  }\n\n  protected color: string = '';\n\n  ngOnInit(): void {\n    this.color = this.data.color;\n  }\n\n  submit(): void {\n    this.callbackData = { color: this.color };\n    this.dialog.close();\n  }\n}\n",
             "assetsDirs": [],
             "styleUrlsData": "",
             "stylesData": "",
@@ -399,7 +599,7 @@
                         "deprecationMessage": ""
                     }
                 ],
-                "line": 20,
+                "line": 19,
                 "jsdoctags": [
                     {
                         "name": "dialogService",
@@ -416,7 +616,7 @@
         },
         {
             "name": "BasicDialogContent",
-            "id": "component-BasicDialogContent-c9193b1160ce332492e375273093a9483ba691061b7387c3de2155bc9f77c8b2d324489d79dbd0c70e94dc6b1309d07b6e6be501aeb3e6ea75dcfa6e9fda36fc",
+            "id": "component-BasicDialogContent-224448799491f7cd59ad2140e722b626337a3c31b1fc44a14abd4bd865207fc53f8ae9b1c9e48fb7436da1f4a902ffcbb943a21edc21c809c4a53f90e6812836",
             "file": "src/app/docs/dialog/basic-dialog/basic-dialog.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -435,7 +635,7 @@
                     "name": "data",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 61,
+                    "line": 66,
                     "type": "any",
                     "decorators": [],
                     "inheritance": {
@@ -443,11 +643,12 @@
                     }
                 },
                 {
-                    "name": "dialogRef",
+                    "name": "dialog",
+                    "defaultValue": "new WISEDialog()",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 62,
-                    "type": "WISEDialog | undefined",
+                    "line": 67,
+                    "type": "WISEDialog",
                     "decorators": [],
                     "inheritance": {
                         "file": "WISEDialogContent"
@@ -464,7 +665,7 @@
                     "type": "string",
                     "optional": false,
                     "description": "",
-                    "line": 61,
+                    "line": 54,
                     "modifierKind": [
                         122
                     ]
@@ -476,7 +677,7 @@
                     "type": "any",
                     "optional": false,
                     "description": "",
-                    "line": 63,
+                    "line": 69,
                     "modifierKind": [
                         122
                     ],
@@ -487,12 +688,22 @@
             ],
             "methodsClass": [
                 {
+                    "name": "ngOnInit",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 56,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                },
+                {
                     "name": "submit",
                     "args": [],
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 63,
+                    "line": 60,
                     "deprecated": false,
                     "deprecationMessage": ""
                 },
@@ -502,7 +713,7 @@
                     "optional": false,
                     "returnType": "any",
                     "typeParameters": [],
-                    "line": 67,
+                    "line": 73,
                     "deprecated": false,
                     "deprecationMessage": "",
                     "inheritance": {
@@ -536,7 +747,7 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component, ComponentRef, OnInit } from '@angular/core';\nimport { WISEButton } from 'src/app/shared/components/actions/button/button.component';\nimport { WISEDialogContent } from 'src/app/shared/components/actions/dialog/dialog-content-components';\nimport { WISEDialogService } from 'src/app/shared/components/actions/dialog/dialog.service';\nimport { WISEDialogConfig } from 'src/app/shared/components/actions/dialog/dialogConfig';\nimport {\n  WISEDialogActions,\n  WISEDialogBody,\n  WISEDialogTitle,\n} from '../../../shared/components/actions/dialog/dialog-content-components';\nimport { WISEDialog } from 'src/app/shared/components/actions/dialog/dialog.component';\nimport { FormsModule } from '@angular/forms';\n\n@Component({\n  standalone: true,\n  selector: 'basic-dialog',\n  imports: [FormsModule, WISEButton],\n  templateUrl: './basic-dialog.component.html',\n})\nexport class BasicDialog {\n  constructor(private dialogService: WISEDialogService) {}\n\n  private dialogRef: ComponentRef<WISEDialog> | undefined;\n  private name: string = '';\n  private color: string = '';\n  private width: string = 'sm';\n\n  openDialog(width: 'sm' | 'md' | 'lg' | 'xl' = 'sm'): void {\n    const dialogConfig: WISEDialogConfig = {\n      data: {\n        name: this.name,\n      },\n      closeOnBackdropClick: true,\n      closeOnEscape: true,\n      width: width,\n    };\n    this.dialogRef = this.dialogService.open(BasicDialogContent, dialogConfig);\n    this.dialogRef.instance.dialogClosed.subscribe((result: any) => {\n      if (result) {\n        this.color = result.color;\n        this.width = width;\n      }\n    });\n\n    // setTimeout(() => {\n    //   dialog.instance.close();\n    // }, 1000);\n  }\n}\n\n@Component({\n  standalone: true,\n  imports: [FormsModule, WISEButton, WISEDialogActions, WISEDialogBody, WISEDialogTitle],\n  templateUrl: './basic-dialog-content.html',\n})\nexport class BasicDialogContent extends WISEDialogContent {\n  constructor() {\n    super();\n  }\n\n  protected color: string = '';\n\n  submit(): void {\n    this.callbackData = { color: `${this.color}` };\n    this.dialogRef?.close();\n  }\n}\n",
+            "sourceCode": "import { Component, ComponentRef, OnInit } from '@angular/core';\nimport { WISEButton } from 'src/app/shared/components/actions/button/button.component';\nimport { WISEDialogService } from 'src/app/shared/components/actions/dialog/dialog.service';\nimport { WISEDialogConfig } from 'src/app/shared/components/actions/dialog/dialogConfig';\nimport {\n  WISEDialogActions,\n  WISEDialogBody,\n  WISEDialogContent,\n  WISEDialogTitle,\n} from '../../../shared/components/actions/dialog/dialog-content-components';\nimport { FormsModule } from '@angular/forms';\n\n@Component({\n  standalone: true,\n  selector: 'basic-dialog',\n  imports: [FormsModule, WISEButton],\n  templateUrl: './basic-dialog.component.html',\n})\nexport class BasicDialog {\n  constructor(private dialogService: WISEDialogService) {}\n\n  private name: string = '';\n  private color: string = '';\n  private width: string = 'sm';\n\n  openDialog(width: 'sm' | 'md' | 'lg' | 'xl' = 'sm'): void {\n    const dialogConfig: WISEDialogConfig = {\n      data: {\n        name: this.name,\n        color: this.color,\n      },\n      width: width,\n    };\n    let dialogRef = this.dialogService.open(BasicDialogContent, dialogConfig);\n    dialogRef.instance.dialogClosed.subscribe((result: any) => {\n      if (result) {\n        this.color = result.color;\n        this.width = width;\n      }\n    });\n  }\n}\n\n@Component({\n  standalone: true,\n  imports: [FormsModule, WISEButton, WISEDialogActions, WISEDialogBody, WISEDialogTitle],\n  templateUrl: './basic-dialog-content.html',\n})\nexport class BasicDialogContent extends WISEDialogContent implements OnInit {\n  constructor() {\n    super();\n  }\n\n  protected color: string = '';\n\n  ngOnInit(): void {\n    this.color = this.data.color;\n  }\n\n  submit(): void {\n    this.callbackData = { color: this.color };\n    this.dialog.close();\n  }\n}\n",
             "assetsDirs": [],
             "styleUrlsData": "",
             "stylesData": "",
@@ -546,10 +757,13 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "args": [],
-                "line": 56
+                "line": 49
             },
             "extends": "WISEDialogContent",
-            "templateData": "<div wise-dialog-title>Hello {{ data.name }}!</div>\n<div wise-dialog-body>\n  <label class=\"form-control pb-2\">\n    <div class=\"label\">\n      <span class=\"label-text\">What is your favorite color?</span>\n    </div>\n    <input\n      type=\"text\"\n      placeholder=\"Favorite color\"\n      class=\"input input-bordered w-full\"\n      [(ngModel)]=\"color\"\n    />\n  </label>\n</div>\n<div wise-dialog-action>\n  <form method=\"dialog\">\n    <button wise-button>Cancel</button>\n  </form>\n  <button wise-button color=\"primary\" (click)=\"submit()\">Submit</button>\n</div>\n"
+            "implements": [
+                "OnInit"
+            ],
+            "templateData": "<div wise-dialog-title>Hello {{ data.name }}!</div>\n<div wise-dialog-body>\n  <label class=\"form-control pb-2\">\n    <div class=\"label\">\n      <span class=\"label-text\">What is your favorite color?</span>\n    </div>\n    <input\n      type=\"text\"\n      placeholder=\"Favorite color\"\n      class=\"input input-bordered w-full\"\n      [(ngModel)]=\"color\"\n    />\n  </label>\n</div>\n<div wise-dialog-actions>\n  <form method=\"dialog\">\n    <button wise-button>Cancel</button>\n  </form>\n  <button wise-button color=\"primary\" (click)=\"submit()\">Submit</button>\n</div>\n"
         },
         {
             "name": "TypographyComponent",
@@ -1053,7 +1267,7 @@
         },
         {
             "name": "WISEDialog",
-            "id": "component-WISEDialog-d4fea28e3f0de92576a6c2ada1f1eeda2ee35a5edb8cfb62eadd56ac716f2108265c1d5bdbb97cb0c8121ea9f5e78a083b6ee513823b48acc3e338e255b63de0",
+            "id": "component-WISEDialog-a799f52255d1f7522d86c815e67fdff67bda031f5dbc34d8834262ee53d48cb070a2435499566e10f827d27e1d68f1e43f1e29456d2b9801abfc31ecfb7d6211",
             "file": "src/app/shared/components/actions/dialog/dialog.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -1077,11 +1291,24 @@
                     "defaultValue": "new EventEmitter<any>()",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 29,
+                    "line": 30,
                     "type": "EventEmitter"
                 }
             ],
             "propertiesClass": [
+                {
+                    "name": "ariaLabelledBy",
+                    "defaultValue": "null",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string | null",
+                    "optional": false,
+                    "description": "",
+                    "line": 25,
+                    "modifierKind": [
+                        122
+                    ]
+                },
                 {
                     "name": "config",
                     "defaultValue": "new WISEDialogConfig()",
@@ -1090,7 +1317,7 @@
                     "type": "WISEDialogConfig",
                     "optional": false,
                     "description": "",
-                    "line": 25,
+                    "line": 26,
                     "modifierKind": [
                         122
                     ]
@@ -1102,7 +1329,7 @@
                     "type": "ComponentRef<any> | undefined",
                     "optional": false,
                     "description": "",
-                    "line": 26,
+                    "line": 27,
                     "modifierKind": [
                         122
                     ]
@@ -1150,7 +1377,7 @@
                     "type": "HTMLDialogElement",
                     "optional": false,
                     "description": "",
-                    "line": 27,
+                    "line": 28,
                     "modifierKind": [
                         122
                     ]
@@ -1163,7 +1390,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 52,
+                    "line": 53,
                     "deprecated": false,
                     "deprecationMessage": ""
                 },
@@ -1173,7 +1400,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 33,
+                    "line": 34,
                     "deprecated": false,
                     "deprecationMessage": ""
                 },
@@ -1183,7 +1410,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 56,
+                    "line": 57,
                     "deprecated": false,
                     "deprecationMessage": ""
                 },
@@ -1201,7 +1428,7 @@
                             "type": "WISEDialogConfig",
                             "deprecated": false,
                             "deprecationMessage": "",
-                            "optional": true
+                            "defaultValue": "new WISEDialogConfig()"
                         }
                     ],
                     "optional": false,
@@ -1209,7 +1436,7 @@
                     "typeParameters": [
                         "T"
                     ],
-                    "line": 41,
+                    "line": 42,
                     "deprecated": false,
                     "deprecationMessage": "",
                     "jsdoctags": [
@@ -1227,7 +1454,7 @@
                             "type": "WISEDialogConfig",
                             "deprecated": false,
                             "deprecationMessage": "",
-                            "optional": true,
+                            "defaultValue": "new WISEDialogConfig()",
                             "tagName": {
                                 "text": "param"
                             }
@@ -1247,7 +1474,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 62,
+                    "line": 63,
                     "deprecated": false,
                     "deprecationMessage": "",
                     "jsdoctags": [
@@ -1277,7 +1504,7 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import {\n  Component,\n  ComponentRef,\n  ElementRef,\n  EventEmitter,\n  Output,\n  Type,\n  ViewChild,\n  ViewContainerRef,\n} from '@angular/core';\nimport { WISEDialogConfig } from './dialogConfig';\nimport { CommonModule } from '@angular/common';\n\n@Component({\n  standalone: true,\n  selector: 'wise-dialog',\n  templateUrl: './dialog.component.html',\n  styleUrls: ['./dialog.component.css'],\n  imports: [CommonModule],\n})\nexport class WISEDialog {\n  @ViewChild('dialog') dialog!: ElementRef<HTMLDialogElement>;\n  @ViewChild('dialogContent', { read: ViewContainerRef }) dialogContent!: ViewContainerRef;\n\n  protected config: WISEDialogConfig = new WISEDialogConfig();\n  protected contentComponentRef: ComponentRef<any> | undefined;\n  protected dialogElement!: HTMLDialogElement;\n\n  @Output() dialogClosed = new EventEmitter<any>();\n\n  constructor() {}\n\n  ngAfterViewInit(): void {\n    this.dialogElement = this.dialog.nativeElement;\n    this.dialogElement.addEventListener('close', () => {\n      const callbackData = this.contentComponentRef?.instance.getCallbackData();\n      this.dialogClosed.emit(callbackData);\n    });\n  }\n\n  open<T>(component: Type<T>, config?: WISEDialogConfig) {\n    this.config = { ...this.config, ...config };\n    this.contentComponentRef = this.dialogContent.createComponent(component);\n    this.contentComponentRef.setInput('data', this.config.data);\n    this.contentComponentRef.setInput('dialogRef', this);\n    if (!this.config.closeOnEscape) {\n      this.dialogElement.addEventListener('cancel', this.preventClose);\n    }\n    this.dialog.nativeElement.showModal();\n  }\n\n  close(): void {\n    this.dialog.nativeElement.close();\n  }\n\n  ngOnDestroy(): void {\n    this.dialogContent.clear();\n    this.dialogElement.removeEventListener('cancel', this.preventClose);\n    this.dialog.nativeElement.close();\n  }\n\n  preventClose(event: Event): void {\n    event.preventDefault();\n  }\n}\n",
+            "sourceCode": "import {\n  Component,\n  ComponentRef,\n  ElementRef,\n  EventEmitter,\n  Output,\n  Type,\n  ViewChild,\n  ViewContainerRef,\n} from '@angular/core';\nimport { WISEDialogConfig } from './dialogConfig';\nimport { CommonModule } from '@angular/common';\n\n@Component({\n  standalone: true,\n  selector: 'wise-dialog',\n  templateUrl: './dialog.component.html',\n  styleUrls: ['./dialog.component.css'],\n  imports: [CommonModule],\n})\nexport class WISEDialog {\n  @ViewChild('dialog') dialog!: ElementRef<HTMLDialogElement>;\n  @ViewChild('dialogContent', { read: ViewContainerRef }) dialogContent!: ViewContainerRef;\n\n  protected ariaLabelledBy: string | null = null;\n  protected config: WISEDialogConfig = new WISEDialogConfig();\n  protected contentComponentRef: ComponentRef<any> | undefined;\n  protected dialogElement!: HTMLDialogElement;\n\n  @Output() dialogClosed = new EventEmitter<any>();\n\n  constructor() {}\n\n  ngAfterViewInit(): void {\n    this.dialogElement = this.dialog.nativeElement;\n    this.dialogElement.addEventListener('close', () => {\n      const callbackData = this.contentComponentRef?.instance.getCallbackData();\n      this.dialogClosed.emit(callbackData);\n    });\n  }\n\n  open<T>(component: Type<T>, config: WISEDialogConfig = new WISEDialogConfig()): void {\n    this.config = config;\n    this.contentComponentRef = this.dialogContent.createComponent(component);\n    this.contentComponentRef.setInput('data', this.config.data);\n    this.contentComponentRef.setInput('dialog', this);\n    if (!this.config.closeOnEscape) {\n      this.dialogElement.addEventListener('cancel', this.preventClose);\n    }\n    this.dialog.nativeElement.showModal();\n  }\n\n  close(): void {\n    this.dialog.nativeElement.close();\n  }\n\n  ngOnDestroy(): void {\n    this.dialogContent.clear();\n    this.dialogElement.removeEventListener('cancel', this.preventClose);\n    this.dialog.nativeElement.close();\n  }\n\n  preventClose(event: Event): void {\n    event.preventDefault();\n  }\n}\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
@@ -1292,13 +1519,13 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "args": [],
-                "line": 29
+                "line": 30
             },
-            "templateData": "<dialog #dialog class=\"modal\">\n  <div\n    class=\"modal-box p-0 w-11/12\"\n    [class.max-w-screen-md]=\"config.width === 'md'\"\n    [class.max-w-screen-lg]=\"config.width === 'lg'\"\n    [class.max-w-screen-xl]=\"config.width === 'xl'\"\n  >\n    <ng-template #dialogContent></ng-template>\n  </div>\n  <form *ngIf=\"config.closeOnBackdropClick\" method=\"dialog\" class=\"modal-backdrop\">\n    <button>Close dialog</button>\n  </form>\n</dialog>\n"
+            "templateData": "<dialog #dialog class=\"modal\">\n  <div\n    class=\"modal-box p-0 w-11/12\"\n    [class.max-w-screen-md]=\"config.width === 'md'\"\n    [class.max-w-screen-lg]=\"config.width === 'lg'\"\n    [class.max-w-screen-xl]=\"config.width === 'xl'\"\n    [attr.aria-role]=\"config.role\"\n    [attr.aria-modal]=\"config.ariaModal\"\n    [attr.aria-label]=\"config.ariaLabel ? config.ariaLabel : null\"\n    [attr.aria-labelledby]=\"config.ariaLabelledBy ? config.ariaLabelledBy : null\"\n    [attr.aria-describedby]=\"config.ariaDescribedBy ? config.ariaDescribedBy : null\"\n  >\n    <ng-template #dialogContent></ng-template>\n  </div>\n  <form *ngIf=\"config.closeOnBackdropClick\" method=\"dialog\" class=\"modal-backdrop\">\n    <button>Close dialog</button>\n  </form>\n</dialog>\n"
         },
         {
             "name": "WISEDialogActions",
-            "id": "component-WISEDialogActions-f49aed2365b24db5fcc6139a0768eb864dcbf870866f1f8be9a19836bd9de7d1f852b048858757b0009da9dfac2811d42fbe47a04c55801aa14e0cb1bbfed6df",
+            "id": "component-WISEDialogActions-46fb3875bd466922316d28179ad5076622c953ff3dd433e3edb91b8db003971c4a306f8bf54559f009cc8ccb6c217f1fad25e9427df7013f5f2939f785627197",
             "file": "src/app/shared/components/actions/dialog/dialog-content-components.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -1306,7 +1533,7 @@
             "inputs": [],
             "outputs": [],
             "providers": [],
-            "selector": "wise-dialog-action, [wise-dialog-action]",
+            "selector": "wise-dialog-actions, [wise-dialog-actions]",
             "styleUrls": [],
             "styles": [],
             "template": "<ng-content></ng-content>",
@@ -1326,14 +1553,14 @@
             "description": "<p>Container for the bottom actions in a dialog. Stays fixed to the bottom when scrolling.</p>\n",
             "rawdescription": "\n\nContainer for the bottom actions in a dialog. Stays fixed to the bottom when scrolling.\n",
             "type": "component",
-            "sourceCode": "import { Component, Input } from '@angular/core';\nimport { WISEDialog } from './dialog.component';\n\n/**\n * Title of a dialog. Stays fixed to the top of the dialog when scrolling.\n */\n@Component({\n  standalone: true,\n  selector: 'wise-dialog-title, [wise-dialog-title]',\n  host: {\n    class: 'p-4 bg-base-100',\n  },\n  template: `\n    <h2 class=\"text-lg m-0\">\n      <ng-content></ng-content>\n    </h2>\n  `,\n})\nexport class WISEDialogTitle {}\n\n/**\n * Scrollable container for dialog content.\n */\n@Component({\n  standalone: true,\n  selector: 'wise-dialog-body, [wise-dialog-body]',\n  host: {\n    class: 'px-4 flex-1 overflow-auto scroll-shadow-v',\n  },\n  template: `<ng-content></ng-content>`,\n})\nexport class WISEDialogBody {}\n\n/**\n * Container for the bottom actions in a dialog. Stays fixed to the bottom when scrolling.\n */\n@Component({\n  standalone: true,\n  selector: 'wise-dialog-action, [wise-dialog-action]',\n  host: {\n    class: 'modal-action gap-2 mt-0 p-4 bg-base-100',\n  },\n  template: `<ng-content></ng-content>`,\n})\nexport class WISEDialogActions {}\n\n/**\n * Content of a dialog. Can contain any or all of the dialog title, body, and action component.\n * Should be extended to provide custom content for each dialog instance.\n */\n@Component({\n  standalone: true,\n  selector: 'wise-dialog-content',\n  host: {\n    class: 'flex flex-col max-h-inherit',\n  },\n  template: '',\n  imports: [],\n})\nexport class WISEDialogContent {\n  @Input() data: any;\n  @Input() dialogRef: WISEDialog | undefined;\n  protected callbackData: any;\n\n  constructor() {}\n\n  getCallbackData(): any {\n    return this.callbackData;\n  }\n}\n",
+            "sourceCode": "import { Component, Input } from '@angular/core';\nimport { WISEDialog } from './dialog.component';\nimport { WISEDialogService } from './dialog.service';\n\n/**\n * Title of a dialog. Stays fixed to the top of the dialog when scrolling.\n */\n@Component({\n  standalone: true,\n  selector: 'wise-dialog-title, [wise-dialog-title]',\n  host: {\n    class: 'p-4 bg-base-100',\n  },\n  template: `\n    <h2 class=\"text-lg m-0\" [id]=\"titleId\">\n      <ng-content></ng-content>\n    </h2>\n  `,\n})\nexport class WISEDialogTitle {\n  constructor(private dialogService: WISEDialogService) {}\n\n  titleId: string = this.dialogService.DIALOG_TITLE_PREFIX + this.dialogService.dialogRefs.length;\n}\n\n/**\n * Scrollable container for dialog content.\n */\n@Component({\n  standalone: true,\n  selector: 'wise-dialog-body, [wise-dialog-body]',\n  host: {\n    class: 'px-4 flex-1 overflow-auto scroll-shadow-v',\n  },\n  template: `<ng-content></ng-content>`,\n})\nexport class WISEDialogBody {}\n\n/**\n * Container for the bottom actions in a dialog. Stays fixed to the bottom when scrolling.\n */\n@Component({\n  standalone: true,\n  selector: 'wise-dialog-actions, [wise-dialog-actions]',\n  host: {\n    class: 'modal-action mt-0 p-4 bg-base-100',\n  },\n  template: `<ng-content></ng-content>`,\n})\nexport class WISEDialogActions {}\n\n/**\n * Content of a dialog. Can contain any or all of the dialog title, body, and action component.\n * Should be extended to provide custom content for each dialog instance.\n */\n@Component({\n  standalone: true,\n  selector: 'wise-dialog-content',\n  host: {\n    class: 'flex flex-col max-h-inherit',\n  },\n  template: '',\n  imports: [],\n})\nexport class WISEDialogContent {\n  @Input() data: any;\n  @Input() dialog: WISEDialog = new WISEDialog();\n\n  protected callbackData: any;\n\n  constructor() {}\n\n  getCallbackData(): any {\n    return this.callbackData;\n  }\n}\n",
             "assetsDirs": [],
             "styleUrlsData": "",
             "stylesData": ""
         },
         {
             "name": "WISEDialogBody",
-            "id": "component-WISEDialogBody-f49aed2365b24db5fcc6139a0768eb864dcbf870866f1f8be9a19836bd9de7d1f852b048858757b0009da9dfac2811d42fbe47a04c55801aa14e0cb1bbfed6df",
+            "id": "component-WISEDialogBody-46fb3875bd466922316d28179ad5076622c953ff3dd433e3edb91b8db003971c4a306f8bf54559f009cc8ccb6c217f1fad25e9427df7013f5f2939f785627197",
             "file": "src/app/shared/components/actions/dialog/dialog-content-components.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -1361,14 +1588,14 @@
             "description": "<p>Scrollable container for dialog content.</p>\n",
             "rawdescription": "\n\nScrollable container for dialog content.\n",
             "type": "component",
-            "sourceCode": "import { Component, Input } from '@angular/core';\nimport { WISEDialog } from './dialog.component';\n\n/**\n * Title of a dialog. Stays fixed to the top of the dialog when scrolling.\n */\n@Component({\n  standalone: true,\n  selector: 'wise-dialog-title, [wise-dialog-title]',\n  host: {\n    class: 'p-4 bg-base-100',\n  },\n  template: `\n    <h2 class=\"text-lg m-0\">\n      <ng-content></ng-content>\n    </h2>\n  `,\n})\nexport class WISEDialogTitle {}\n\n/**\n * Scrollable container for dialog content.\n */\n@Component({\n  standalone: true,\n  selector: 'wise-dialog-body, [wise-dialog-body]',\n  host: {\n    class: 'px-4 flex-1 overflow-auto scroll-shadow-v',\n  },\n  template: `<ng-content></ng-content>`,\n})\nexport class WISEDialogBody {}\n\n/**\n * Container for the bottom actions in a dialog. Stays fixed to the bottom when scrolling.\n */\n@Component({\n  standalone: true,\n  selector: 'wise-dialog-action, [wise-dialog-action]',\n  host: {\n    class: 'modal-action gap-2 mt-0 p-4 bg-base-100',\n  },\n  template: `<ng-content></ng-content>`,\n})\nexport class WISEDialogActions {}\n\n/**\n * Content of a dialog. Can contain any or all of the dialog title, body, and action component.\n * Should be extended to provide custom content for each dialog instance.\n */\n@Component({\n  standalone: true,\n  selector: 'wise-dialog-content',\n  host: {\n    class: 'flex flex-col max-h-inherit',\n  },\n  template: '',\n  imports: [],\n})\nexport class WISEDialogContent {\n  @Input() data: any;\n  @Input() dialogRef: WISEDialog | undefined;\n  protected callbackData: any;\n\n  constructor() {}\n\n  getCallbackData(): any {\n    return this.callbackData;\n  }\n}\n",
+            "sourceCode": "import { Component, Input } from '@angular/core';\nimport { WISEDialog } from './dialog.component';\nimport { WISEDialogService } from './dialog.service';\n\n/**\n * Title of a dialog. Stays fixed to the top of the dialog when scrolling.\n */\n@Component({\n  standalone: true,\n  selector: 'wise-dialog-title, [wise-dialog-title]',\n  host: {\n    class: 'p-4 bg-base-100',\n  },\n  template: `\n    <h2 class=\"text-lg m-0\" [id]=\"titleId\">\n      <ng-content></ng-content>\n    </h2>\n  `,\n})\nexport class WISEDialogTitle {\n  constructor(private dialogService: WISEDialogService) {}\n\n  titleId: string = this.dialogService.DIALOG_TITLE_PREFIX + this.dialogService.dialogRefs.length;\n}\n\n/**\n * Scrollable container for dialog content.\n */\n@Component({\n  standalone: true,\n  selector: 'wise-dialog-body, [wise-dialog-body]',\n  host: {\n    class: 'px-4 flex-1 overflow-auto scroll-shadow-v',\n  },\n  template: `<ng-content></ng-content>`,\n})\nexport class WISEDialogBody {}\n\n/**\n * Container for the bottom actions in a dialog. Stays fixed to the bottom when scrolling.\n */\n@Component({\n  standalone: true,\n  selector: 'wise-dialog-actions, [wise-dialog-actions]',\n  host: {\n    class: 'modal-action mt-0 p-4 bg-base-100',\n  },\n  template: `<ng-content></ng-content>`,\n})\nexport class WISEDialogActions {}\n\n/**\n * Content of a dialog. Can contain any or all of the dialog title, body, and action component.\n * Should be extended to provide custom content for each dialog instance.\n */\n@Component({\n  standalone: true,\n  selector: 'wise-dialog-content',\n  host: {\n    class: 'flex flex-col max-h-inherit',\n  },\n  template: '',\n  imports: [],\n})\nexport class WISEDialogContent {\n  @Input() data: any;\n  @Input() dialog: WISEDialog = new WISEDialog();\n\n  protected callbackData: any;\n\n  constructor() {}\n\n  getCallbackData(): any {\n    return this.callbackData;\n  }\n}\n",
             "assetsDirs": [],
             "styleUrlsData": "",
             "stylesData": ""
         },
         {
             "name": "WISEDialogContent",
-            "id": "component-WISEDialogContent-f49aed2365b24db5fcc6139a0768eb864dcbf870866f1f8be9a19836bd9de7d1f852b048858757b0009da9dfac2811d42fbe47a04c55801aa14e0cb1bbfed6df",
+            "id": "component-WISEDialogContent-46fb3875bd466922316d28179ad5076622c953ff3dd433e3edb91b8db003971c4a306f8bf54559f009cc8ccb6c217f1fad25e9427df7013f5f2939f785627197",
             "file": "src/app/shared/components/actions/dialog/dialog-content-components.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -1388,16 +1615,17 @@
                     "name": "data",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 61,
+                    "line": 66,
                     "type": "any",
                     "decorators": []
                 },
                 {
-                    "name": "dialogRef",
+                    "name": "dialog",
+                    "defaultValue": "new WISEDialog()",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 62,
-                    "type": "WISEDialog | undefined",
+                    "line": 67,
+                    "type": "WISEDialog",
                     "decorators": []
                 }
             ],
@@ -1410,7 +1638,7 @@
                     "type": "any",
                     "optional": false,
                     "description": "",
-                    "line": 63,
+                    "line": 69,
                     "modifierKind": [
                         122
                     ]
@@ -1423,7 +1651,7 @@
                     "optional": false,
                     "returnType": "any",
                     "typeParameters": [],
-                    "line": 67,
+                    "line": 73,
                     "deprecated": false,
                     "deprecationMessage": ""
                 }
@@ -1437,7 +1665,7 @@
             "description": "<p>Content of a dialog. Can contain any or all of the dialog title, body, and action component.\nShould be extended to provide custom content for each dialog instance.</p>\n",
             "rawdescription": "\n\nContent of a dialog. Can contain any or all of the dialog title, body, and action component.\nShould be extended to provide custom content for each dialog instance.\n",
             "type": "component",
-            "sourceCode": "import { Component, Input } from '@angular/core';\nimport { WISEDialog } from './dialog.component';\n\n/**\n * Title of a dialog. Stays fixed to the top of the dialog when scrolling.\n */\n@Component({\n  standalone: true,\n  selector: 'wise-dialog-title, [wise-dialog-title]',\n  host: {\n    class: 'p-4 bg-base-100',\n  },\n  template: `\n    <h2 class=\"text-lg m-0\">\n      <ng-content></ng-content>\n    </h2>\n  `,\n})\nexport class WISEDialogTitle {}\n\n/**\n * Scrollable container for dialog content.\n */\n@Component({\n  standalone: true,\n  selector: 'wise-dialog-body, [wise-dialog-body]',\n  host: {\n    class: 'px-4 flex-1 overflow-auto scroll-shadow-v',\n  },\n  template: `<ng-content></ng-content>`,\n})\nexport class WISEDialogBody {}\n\n/**\n * Container for the bottom actions in a dialog. Stays fixed to the bottom when scrolling.\n */\n@Component({\n  standalone: true,\n  selector: 'wise-dialog-action, [wise-dialog-action]',\n  host: {\n    class: 'modal-action gap-2 mt-0 p-4 bg-base-100',\n  },\n  template: `<ng-content></ng-content>`,\n})\nexport class WISEDialogActions {}\n\n/**\n * Content of a dialog. Can contain any or all of the dialog title, body, and action component.\n * Should be extended to provide custom content for each dialog instance.\n */\n@Component({\n  standalone: true,\n  selector: 'wise-dialog-content',\n  host: {\n    class: 'flex flex-col max-h-inherit',\n  },\n  template: '',\n  imports: [],\n})\nexport class WISEDialogContent {\n  @Input() data: any;\n  @Input() dialogRef: WISEDialog | undefined;\n  protected callbackData: any;\n\n  constructor() {}\n\n  getCallbackData(): any {\n    return this.callbackData;\n  }\n}\n",
+            "sourceCode": "import { Component, Input } from '@angular/core';\nimport { WISEDialog } from './dialog.component';\nimport { WISEDialogService } from './dialog.service';\n\n/**\n * Title of a dialog. Stays fixed to the top of the dialog when scrolling.\n */\n@Component({\n  standalone: true,\n  selector: 'wise-dialog-title, [wise-dialog-title]',\n  host: {\n    class: 'p-4 bg-base-100',\n  },\n  template: `\n    <h2 class=\"text-lg m-0\" [id]=\"titleId\">\n      <ng-content></ng-content>\n    </h2>\n  `,\n})\nexport class WISEDialogTitle {\n  constructor(private dialogService: WISEDialogService) {}\n\n  titleId: string = this.dialogService.DIALOG_TITLE_PREFIX + this.dialogService.dialogRefs.length;\n}\n\n/**\n * Scrollable container for dialog content.\n */\n@Component({\n  standalone: true,\n  selector: 'wise-dialog-body, [wise-dialog-body]',\n  host: {\n    class: 'px-4 flex-1 overflow-auto scroll-shadow-v',\n  },\n  template: `<ng-content></ng-content>`,\n})\nexport class WISEDialogBody {}\n\n/**\n * Container for the bottom actions in a dialog. Stays fixed to the bottom when scrolling.\n */\n@Component({\n  standalone: true,\n  selector: 'wise-dialog-actions, [wise-dialog-actions]',\n  host: {\n    class: 'modal-action mt-0 p-4 bg-base-100',\n  },\n  template: `<ng-content></ng-content>`,\n})\nexport class WISEDialogActions {}\n\n/**\n * Content of a dialog. Can contain any or all of the dialog title, body, and action component.\n * Should be extended to provide custom content for each dialog instance.\n */\n@Component({\n  standalone: true,\n  selector: 'wise-dialog-content',\n  host: {\n    class: 'flex flex-col max-h-inherit',\n  },\n  template: '',\n  imports: [],\n})\nexport class WISEDialogContent {\n  @Input() data: any;\n  @Input() dialog: WISEDialog = new WISEDialog();\n\n  protected callbackData: any;\n\n  constructor() {}\n\n  getCallbackData(): any {\n    return this.callbackData;\n  }\n}\n",
             "assetsDirs": [],
             "styleUrlsData": "",
             "stylesData": "",
@@ -1447,12 +1675,12 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "args": [],
-                "line": 63
+                "line": 69
             }
         },
         {
             "name": "WISEDialogTitle",
-            "id": "component-WISEDialogTitle-f49aed2365b24db5fcc6139a0768eb864dcbf870866f1f8be9a19836bd9de7d1f852b048858757b0009da9dfac2811d42fbe47a04c55801aa14e0cb1bbfed6df",
+            "id": "component-WISEDialogTitle-46fb3875bd466922316d28179ad5076622c953ff3dd433e3edb91b8db003971c4a306f8bf54559f009cc8ccb6c217f1fad25e9427df7013f5f2939f785627197",
             "file": "src/app/shared/components/actions/dialog/dialog-content-components.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -1463,13 +1691,24 @@
             "selector": "wise-dialog-title, [wise-dialog-title]",
             "styleUrls": [],
             "styles": [],
-            "template": "<h2 class=\"text-lg m-0\">\n  <ng-content></ng-content>\n</h2>\n",
+            "template": "<h2 class=\"text-lg m-0\" [id]=\"titleId\">\n  <ng-content></ng-content>\n</h2>\n",
             "templateUrl": [],
             "viewProviders": [],
             "hostDirectives": [],
             "inputsClass": [],
             "outputsClass": [],
-            "propertiesClass": [],
+            "propertiesClass": [
+                {
+                    "name": "titleId",
+                    "defaultValue": "this.dialogService.DIALOG_TITLE_PREFIX + this.dialogService.dialogRefs.length",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 23
+                }
+            ],
             "methodsClass": [],
             "deprecated": false,
             "deprecationMessage": "",
@@ -1480,10 +1719,36 @@
             "description": "<p>Title of a dialog. Stays fixed to the top of the dialog when scrolling.</p>\n",
             "rawdescription": "\n\nTitle of a dialog. Stays fixed to the top of the dialog when scrolling.\n",
             "type": "component",
-            "sourceCode": "import { Component, Input } from '@angular/core';\nimport { WISEDialog } from './dialog.component';\n\n/**\n * Title of a dialog. Stays fixed to the top of the dialog when scrolling.\n */\n@Component({\n  standalone: true,\n  selector: 'wise-dialog-title, [wise-dialog-title]',\n  host: {\n    class: 'p-4 bg-base-100',\n  },\n  template: `\n    <h2 class=\"text-lg m-0\">\n      <ng-content></ng-content>\n    </h2>\n  `,\n})\nexport class WISEDialogTitle {}\n\n/**\n * Scrollable container for dialog content.\n */\n@Component({\n  standalone: true,\n  selector: 'wise-dialog-body, [wise-dialog-body]',\n  host: {\n    class: 'px-4 flex-1 overflow-auto scroll-shadow-v',\n  },\n  template: `<ng-content></ng-content>`,\n})\nexport class WISEDialogBody {}\n\n/**\n * Container for the bottom actions in a dialog. Stays fixed to the bottom when scrolling.\n */\n@Component({\n  standalone: true,\n  selector: 'wise-dialog-action, [wise-dialog-action]',\n  host: {\n    class: 'modal-action gap-2 mt-0 p-4 bg-base-100',\n  },\n  template: `<ng-content></ng-content>`,\n})\nexport class WISEDialogActions {}\n\n/**\n * Content of a dialog. Can contain any or all of the dialog title, body, and action component.\n * Should be extended to provide custom content for each dialog instance.\n */\n@Component({\n  standalone: true,\n  selector: 'wise-dialog-content',\n  host: {\n    class: 'flex flex-col max-h-inherit',\n  },\n  template: '',\n  imports: [],\n})\nexport class WISEDialogContent {\n  @Input() data: any;\n  @Input() dialogRef: WISEDialog | undefined;\n  protected callbackData: any;\n\n  constructor() {}\n\n  getCallbackData(): any {\n    return this.callbackData;\n  }\n}\n",
+            "sourceCode": "import { Component, Input } from '@angular/core';\nimport { WISEDialog } from './dialog.component';\nimport { WISEDialogService } from './dialog.service';\n\n/**\n * Title of a dialog. Stays fixed to the top of the dialog when scrolling.\n */\n@Component({\n  standalone: true,\n  selector: 'wise-dialog-title, [wise-dialog-title]',\n  host: {\n    class: 'p-4 bg-base-100',\n  },\n  template: `\n    <h2 class=\"text-lg m-0\" [id]=\"titleId\">\n      <ng-content></ng-content>\n    </h2>\n  `,\n})\nexport class WISEDialogTitle {\n  constructor(private dialogService: WISEDialogService) {}\n\n  titleId: string = this.dialogService.DIALOG_TITLE_PREFIX + this.dialogService.dialogRefs.length;\n}\n\n/**\n * Scrollable container for dialog content.\n */\n@Component({\n  standalone: true,\n  selector: 'wise-dialog-body, [wise-dialog-body]',\n  host: {\n    class: 'px-4 flex-1 overflow-auto scroll-shadow-v',\n  },\n  template: `<ng-content></ng-content>`,\n})\nexport class WISEDialogBody {}\n\n/**\n * Container for the bottom actions in a dialog. Stays fixed to the bottom when scrolling.\n */\n@Component({\n  standalone: true,\n  selector: 'wise-dialog-actions, [wise-dialog-actions]',\n  host: {\n    class: 'modal-action mt-0 p-4 bg-base-100',\n  },\n  template: `<ng-content></ng-content>`,\n})\nexport class WISEDialogActions {}\n\n/**\n * Content of a dialog. Can contain any or all of the dialog title, body, and action component.\n * Should be extended to provide custom content for each dialog instance.\n */\n@Component({\n  standalone: true,\n  selector: 'wise-dialog-content',\n  host: {\n    class: 'flex flex-col max-h-inherit',\n  },\n  template: '',\n  imports: [],\n})\nexport class WISEDialogContent {\n  @Input() data: any;\n  @Input() dialog: WISEDialog = new WISEDialog();\n\n  protected callbackData: any;\n\n  constructor() {}\n\n  getCallbackData(): any {\n    return this.callbackData;\n  }\n}\n",
             "assetsDirs": [],
             "styleUrlsData": "",
-            "stylesData": ""
+            "stylesData": "",
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "args": [
+                    {
+                        "name": "dialogService",
+                        "type": "WISEDialogService",
+                        "deprecated": false,
+                        "deprecationMessage": ""
+                    }
+                ],
+                "line": 20,
+                "jsdoctags": [
+                    {
+                        "name": "dialogService",
+                        "type": "WISEDialogService",
+                        "deprecated": false,
+                        "deprecationMessage": "",
+                        "tagName": {
+                            "text": "param"
+                        }
+                    }
+                ]
+            }
         },
         {
             "name": "WISETab",
@@ -2082,7 +2347,7 @@
                 "file": "src/app/docs/dialog/dialog.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
-                "type": "Story",
+                "type": "StoryObj<StoryDialog>",
                 "defaultValue": "{\n  render: () => ({\n    template: `\n      <basic-dialog></basic-dialog>\n    `,\n  }),\n}"
             },
             {
@@ -2114,16 +2379,6 @@
                 "deprecationMessage": "",
                 "type": "StoryObj<StoryButton>",
                 "defaultValue": "{\n  parameters: {\n    controls: { exclude: /.*/g },\n  },\n  render: (args) => ({\n    props: args,\n    template: `\n      <div class=\"gap-2 flex flex-wrap\">\n        <button wise-button circle=\"true\" ghost=\"true\" color=\"primary\">\n          <span class=\"fas fa-bars\" title=\"Open menu\"></span>\n        </button>\n        <button wise-button circle=\"true\" ghost=\"true\">\n          <span class=\"fas fa-archive\" title=\"Archive\"></span>\n        </button>\n        <button wise-button circle=\"true\">\n          <span class=\"fas fa-close\" title=\"Close\"></span>\n        </button>\n        <button wise-button circle=\"true\" color=\"primary\">\n          <span class=\"fas fa-question\" title=\"Info\"></span>\n        </button>\n        <button wise-button>\n          <span class=\"fas fa-home\"></span>\n          Home\n        </button>\n        <button wise-button>\n          Home\n          <span class=\"fas fa-home\"></span>\n        </button>\n      </div>\n    `,\n  }),\n}"
-            },
-            {
-                "name": "meta",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "src/app/docs/dialog/dialog.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "Meta",
-                "defaultValue": "{\n  title: 'Components/Actions/Dialog',\n  decorators: [\n    moduleMetadata({\n      declarations: [],\n      imports: [BasicDialog, CommonModule],\n    }),\n  ],\n  argTypes: {},\n}"
             },
             {
                 "name": "meta",
@@ -2256,6 +2511,26 @@
                 "defaultValue": "{\n  parameters: {\n    controls: { exclude: /.*/g },\n  },\n  render: (args) => ({\n    props: args,\n    template: `\n      <div class=\"gap-2 flex flex-col\">\n        <div>\n          <button wise-button>Auto</button>\n        </div>\n        <div>\n          <button wise-button wide=\"true\">Wide</button>\n        </div>\n        <div>\n          <button wise-button block=\"true\">Block</button>\n        </div>\n      </div>\n    `,\n  }),\n}"
             },
             {
+                "name": "WISEDialogConfigDocs",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/docs/dialog/compodoc.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "compodocData.classes.find(\n  (injectable) => injectable.name === 'WISEDialogConfig',\n)"
+            },
+            {
+                "name": "WISEDialogServiceDocs",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/docs/dialog/compodoc.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "compodocData.injectables.find(\n  (injectable) => injectable.name === 'WISEDialogService',\n)"
+            },
+            {
                 "name": "Zebra",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
@@ -2268,17 +2543,6 @@
         ],
         "functions": [],
         "typealiases": [
-            {
-                "name": "Story",
-                "ctype": "miscellaneous",
-                "subtype": "typealias",
-                "rawtype": "StoryObj",
-                "file": "src/app/docs/dialog/dialog.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "description": "",
-                "kind": 180
-            },
             {
                 "name": "Story",
                 "ctype": "miscellaneous",
@@ -2300,6 +2564,17 @@
                 "deprecationMessage": "",
                 "description": "",
                 "kind": 190
+            },
+            {
+                "name": "StoryDialog",
+                "ctype": "miscellaneous",
+                "subtype": "typealias",
+                "rawtype": "BasicDialog",
+                "file": "src/app/docs/dialog/dialog.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "description": "",
+                "kind": 180
             },
             {
                 "name": "StoryTable",
@@ -2497,18 +2772,8 @@
                     "file": "src/app/docs/dialog/dialog.stories.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "type": "Story",
+                    "type": "StoryObj<StoryDialog>",
                     "defaultValue": "{\n  render: () => ({\n    template: `\n      <basic-dialog></basic-dialog>\n    `,\n  }),\n}"
-                },
-                {
-                    "name": "meta",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/app/docs/dialog/dialog.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "Meta",
-                    "defaultValue": "{\n  title: 'Components/Actions/Dialog',\n  decorators: [\n    moduleMetadata({\n      declarations: [],\n      imports: [BasicDialog, CommonModule],\n    }),\n  ],\n  argTypes: {},\n}"
                 }
             ],
             "src/app/docs/typography/typography.stories.ts": [
@@ -2544,24 +2809,33 @@
                     "type": "Preview",
                     "defaultValue": "{\n  parameters: {\n    actions: { argTypesRegex: '^on[A-Z].*' },\n    controls: {\n      matchers: {\n        color: /(background|color)$/i,\n        date: /Date$/,\n      },\n      expanded: true,\n    },\n    docs: {\n      toc: {\n        headingSelector: 'h2, h3',\n        ignoreSelector: '#stories, .toc-ignore',\n        disable: false,\n      },\n    },\n    options: {\n      storySort: {\n        method: 'alphabetical',\n        order: ['Design Tokens', 'Components', '*'],\n      },\n    },\n  },\n  decorators: [\n    // Adds theme switching support\n    withThemeByDataAttribute<AngularRenderer>({\n      themes: {\n        light: 'wise',\n        dark: 'wisedark',\n      },\n      defaultTheme: 'light',\n      attributeName: 'data-theme',\n    }),\n  ],\n}"
                 }
+            ],
+            "src/app/docs/dialog/compodoc.ts": [
+                {
+                    "name": "WISEDialogConfigDocs",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/docs/dialog/compodoc.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "compodocData.classes.find(\n  (injectable) => injectable.name === 'WISEDialogConfig',\n)"
+                },
+                {
+                    "name": "WISEDialogServiceDocs",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/docs/dialog/compodoc.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "compodocData.injectables.find(\n  (injectable) => injectable.name === 'WISEDialogService',\n)"
+                }
             ]
         },
         "groupedFunctions": {},
         "groupedEnumerations": {},
         "groupedTypeAliases": {
-            "src/app/docs/dialog/dialog.stories.ts": [
-                {
-                    "name": "Story",
-                    "ctype": "miscellaneous",
-                    "subtype": "typealias",
-                    "rawtype": "StoryObj",
-                    "file": "src/app/docs/dialog/dialog.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "description": "",
-                    "kind": 180
-                }
-            ],
             "src/app/docs/typography/typography.stories.ts": [
                 {
                     "name": "Story",
@@ -2586,6 +2860,19 @@
                     "deprecationMessage": "",
                     "description": "",
                     "kind": 190
+                }
+            ],
+            "src/app/docs/dialog/dialog.stories.ts": [
+                {
+                    "name": "StoryDialog",
+                    "ctype": "miscellaneous",
+                    "subtype": "typealias",
+                    "rawtype": "BasicDialog",
+                    "file": "src/app/docs/dialog/dialog.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "kind": 180
                 }
             ],
             "src/app/docs/table/table.stories.ts": [
@@ -2733,7 +3020,7 @@
                 "linktype": "component",
                 "name": "BasicDialog",
                 "coveragePercent": 0,
-                "coverageCount": "0/7",
+                "coverageCount": "0/6",
                 "status": "low"
             },
             {
@@ -2742,15 +3029,25 @@
                 "linktype": "component",
                 "name": "BasicDialogContent",
                 "coveragePercent": 0,
-                "coverageCount": "0/8",
+                "coverageCount": "0/9",
                 "status": "low"
             },
             {
-                "filePath": "src/app/docs/dialog/dialog.stories.ts",
+                "filePath": "src/app/docs/dialog/compodoc.ts",
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
-                "name": "Dialog",
+                "name": "WISEDialogConfigDocs",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/docs/dialog/compodoc.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "WISEDialogServiceDocs",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
                 "status": "low"
@@ -2760,7 +3057,7 @@
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
-                "name": "meta",
+                "name": "Dialog",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
                 "status": "low"
@@ -2914,9 +3211,9 @@
                 "type": "component",
                 "linktype": "component",
                 "name": "WISEDialogTitle",
-                "coveragePercent": 100,
-                "coverageCount": "1/1",
-                "status": "very-good"
+                "coveragePercent": 33,
+                "coverageCount": "1/3",
+                "status": "medium"
             },
             {
                 "filePath": "src/app/shared/components/actions/dialog/dialog.component.ts",
@@ -2924,7 +3221,7 @@
                 "linktype": "component",
                 "name": "WISEDialog",
                 "coveragePercent": 0,
-                "coverageCount": "0/13",
+                "coverageCount": "0/14",
                 "status": "low"
             },
             {
@@ -2932,17 +3229,17 @@
                 "type": "injectable",
                 "linktype": "injectable",
                 "name": "WISEDialogService",
-                "coveragePercent": 0,
-                "coverageCount": "0/5",
-                "status": "low"
+                "coveragePercent": 57,
+                "coverageCount": "4/7",
+                "status": "good"
             },
             {
                 "filePath": "src/app/shared/components/actions/dialog/dialogConfig.ts",
                 "type": "class",
                 "linktype": "classe",
                 "name": "WISEDialogConfig",
-                "coveragePercent": 83,
-                "coverageCount": "5/6",
+                "coveragePercent": 100,
+                "coverageCount": "11/11",
                 "status": "very-good"
             },
             {

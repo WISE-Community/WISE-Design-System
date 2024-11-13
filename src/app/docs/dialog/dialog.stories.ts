@@ -3,7 +3,9 @@ import { moduleMetadata } from '@storybook/angular';
 import { CommonModule } from '@angular/common';
 import { BasicDialog } from './basic-dialog/basic-dialog.component';
 
-const meta: Meta = {
+type StoryDialog = BasicDialog;
+
+export default {
   title: 'Components/Actions/Dialog',
   decorators: [
     moduleMetadata({
@@ -11,13 +13,9 @@ const meta: Meta = {
       imports: [BasicDialog, CommonModule],
     }),
   ],
-  argTypes: {},
-};
+} as Meta<StoryDialog>;
 
-export default meta;
-type Story = StoryObj;
-
-export const Dialog: Story = {
+export const Dialog: StoryObj<StoryDialog> = {
   render: () => ({
     template: `
       <basic-dialog></basic-dialog>

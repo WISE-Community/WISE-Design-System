@@ -42,8 +42,17 @@ pre {
   position: relative;
 }
 
-.wisetype :where(pre code):not(:where([class~="not-wisetype"],[class~="not-wisetype"] *)) {
+.wisetype :where(code):not(:where([class~="not-wisetype"], [class~="not-wisetype"] *)) {
+  &::before, &::after {
+    content: none !important;
+  }
+  
+  @apply bg-neutral-100 dark:bg-neutral-700 p-1 rounded-sm;
+}
+
+.wisetype :where(pre code):not(:where([class~="not-wisetype"], [class~="not-wisetype"] *)) {
   padding: 1em;
+  @apply dark:bg-transparent;
 }
 
 /* DaisyUI */

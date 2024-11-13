@@ -11,6 +11,9 @@ import {
 import { WISEDialog } from './dialog.component';
 import { WISEDialogConfig } from './dialogConfig';
 
+/**
+ * Service to open WISE modal dialogs.
+ */
 @Injectable({
   providedIn: 'root',
 })
@@ -21,8 +24,17 @@ export class WISEDialogService {
   ) {}
 
   DIALOG_TITLE_PREFIX: string = 'wise-dialog-title-';
+  /**
+   * A list of all open dialogs
+   */
   dialogRefs: ComponentRef<WISEDialog>[] = [];
 
+  /**
+   * Opens a dialog with the specified component and configuration.
+   * @param {Type<T>} component The component to display in the dialog.
+   * @param {WISEDialogConfig} dialogConfig Configuration options for the dialog.
+   * @returns {ComponentRef<WISEDialog>} Reference to the newly opened dialog component.
+   */
   open<T>(component: Type<T>, dialogConfig?: WISEDialogConfig): ComponentRef<WISEDialog> {
     const dialogRef = createComponent(WISEDialog, {
       environmentInjector: this.injector as EnvironmentInjector,
@@ -50,6 +62,9 @@ export class WISEDialogService {
     return config;
   }
 
+  /**
+   * Closes all open dialogs.
+   */
   closeAll(): void {
     this.dialogRefs.forEach((dialogRef) => {
       dialogRef.instance.dialog.nativeElement.close();

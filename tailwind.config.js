@@ -225,5 +225,10 @@ module.exports = {
     'card',
     'rounded-lg',
     'shadow-lg',
+    'mb-2',
+    'font-medium',
+    'badge',
+    'badge-ghost',
+    'badge-warning',
   ],
 };

@@ -1,10 +1,11 @@
-import { Canvas, Meta, Story } from '@storybook/blocks';
+import { ArgTypes, Canvas, Meta, Story } from '@storybook/blocks';
 import * as DialogStories from './dialog.stories';
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import { Source } from '@storybook/blocks';
 import basicDialogCode from '!!raw-loader!./basic-dialog/basic-dialog.component.ts'
 import basicDialogTemplate from '!!raw-loader!./basic-dialog/basic-dialog.component.html'
 import basicDialogContent from '!!raw-loader!./basic-dialog/basic-dialog-content.html'
+import { WISEDialogConfigDocs, WISEDialogServiceDocs } from './compodoc';
 
 <Meta of={DialogStories} />
 <div class="sb-unstyled wisetype dark:wisetype-invert wisetype-neutral mx-auto max-w-6xl">
@@ -39,6 +40,104 @@ import basicDialogContent from '!!raw-loader!./basic-dialog/basic-dialog-content
           <Source code={basicDialogContent} language="html" dark />
         </TabPanel>
       </Tabs>
+    </div>
+    <h2 id="services">Services</h2>
+    <h3 id="wisedialogservice"><code>WISEDialogService</code></h3>
+    <p>{WISEDialogServiceDocs.rawdescription}</p>
+    <h4 id="wisedialogservice-methods">Methods</h4>
+      {WISEDialogServiceDocs.methods.map((method) => (
+        <div class="pb-2">
+          <table class="table border dark:border-neutral-600">
+            <thead>
+              <tr>
+                <th colspan="2">
+                  <code>{method.name}</code>
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td colspan="2">
+                  {method.deprecated ? (
+                    <>
+                    <span class="badge badge-warning">Deprecated</span> <span class="text-warning">{method.deprecationMessage}</span>
+                    <br /><br />
+                    </>
+                  ) : null}
+                  {method.rawdescription}
+                </td>
+              </tr>
+              {method.args.length ? (
+                <tr>
+                  <td colspan="2" class="font-bold bg-neutral-50 dark:bg-neutral-800">Parameters</td>
+                </tr>
+              ) : null}
+              {method.args.map((arg) => (
+                <tr>
+                  <td>
+                    <code>{arg.name}: {arg.type}</code> {arg.optional ? (<span class="badge badge-ghost">optional</span>) : null}
+                  </td>
+                  <td>
+                    {arg.deprecated ? (
+                      <>
+                      <span class="badge badge-warning">Deprecated</span> <span class="text-warning">{arg.deprecationMessage}</span>
+                      </>
+                    ) : null}
+                    <br /><br />
+                    {arg.rawdescription}
+                  </td>
+                </tr>
+              ))}
+              {method.returnType ? (
+                <>
+                <tr>
+                  <td colspan="2" class="font-bold bg-neutral-50 dark:bg-neutral-800">Returns</td>
+                </tr>
+                <tr>
+                  <td>
+                    <code>{method.returnType}</code>
+                  </td>
+                </tr>
+                </>
+              ) : null}
+            </tbody>
+          </table>
+        </div>
+      ))}
+    <h2 id="components">Components</h2>
+    <h2 id="classes">Classes</h2>
+    <h3 id="wisedialogconfig"><code>WISEDialogConfig</code></h3>
+    <p>{WISEDialogConfigDocs.rawdescription}</p>
+    <h4 id="wisedialogconfig-properties">Properties</h4>
+    <div class="pb-2">
+      <table class="table border dark:border-neutral-600">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Description</th>
+          </tr>
+        </thead>
+        <tbody>
+          {WISEDialogConfigDocs.properties.map((property) => {
+            return (
+              <tr>
+                <td>
+                  <code>{property.name}: {property.type} = {property.defaultValue}</code>
+                </td>
+                <td>
+                  {property.deprecated ? (
+                    <>
+                    <span class="badge badge-warning">Deprecated</span> <span class="text-warning">{property.deprecationMessage}</span>
+                    <br /><br />
+                    </>
+                  ) : null}
+                  {property.rawdescription}
+                </td>
+              </tr>
+            );
+          })}
+        </tbody>
+      </table>
     </div>
   </div>
 </div>
