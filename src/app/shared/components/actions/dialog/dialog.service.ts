@@ -20,7 +20,8 @@ export class WISEDialogService {
     private appRef: ApplicationRef,
   ) {}
 
-  private dialogRefs: ComponentRef<WISEDialog>[] = [];
+  DIALOG_TITLE_PREFIX: string = 'wise-dialog-title-';
+  dialogRefs: ComponentRef<WISEDialog>[] = [];
 
   open<T>(component: Type<T>, dialogConfig?: WISEDialogConfig): ComponentRef<WISEDialog> {
     const dialogRef = createComponent(WISEDialog, {
